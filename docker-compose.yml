@@ -1,0 +1,41 @@
+version: "3"
+services:
+  
+    # Launch a MySQL instance that will be available on port 3306.
+    # It uses the volume named "mysql_db".
+    
+    mysql:
+        image: mysql:5
+        restart: always
+        ports:
+            - "3306:3306"
+        volumes:
+            - mysql_db:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: dev
+            MYSQL_USER: dev
+            MYSQL_PASSWORD: dev
+    
+    # Launch a phpmyadmin available on http://localhost:8001 . It is already connected to the MySQL instance.
+    
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        ports:
+            - "8001:80"
+        environment:
+            PMA_HOST: mysql
+            PMA_USER: dev
+            PMA_PASSWORD: dev
+            
+    # Launch a mailcatcher. Its admin is available on http://localhost:8002 . It's only useful if some program
+    # is configured to send mails to it using the port 1025.
+            
+    mailcatcher:
+        image: tophfr/mailcatcher
+        ports:
+            - "1025:25"
+            - "8002:80"
+
+volumes:
+    mysql_db:
