@@ -12,5 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(MediasTableSeeder::class);
+        $this->call(ActorsTableSeeder::class);
+        $this->call(Media_actorTableSeeder::class);
     }
 }
