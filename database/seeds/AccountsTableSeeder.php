@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class AccountsTableSeeder extends Seeder
 {
@@ -11,6 +12,15 @@ class AccountsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table( 'accounts' ) -> insert( [
+            [
+                'email' => 'admin@nutflux.com',
+                'password' => Hash::make( 'admin' )
+            ],
+            [
+                'email' => 'tanguy@nutflux.com',
+                'password' => Hash::make( 'toto' )
+            ]
+        ] );
     }
 }
