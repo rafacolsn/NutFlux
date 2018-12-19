@@ -18,7 +18,7 @@ Route::get('/', function () {
 // Route::resource( 'accounts', 'AccountController' );
 // Route::get( 'accounts/{account}/delete', 'AccountController@delete' ) -> name( 'accounts.delete' );
 
-// Route::resource( 'actors', 'ActorController' );
-// Route::get( 'actors/{actor}/delete', 'ActorController@delete' ) -> name( 'actors.delete' );
+Route::resource( 'actors', 'ActorController' );
+Route::get( 'actors/{actor}/delete', 'ActorController@delete' ) -> name( 'actors.delete' );
 
-Route::get('actors/{id}', 'ActorController@show');
+// Route::get('actors/{id}', 'ActorController@show');
