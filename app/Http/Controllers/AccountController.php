@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class AccountController extends Controller
 {
+<<<<<<< HEAD
     /**
      * Display a listing of the resource.
      *
@@ -81,4 +82,7 @@ class AccountController extends Controller
     {
         //
     }
+=======
+    //
+>>>>>>> bc5937dbea01aa55d272f6e6eb5807cd49bea5bf
 }

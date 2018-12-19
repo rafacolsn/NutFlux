@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Actor;
+
 class ActorController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class ActorController extends Controller
      */
     public function index()
     {
-        //
+        $actors = Actor::orderBy( 'lastname' ) -> get();
+        return view( 'actors.index', compact( 'actors' ) );
     }
 
     /**
@@ -43,10 +46,11 @@ class ActorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show( Actor $actor )
     {
-        //
+        return view( 'actors.show', compact( 'actor' ) );
     }
+
 
     /**
      * Show the form for editing the specified resource.

@@ -1,11 +1,10 @@
 <?php
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class actors extends Model
-{
-    //
+class Actor extends Model {
     protected $fillable = ['firstname', 'lastname', 'picture'];
-}
+} 
+
+?>
