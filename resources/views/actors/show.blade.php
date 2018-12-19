@@ -1,5 +1,9 @@
-<div id="app">
-    <actors-show :actor="{{ json_encode( $actor ) }}"></actors-show>
-</div>
+@extends( 'layout' )
 
-<script src="/js/app.js" type="text/javascript"></script>
+@section( 'title' )
+    {{ $actor -> firstname }} {{ $actor -> lastname }}
+@stop
+
+@section( 'content' )
+    <actors-show :actor="{{ json_encode( $actor ) }}"></actors-show>
+@stop

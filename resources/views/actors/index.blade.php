@@ -1,5 +1,9 @@
-<div id="app">
-    <actors-index :actors="{{ json_encode( $actors ) }}"></actors-index>
-</div>
+@extends( 'layout' )
 
-<script src="/js/app.js" type="text/javascript"></script>
+@section( 'title' )
+    Liste des acteurs
+@stop
+
+@section( 'content' )
+    <actors-index :actors="{{ json_encode( $actors ) }}"></actors-index>
+@stop

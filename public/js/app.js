@@ -47637,6 +47637,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['actors'],
@@ -47654,6 +47655,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("h1", [_vm._v("Liste des acteurs")]),
+    _vm._v(" "),
     _vm.actors
       ? _c(
           "ol",

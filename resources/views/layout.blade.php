@@ -15,8 +15,8 @@
     </head>
     <body>
 
-        <nav id="">
-            @include( 'navigation' )
+        <nav id="nav">
+            <!-- include vue component -->
         </nav>
 
         <main id="app">
