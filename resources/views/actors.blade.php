@@ -1,6 +1,5 @@
-@foreach ($actor as $actors)
-    <h1>{{ $actor->firstname }} {{ $actor->lastname }}</h1>
-    {{-- <img src="{{$actor->picture}}" alt=""> --}}
-    <?php var_dump($actor); ?>
-@endforeach
+<div id="app">
+    <actors-show :actor="{{ json_encode( $actor ) }}"></actors-show>
+</div>
 
+<script src="/js/app.js" type="text/javascript"></script>
