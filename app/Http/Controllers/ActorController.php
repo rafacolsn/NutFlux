@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Actor;
+
 class ActorController extends Controller
 {
     /**
@@ -45,8 +47,10 @@ class ActorController extends Controller
      */
     public function show($id)
     {
-        //
+        $actor = Actor::find($id);
+        return view('actors', compact('actor'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.
