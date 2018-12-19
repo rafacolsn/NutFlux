@@ -45,12 +45,11 @@ class ActorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show( Actor $actor )
     {
-        $actor = Actor::find($id);
-        return view('actors', compact('actor'));
+        return view( 'actors', compact( 'actor' ) );
     }
-    
+
 
     /**
      * Show the form for editing the specified resource.
