@@ -14053,9 +14053,11 @@ window.Vue = __webpack_require__(37);
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-Vue.component('example-component', __webpack_require__(40));
-Vue.component('actors-show', __webpack_require__(43));
+/* Actors components */
+Vue.component('actors-show', __webpack_require__(40));
+Vue.component('actors-index', __webpack_require__(43));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -47498,7 +47500,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/ExampleComponent.vue"
+Component.options.__file = "resources/js/components/ActorsShow.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -47507,9 +47509,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-299e239e", Component.options)
+    hotAPI.createRecord("data-v-87cc8734", Component.options)
   } else {
-    hotAPI.reload("data-v-299e239e", Component.options)
+    hotAPI.reload("data-v-87cc8734", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47532,17 +47534,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['actor'],
     mounted: function mounted() {
         console.log('Component mounted.');
     }
@@ -47556,38 +47550,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", [
+      _vm._v(_vm._s(_vm.actor.firstname) + " " + _vm._s(_vm.actor.lastname))
+    ]),
+    _vm._v(" "),
+    _c("img", {
+      attrs: {
+        src: _vm.actor.picture,
+        alt: _vm.actor.firstname + " " + _vm.actor.lastname
+      }
+    })
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-299e239e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-87cc8734", module.exports)
   }
 }
 
@@ -47617,7 +47599,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/ActorsShow.vue"
+Component.options.__file = "resources/js/components/ActorsIndex.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -47626,9 +47608,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-87cc8734", Component.options)
+    hotAPI.createRecord("data-v-0b0ed739", Component.options)
   } else {
-    hotAPI.reload("data-v-87cc8734", Component.options)
+    hotAPI.reload("data-v-0b0ed739", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47650,9 +47632,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['actor'],
+    props: ['actors'],
     mounted: function mounted() {
         console.log('Component mounted.');
     }
@@ -47667,9 +47654,26 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", [
-      _vm._v(_vm._s(_vm.actor.firstname) + " " + _vm._s(_vm.actor.lastname))
-    ])
+    _vm.actors
+      ? _c(
+          "ol",
+          _vm._l(_vm.actors, function(actor) {
+            return _c("li", [
+              _c("p", [
+                _vm._v(_vm._s(actor.firstname) + " " + _vm._s(actor.lastname))
+              ]),
+              _vm._v(" "),
+              _c("img", {
+                attrs: {
+                  src: actor.picture,
+                  alt: actor.firstname + " " + actor.lastname
+                }
+              })
+            ])
+          }),
+          0
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -47678,7 +47682,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-87cc8734", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0b0ed739", module.exports)
   }
 }
 

@@ -15,7 +15,8 @@ class ActorController extends Controller
      */
     public function index()
     {
-        //
+        $actors = Actor::orderBy( 'lastname' ) -> get();
+        return view( 'actors.index', compact( 'actors' ) );
     }
 
     /**
@@ -47,7 +48,7 @@ class ActorController extends Controller
      */
     public function show( Actor $actor )
     {
-        return view( 'actors', compact( 'actor' ) );
+        return view( 'actors.show', compact( 'actor' ) );
     }
 
 
