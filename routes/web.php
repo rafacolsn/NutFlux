@@ -15,6 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::resource( 'accounts', 'AccountController' );
+// Route::get( 'accounts/{account}/delete', 'AccountController@delete' ) -> name( 'accounts.delete' );
+
+Route::resource( 'actors', 'ActorController' );
+Route::get( 'actors/{actor}/delete', 'ActorController@delete' ) -> name( 'actors.delete' );
+
+// Route::get('actors/{id}', 'ActorController@show');
+
