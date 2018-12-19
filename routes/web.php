@@ -15,10 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-Route::get('/actors','actorsController@index');
-=======
+Route::get('/actors','actorController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
->>>>>>> 1ca66ce42475c1806fd90104a3c44f5eaf1a7030
+
+Route::resource('account','AccountController');
