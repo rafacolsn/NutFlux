@@ -16,9 +16,11 @@ window.Vue = require('vue');
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+/* Actors components */
 Vue.component( 'actors-show', require( './components/ActorsShow.vue' ) );
+Vue.component( 'actors-index', require( './components/ActorsIndex.vue' ) );
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
