@@ -67,7 +67,7 @@ class ActorController extends Controller
         $actorsObj = Actor::find($id);
         return view('actors.show', compact('actorsObj'));
     }
-    
+
 
     /**
      * Show the form for editing the specified resource.

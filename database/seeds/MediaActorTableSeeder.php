@@ -168,6 +168,102 @@ class MediaActorTableSeeder extends Seeder
                 'media_id' => 12,
                 'actor_id' => 22
             ],
+            [
+                'media_id' => 13,
+                'actor_id' => 23,
+            ],
+            [
+                'media_id' => 13,
+                'actor_id' => 24,
+            ],
+            [
+                'media_id' => 13,
+                'actor_id' => 25,
+            ],
+            [
+                'media_id' => 13,
+                'actor_id' => 26,
+            ],
+            [
+                'media_id' => 14,
+                'actor_id' => 23,
+            ],
+            [
+                'media_id' => 14,
+                'actor_id' => 24,
+            ],
+            [
+                'media_id' => 14,
+                'actor_id' => 25,
+            ],
+            [
+                'media_id' => 14,
+                'actor_id' => 26,
+            ],
+            [
+                'media_id' => 15,
+                'actor_id' => 23,
+            ],
+            [
+                'media_id' => 15,
+                'actor_id' => 24,
+            ],
+            [
+                'media_id' => 15,
+                'actor_id' => 25,
+            ],
+            [
+                'media_id' => 15,
+                'actor_id' => 26,
+            ],
+            [
+                'media_id' => 15,
+                'actor_id' => 27,
+            ],
+            [
+                'media_id' => 16,
+                'actor_id' => 28,
+            ],
+            [
+                'media_id' => 16,
+                'actor_id' => 29,
+            ],
+            [
+                'media_id' => 17,
+                'actor_id' => 30,
+            ],
+            [
+                'media_id' => 17,
+                'actor_id' => 31,
+            ],
+            [
+                'media_id' => 18,
+                'actor_id' => 32,
+            ],
+            [
+                'media_id' => 18,
+                'actor_id' => 33,
+            ],
+            [
+                'media_id' => 18,
+                'actor_id' => 34,
+            ],
+            [
+                'media_id' => 19,
+                'actor_id' => 35,
+            ],
+            [
+                'media_id' => 19,
+                'actor_id' => 36,
+            ],
+            [
+                'media_id' => 19,
+                'actor_id' => 37,
+            ],
+            [
+                'media_id' => 19,
+                'actor_id' => 38,
+            ],
         ] );
     }
 }

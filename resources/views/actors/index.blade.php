@@ -1,14 +1,14 @@
+   
+@extends( 'layout' )
 
 @if(session('success'))
 {{session('success')}}
 @endif
 
-<h1>Liste des acteurs</h1>
+@section( 'title' )
+    Liste des acteurs
+@stop
 
-<ul>
-    @foreach ($actorsAll as $actor)
-        <li>{{ $actor->firstname }} {{ $actor->lastname }}</li>
-        <img style="height:150px" src="{{$actor->picture}}" alt="">
-    @endforeach
-</ul>
-   
+@section( 'content' )
+    <actors-index :actors="{{ json_encode($actorsAll) }}"></actors-index>
+@stop
