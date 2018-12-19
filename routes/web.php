@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Auth::routes();
 // Route::resource( 'accounts', 'AccountController' );
 // Route::get( 'accounts/{account}/delete', 'AccountController@delete' ) -> name( 'accounts.delete' );
 
