@@ -24,6 +24,12 @@ Vue.component( 'actors-show', require( './components/ActorsShow.vue' ) );
 Vue.component( 'actors-index', require( './components/ActorsIndex.vue' ) );
 Vue.component( 'actors-edit', require( './components/ActorsEdit.vue' ) );
 
+/* Medias components */
+Vue.component( 'medias-show', require( './components/MediasShow.vue' ) );
+Vue.component( 'medias-index', require( './components/MediasIndex.vue' ) );
+Vue.component( 'medias-edit', require( './components/MediasEdit.vue' ) );
+Vue.component( 'medias-create', require( './components/MediasCreate.vue' ) );
+
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 

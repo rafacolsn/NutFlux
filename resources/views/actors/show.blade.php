@@ -1,10 +1,7 @@
-
-
-
 @extends( 'layout' )
 
 @section( 'title' )
-{{ $actorsObj->firstname.' '.$actorsObj->lastname }} 
+{{ $actorsObj->firstname.' '.$actorsObj->lastname }}
 @stop
 
 @section( 'content' )
