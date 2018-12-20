@@ -72,10 +72,12 @@ class ActorController extends Controller
      */
     public function update(Request $request, $id)
     {
+        /* --- This code is to be replaced by update handle in database */
         echo 'Hello, this is ActorController\'s edit method !';
         echo'<br />';
         var_dump($request->actorFirstname);
         die();
+        /* ----- */
     }
 
     /**
