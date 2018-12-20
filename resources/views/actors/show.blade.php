@@ -9,4 +9,5 @@
 
 @section( 'content' )
     <actors-show :actor="{{ json_encode($actorsObj) }}"></actors-show>
+    
 @stop

@@ -5,6 +5,7 @@
             <li v-for="actor in actors">
                 <p>{{ actor.firstname }} {{ actor.lastname }}</p>
                 <img :src="actor.picture" :alt="actor.firstname + ' ' +  actor.lastname" />
+                
             </li>
         </ol>
     </div>

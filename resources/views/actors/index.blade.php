@@ -11,4 +11,5 @@
 
 @section( 'content' )
     <actors-index :actors="{{ json_encode($actorsAll) }}"></actors-index>
+    
 @stop

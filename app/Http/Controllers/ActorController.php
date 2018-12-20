@@ -77,7 +77,8 @@ class ActorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $actor = Actor::find($id);
+        return view('actors.edit', compact('actor'));
     }
 
     /**
@@ -89,7 +90,15 @@ class ActorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'picture' => 'required',
+        ]);
+  
+        $id->update($request->all());
+  
+        return redirect()->route('actors.index')->with('success','Actor updated successfully');
     }
 
     /**
