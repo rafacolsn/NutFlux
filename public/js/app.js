@@ -47640,11 +47640,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['actors'],
-    mounted: function mounted() {
-        console.log('Component mounted.');
+    props: ['actors', 'csrf'],
+    methods: {
+        destroy: function destroy(event) {
+            axios.delete('/actors/' + actor.id).then(function (response) {
+                // handle success
+                console.log(response);
+            }).catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+        }
     }
 });
 
@@ -47673,7 +47688,31 @@ var render = function() {
                   src: actor.picture,
                   alt: actor.firstname + " " + actor.lastname
                 }
-              })
+              }),
+              _vm._v(" "),
+              _c(
+                "form",
+                { attrs: { method: "post", action: "/actors/" + actor.id } },
+                [
+                  _c("input", {
+                    attrs: { name: "id" },
+                    domProps: { value: actor.id }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_method", value: "DELETE" }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.csrf }
+                  }),
+                  _vm._v(" "),
+                  _c("button", { on: { click: _vm.destroy } }, [
+                    _vm._v("Delete")
+                  ])
+                ]
+              )
             ])
           }),
           0
@@ -47778,9 +47817,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             actorLastname: actor.lastname,
             actorPicture: actor.picture
         };
-    },
-    mounted: function mounted() {
-        console.log('Component mounted.');
     },
 
     methods: {
