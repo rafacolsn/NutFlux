@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+const axios = require('axios');
 
 window.Vue = require('vue');
 
@@ -21,6 +22,7 @@ window.Vue = require('vue');
 /* Actors components */
 Vue.component( 'actors-show', require( './components/ActorsShow.vue' ) );
 Vue.component( 'actors-index', require( './components/ActorsIndex.vue' ) );
+Vue.component( 'actors-edit', require( './components/ActorsEdit.vue' ) );
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))

@@ -58,9 +58,9 @@ class ActorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( Actor $actor )
     {
-        //
+        return view( 'actors.edit', compact( 'actor' ) );
     }
 
     /**
@@ -72,7 +72,10 @@ class ActorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        echo 'Hello, this is ActorController\'s edit method !';
+        echo'<br />';
+        var_dump($request->actorFirstname);
+        die();
     }
 
     /**

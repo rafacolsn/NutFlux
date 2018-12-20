@@ -1,7 +1,7 @@
 @extends( 'layout' )
 
 @section( 'title' )
-    Liste des acteurs
+    Actors index
 @stop
 
 @section( 'content' )
