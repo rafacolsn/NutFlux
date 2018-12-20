@@ -26,7 +26,7 @@ class MediaController extends Controller
      */
     public function create()
     {
-        //
+        return view('medias.create');
     }
 
     /**
@@ -37,7 +37,21 @@ class MediaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'mediaTitle' => 'required',
+            'mediaSummary' => 'required',
+            'mediaYear' => 'required',
+            'mediaTrailer' => 'required'
+
+        ]);
+
+        $actor = new Actor([
+            'firstname' => $request->get('firstname'),
+            'lastname'=> $request->get('lastname'),
+            'picture'=> $request->get('picture')
+          ]);
+          $actor->save();
+          return redirect('/actors')->with('success', 'Actor has been added');
     }
 
     /**
