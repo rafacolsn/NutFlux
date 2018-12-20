@@ -1,4 +1,9 @@
-<form action="{{ route('actors.update', $actor->$id) }}">
-    <input type="text" name="firstname" placeholder="test">
-</form>
+@extends( 'layout' )
 
+@section( 'title' )
+    Edit this actor
+@stop
+
+@section( 'content' )
+    <actors-edit :actor="{{ json_encode( $actor ) }}" csrf="{{ csrf_token() }}"></actors-edit>
+@stop
