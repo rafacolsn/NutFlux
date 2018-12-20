@@ -19,7 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::resource( 'accounts', 'AccountController' );
-// Route::get( 'accounts/{account}/delete', 'AccountController@delete' ) -> name( 'accounts.delete' );
-
-Route::resource( 'actors', 'ActorController' );
+Route::resource('actors', 'ActorController');
+Route::resource('medias', 'MediaController');
