@@ -59,7 +59,7 @@
         },
         methods: {
             send: function ( event ) {
-                axios.patch( '/medias' )
+                axios.post( '/medias' )
                     .then( function ( response ) {
                         // handle success
                         console.log(response);
