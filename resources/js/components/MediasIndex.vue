@@ -1,12 +1,12 @@
 <template>
     <div class="container">
-        <h1>Actors index</h1>
-        <ol v-if="actors">
-            <li v-for="actor in actors">
-                <p>{{ actor.firstname }} {{ actor.lastname }}</p>
-                <img :src="actor.picture" :alt="actor.firstname + ' ' +  actor.lastname" />
-                <form method="post" :action="'/actors/' + actor.id">
-                    <input type="hidden" name="id" :value="actor.id" />
+        <h1>Medias index</h1>
+        <ol v-if="medias">
+            <li v-for="media in medias">
+                <p>{{ media.title }}</p>
+                <img :src="media.poster" :alt="media.title" />
+                <form method="post" :action="'/medias/' + media.id">
+                    <input type="hidden" name="id" :value="media.id" />
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" :value="csrf">
 
@@ -19,10 +19,10 @@
 
 <script>
     export default {
-        props: ['actors', 'csrf'],
+        props: ['medias', 'csrf'],
         methods: {
             destroy: function ( event ) {
-                axios.delete( '/actors/' + actor.id )
+                axios.delete( '/medias/' + media.id )
                     .then( function ( response ) {
                         // handle success
                         console.log(response);

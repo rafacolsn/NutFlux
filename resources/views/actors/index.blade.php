@@ -1,4 +1,3 @@
-
 @extends( 'layout' )
 
 @if(session('success'))

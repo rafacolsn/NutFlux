@@ -1,20 +1,13 @@
 @extends( 'layout' )
 
 @if(session('success'))
-{{session('success')}}
+    {{session('success')}}
 @endif
 
 @section( 'title' )
-    Actors index
+    Medias index
 @stop
 
 @section( 'content' )
-    <ul>
-        @foreach ($mediasAll as $item)
-        <li>{{$item->title}}</li>
-        <li><img src="{{$item->poster}}" style="height:200px;" alt="{{$item->poster}}"></li>
-        @endforeach
-        
-    </ul>
-
+    <medias-index :actors="{{ json_encode($mediasAll) }}" csrf="{{ csrf_token() }}"></medias-index>
 @stop
