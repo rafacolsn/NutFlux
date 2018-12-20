@@ -15,8 +15,8 @@ class ActorController extends Controller
      */
     public function index()
     {
-        $actors = Actor::orderBy( 'lastname' ) -> get();
-        return view( 'actors.index', compact( 'actors' ) );
+        $actorsAll = Actor::orderBy('lastname')->get();
+        return view('actors.index', compact('actorsAll'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ActorController extends Controller
      */
     public function create()
     {
-        //
+        return view('actors.create');
     }
 
     /**
@@ -37,7 +37,23 @@ class ActorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'picture' => 'required'
+        ]);
+
+        $actor = new Actor([
+            'firstname' => $request->get('firstname'),
+            'lastname'=> $request->get('lastname'),
+            'picture'=> $request->get('picture')
+          ]);
+          $actor->save();
+          return redirect('/actors')->with('success', 'Actor has been added');
+
+        // Actor::create($request->all());
+
+    
     }
 
     /**
@@ -46,9 +62,10 @@ class ActorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show( Actor $actor )
+    public function show($id)
     {
-        return view( 'actors.show', compact( 'actor' ) );
+        $actorsObj = Actor::find($id);
+        return view('actors.show', compact('actorsObj'));
     }
 
 
@@ -88,6 +105,10 @@ class ActorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $actor = Actor::find($id);
+        $actor->delete();
+        return redirect()->route('actors.index')->with('success', $actor->firstname.' '.$actor->lastname.' has been deleted');
+        
+    
     }
 }
