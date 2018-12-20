@@ -1,4 +1,4 @@
-   
+
 @extends( 'layout' )
 
 @if(session('success'))
@@ -10,6 +10,5 @@
 @stop
 
 @section( 'content' )
-    <actors-index :actors="{{ json_encode($actorsAll) }}"></actors-index>
-    
+    <actors-index :actors="{{ json_encode($actorsAll) }}" csrf="{{ csrf_token() }}"></actors-index>
 @stop
