@@ -33,9 +33,6 @@
                 actorPicture: actor.picture
             }
         },
-        mounted() {
-            console.log('Component mounted.')
-        },
         methods: {
             send: function ( event ) {
                 axios.patch( '/actors/' + actor.id )
