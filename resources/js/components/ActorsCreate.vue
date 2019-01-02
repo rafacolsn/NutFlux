@@ -1,75 +1,51 @@
 <template>
   <div class="container">
-    <input v-model="message" placeholder="modifiez-moi">
-
-    <p>Le message est : {{ message }}</p>
-
     <h1>Create an actor</h1>
 
     <form method="POST" action="/actors">
-      <label for="first-name">First name:</label>
+      <label for="firstname">First name:</label>
+      <input type="text" v-model="firstname" name="firstname" placeholder="Cate">
       
-      <input type="hidden" value="csrf" name="_token">
-      
-      <input
-        type="text"
-        class="form-control"
-        id="first-name"
-        required
-        v-model="newItem.firstname"
-        placeholder="Cate"
-      >
-      
-      <label for="last-name">Last name:</label>
-      
-      <input
-        type="text"
-        class="form-control"
-        id="last-name"
-        required
-        v-model="newItem.lastname"
-        placeholder="Blanchett"
-      >
+      <label for="lastname">Last name:</label>
+      <input type="text" v-model="lastname" name="lastname" placeholder="Blanchett">
 
       <br>
       <br>
+      <input type="hidden" name="_token" :value="csrf">
+      <label for="picture">Picture:</label>
+      
+      <input type="text" name="picture" v-model="picture">
+      <br>
 
-      <input type="file" name="pic" accept="image/*" v-on:change="newItem.picture">
+      <button @click="create">Submit</button>
+      <!-- execute fonction create on the click -->
     </form>
-
-    <br>
-
-    <button @click="create">Submit</button>
   </div>
 </template>
 
 
 <script>
-
-
 export default {
   props: ["csrf"],
   data() {
     return {
-      message: "",
-      item: [],
-      newItem: { firstname: "", lastname: "", picture: "" }
+      firstname: "",
+      lastname: "",
+      picture: ""
     };
   },
   methods: {
     create: function(event) {
       console.log("coucou");
-
       axios
-        .post("/actors/")
+        .post("/actors")
         .then(function(response) {
-          console.log("yeyyyyyyyyyyyyyyyyyyy");
-
+          console.log("alleluia");
           console.log(response);
         })
         .catch(function(error) {
           console.log(error);
-          console.log("cocaaa");
+          console.log("EndEndEnd");
         });
     }
   }

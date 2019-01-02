@@ -31,6 +31,12 @@ Vue.component( 'medias-index', require( './components/MediasIndex.vue' ) );
 Vue.component( 'medias-edit', require( './components/MediasEdit.vue' ) );
 Vue.component( 'medias-create', require( './components/MediasCreate.vue' ) );
 
+/* Accounts components */
+Vue.component( 'accounts-show', require( './components/AccountsShow.vue' ) );
+Vue.component( 'accounts-create', require( './components/AccountsCreate.vue' ) );
+
+
+
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
@@ -44,9 +50,6 @@ const app = new Vue({
     el: '#app'
 });
 
-Vue.http.interceptors.push(function (request, next) {
-    request.headers['X-CSRF-TOKEN'] = Laravel.csrfToken;
-    next();
-    });
+
 
 
