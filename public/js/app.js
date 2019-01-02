@@ -48231,7 +48231,7 @@ var render = function() {
           "ul",
           _vm._l(_vm.media.actors, function(actor) {
             return _c("li", [
-              _c("a", { attrs: { href: "/actors/".actor.id } }, [
+              _c("a", { attrs: { href: "/actors/" + actor.id } }, [
                 _vm._v(
                   "\n                        " +
                     _vm._s(actor.firstname) +
