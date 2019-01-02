@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('actors', 'ActorController');
 Route::resource('medias', 'MediaController');
 Route::resource('accounts', 'AccountController');
+Route::resource('users', 'UserController');
+
