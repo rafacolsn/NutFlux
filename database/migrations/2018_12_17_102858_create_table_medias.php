@@ -19,7 +19,7 @@ class CreateTableMedias extends Migration
             $table -> text( 'summary' );
             $table -> unsignedInteger( 'year' );
             $table -> string( 'trailer' );
-            $table -> boolean( 'is_serie' );
+            $table -> boolean( 'is_serie' )->default(false);
             $table -> string( 'poster' );
             $table -> string( 'director' );
             $table -> string( 'producer' );

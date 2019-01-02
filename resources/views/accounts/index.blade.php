@@ -9,6 +9,8 @@
 @stop
 
 @section( 'content' )
-<p> {{ $accountsAll }}</p>
+@foreach ($accountsAll as $item)
+    <p>{{$item->email}}</p>
+@endforeach
     
 @stop

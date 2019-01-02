@@ -92,13 +92,13 @@ class AccountController extends Controller
         
         $request->validate([
             'email' => 'required',
-            'password' => 'required',
+            // 'password' => 'required',
             
         ]);
         
         $account = Account::find($id);
         $account->email = $request->get('email');
-        $account->password = $request->get('password');
+        // $account->password = $request->get('password');
         $account->save();
 
         return redirect()->route('accounts.index')->with('success','Account updated successfully');
