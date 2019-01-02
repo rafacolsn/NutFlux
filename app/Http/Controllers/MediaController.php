@@ -42,19 +42,23 @@ class MediaController extends Controller
             'mediaSummary' => 'required',
             'mediaYear' => 'required',
             'mediaTrailer' => 'required',
-            'mediaIsSerie' => 'required',
+            'mediaIsSerie' => 'boolean',
             'mediaPoster' => 'required',
             'mediaDirector' => 'required',
             'mediaProducer' => 'required',
-
         ]);
+
+        $mediaIsSerie = 0;
+        if ( $request -> get( 'mediaIsSerie' ) == true || $request -> get( 'mediaIsSerie' ) == 1 ) {
+            $mediaIsSerie = 1;
+        }
 
         $media = new Media([
             'title' => $request->get('mediaTitle'),
             'summary'=> $request->get('mediaSummary'),
             'year'=> $request->get('mediaYear'),
             'trailer'=> $request->get('mediaTrailer'),
-            'is_serie'=> $request->get('mediaIsSerie'),
+            'is_serie'=> $mediaIsSerie,
             'poster'=> $request->get('mediaPoster'),
             'director'=> $request->get('mediaDirector'),
             'producer'=> $request->get('mediaProducer')
