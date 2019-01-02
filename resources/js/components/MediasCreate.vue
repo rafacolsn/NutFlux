@@ -51,7 +51,7 @@
                 mediaSummary: '',
                 mediaYear: 0,
                 mediaTrailer: '',
-                mediaIsSerie: false,
+                mediaIsSerie: 0,
                 mediaPoster: '',
                 mediaDirector: '',
                 mediaProducer: '',

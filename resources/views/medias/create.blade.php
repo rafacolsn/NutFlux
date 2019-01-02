@@ -5,9 +5,9 @@
 @stop
 
 @section( 'content' )
-    <medias-create csrf="{{ csrf_token() }}"></medias-create>
+    {{-- <medias-create csrf="{{ csrf_token() }}"></medias-create> --}}
 
-    {{-- <form method="post" action={{ route('medias.store') }}>
+    <form method="post" action={{ route('medias.store') }}>
         @csrf
         <p>
             <label for="mediaTitle">Title</label>
@@ -45,5 +45,5 @@
         
 
         <button type="submit">create</button>   
-    </form> --}}
+    </form>
 @stop

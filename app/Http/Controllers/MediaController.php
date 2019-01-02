@@ -42,7 +42,7 @@ class MediaController extends Controller
             'mediaSummary' => 'required',
             'mediaYear' => 'required',
             'mediaTrailer' => 'required',
-            'mediaIsSerie' => 'required',
+            'mediaIsSerie' => 'boolean',
             'mediaPoster' => 'required',
             'mediaDirector' => 'required',
             'mediaProducer' => 'required',
