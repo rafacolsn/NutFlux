@@ -41,17 +41,26 @@ class MediaController extends Controller
             'mediaTitle' => 'required',
             'mediaSummary' => 'required',
             'mediaYear' => 'required',
-            'mediaTrailer' => 'required'
+            'mediaTrailer' => 'required',
+            'mediaIsSerie' => 'required',
+            'mediaPoster' => 'required',
+            'mediaDirector' => 'required',
+            'mediaProducer' => 'required',
 
         ]);
 
-        $actor = new Actor([
-            'firstname' => $request->get('firstname'),
-            'lastname'=> $request->get('lastname'),
-            'picture'=> $request->get('picture')
+        $media = new Media([
+            'title' => $request->get('mediaTitle'),
+            'summary'=> $request->get('mediaSummary'),
+            'year'=> $request->get('mediaYear'),
+            'trailer'=> $request->get('mediaTrailer'),
+            'is_serie'=> $request->get('mediaIsSerie'),
+            'poster'=> $request->get('mediaPoster'),
+            'director'=> $request->get('mediaDirector'),
+            'producer'=> $request->get('mediaProducer')
           ]);
-          $actor->save();
-          return redirect('/actors')->with('success', 'Actor has been added');
+          $media->save();
+          return redirect('/medias')->with('success', 'Media has been added');
     }
 
     /**
