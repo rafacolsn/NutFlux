@@ -47985,6 +47985,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['csrf'],
@@ -48018,6 +48020,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("h1", [_vm._v("Create an actor")]),
+    _vm._v(" "),
     _c("form", { attrs: { method: "post", action: "/actors" } }, [
       _c("p", [
         _c("label", { attrs: { for: "firstname" } }, [_vm._v("Firstname :")]),
@@ -48589,7 +48593,7 @@ var render = function() {
           _vm._v(" "),
           _c("input", {
             attrs: { type: "number", step: "1", name: "mediaYear" },
-            domProps: { value: _vm.media.Year }
+            domProps: { value: _vm.media.year }
           })
         ]),
         _vm._v(" "),
