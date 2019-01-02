@@ -71,7 +71,8 @@ class MediaController extends Controller
      */
     public function show($id)
     {
-        //
+        $mediasObj = Media::find($id);
+        return view('medias.show', compact('mediasObj'));
     }
 
     /**

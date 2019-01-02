@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h1>Create a media</h1>
-        <form method="post" action="medias">
+        <form method="post" action="/medias">
             <p>
                 <label for="mediaTitle">Title</label>
                 <input type="text" name="mediaTitle" v-bind="mediaTitle" />

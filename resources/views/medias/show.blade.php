@@ -1,9 +1,10 @@
 @extends( 'layout' )
 
 @section( 'title' )
-    {{ $media -> title }}
+    {{ $mediasObj -> title }}
 @stop
 
 @section( 'content' )
-    <medias-show :media="{{ json_encode( $media ) }}"></medias-show>
+    {{-- <medias-show :media="{{ json_encode( $media ) }}"></medias-show> --}}
+    {{$mediasObj->title}}
 @stop
