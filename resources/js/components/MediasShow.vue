@@ -7,8 +7,8 @@
             <li>Year: {{ media.year }}</li>
             <li>Director: {{ media.director }}</li>
             <li>Producer: {{ media.producer }}</li>
-            <li>Actors:
-                <ul :if="media.actors">
+            <li :if="media.actors">Actors:
+                <ul>
                     <li v-for="actor in media.actors">
                         <a :href="'/actors/' . actor.id">
                             {{ actor.firstname }} {{ actor.lastname }}

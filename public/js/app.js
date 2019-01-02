@@ -48225,11 +48225,10 @@ var render = function() {
       _vm._v(" "),
       _c("li", [_vm._v("Producer: " + _vm._s(_vm.media.producer))]),
       _vm._v(" "),
-      _c("li", [
+      _c("li", { attrs: { if: _vm.media.actors } }, [
         _vm._v("Actors:\n            "),
         _c(
           "ul",
-          { attrs: { if: _vm.media.actors } },
           _vm._l(_vm.media.actors, function(actor) {
             return _c("li", [
               _c("a", { attrs: { href: "/actors/".actor.id } }, [
