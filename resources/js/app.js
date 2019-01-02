@@ -19,6 +19,12 @@ window.Vue = require('vue');
  */
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
+/* Medias components */
+Vue.component( 'users-show', require( './components/UsersShow.vue' ) );
+Vue.component( 'users-index', require( './components/UsersIndex.vue' ) );
+Vue.component( 'users-edit', require( './components/UsersEdit.vue' ) );
+Vue.component( 'users-create', require( './components/UsersCreate.vue' ) );
+
 /* Actors components */
 Vue.component( 'actors-show', require( './components/ActorsShow.vue' ) );
 Vue.component( 'actors-index', require( './components/ActorsIndex.vue' ) );
@@ -40,6 +46,6 @@ Vue.component( 'medias-create', require( './components/MediasCreate.vue' ) );
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
+const app = new Vue( {
     el: '#app'
-});
+} );

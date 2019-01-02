@@ -1,15 +1,9 @@
-
 @extends( 'layout' )
 
 @section( 'title' )
-    Create a profile
+    Create a user
 @stop
 
 @section( 'content' )
-<form method="post" action={{ route('users.store') }}>
-    @csrf
-    <input type="text" name="firstname">
-    <input type="text" name="lastname" >
-    <input type="text" name="avatar" >
-</form>
+    <users-create csrf="{{ csrf_token() }}"></users-create>
 @stop

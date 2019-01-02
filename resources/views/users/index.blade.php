@@ -1,7 +1,7 @@
 @extends( 'layout' )
 
-@if(session('success'))
-    {{session('success')}}
+@if( session( 'success' ) )
+    {{ session( 'success' ) }}
 @endif
 
 @section( 'title' )
@@ -9,8 +9,5 @@
 @stop
 
 @section( 'content' )
-    @foreach ($usersAll as $item)
-    {{$item->firstname}} {{$item->lastname}}
-    @endforeach
-    
+    <users-index :users="{{ json_encode( $usersAll ) }}" csrf="{{ csrf_token() }}"></users-index>
 @stop
