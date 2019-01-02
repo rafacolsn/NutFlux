@@ -111,17 +111,19 @@ class MediaController extends Controller
             'mediaProducer' => 'required',
         ]);
 
+        
+        $media = Media::find($id);
+        
         $mediaIsSerie = 0;
         if ( $request -> get( 'mediaIsSerie' ) == true || $request -> get( 'mediaIsSerie' ) == 1 ) {
             $mediaIsSerie = 1;
         }
-        $media = Media::find($id);
-        
+
         $media->title = $request->get('mediaTitle');
         $media->summary = $request->get('mediaSummary');
         $media->year = $request->get('mediaYear');
         $media->trailer = $request->get('mediaTrailer');
-        $media->is_serie = $request->$mediaIsSerie;
+        $media->is_serie = $mediaIsSerie;
         $media->poster = $request->get('mediaPoster');
         $media->director = $request->get('mediaDirector');
         $media->producer = $request->get('mediaProducer');
@@ -139,6 +141,8 @@ class MediaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $media = Media::find($id);
+        $media->delete();
+        return redirect()->route('medias.index')->with('success', $media->title.' '.$media->year.' has been deleted');
     }
 }

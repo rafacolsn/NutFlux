@@ -5,6 +5,5 @@
 @stop
 
 @section( 'content' )
-    {{-- <medias-show :media="{{ json_encode( $media ) }}"></medias-show> --}}
-    {{$mediasObj->title}}
+    <medias-show :media="{{ json_encode( $media ) }}"></medias-show>
 @stop
