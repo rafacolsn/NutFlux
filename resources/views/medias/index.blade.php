@@ -9,5 +9,5 @@
 @stop
 
 @section( 'content' )
-    <medias-index :actors="{{ json_encode($mediasAll) }}" csrf="{{ csrf_token() }}"></medias-index>
+    <medias-index :medias="{{ json_encode($mediasAll) }}" csrf="{{ csrf_token() }}"></medias-index>
 @stop

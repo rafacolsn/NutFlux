@@ -5,5 +5,5 @@
 @stop
 
 @section( 'content' )
-    <medias-edit :actor="{{ json_encode( $media ) }}" csrf="{{ csrf_token() }}"></medias-edit>
+    <medias-edit :media="{{ json_encode( $media ) }}" csrf="{{ csrf_token() }}"></medias-edit>
 @stop
