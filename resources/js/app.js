@@ -23,6 +23,7 @@ window.Vue = require('vue');
 Vue.component( 'actors-show', require( './components/ActorsShow.vue' ) );
 Vue.component( 'actors-index', require( './components/ActorsIndex.vue' ) );
 Vue.component( 'actors-edit', require( './components/ActorsEdit.vue' ) );
+Vue.component( 'actors-create', require( './components/ActorsCreate.vue' ) );
 
 /* Medias components */
 Vue.component( 'medias-show', require( './components/MediasShow.vue' ) );

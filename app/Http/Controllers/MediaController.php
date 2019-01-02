@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Media;
+use App\Actor;
 
 class MediaController extends Controller
 {
@@ -76,6 +77,9 @@ class MediaController extends Controller
     public function show($id)
     {
         $mediasObj = Media::find($id);
+        
+        $mediasObj->actors = $mediasObj->actors()->get();
+  
         return view('medias.show', compact('mediasObj'));
     }
 
@@ -129,7 +133,7 @@ class MediaController extends Controller
         $media->producer = $request->get('mediaProducer');
 
         $media->save();
-  
+
         return redirect()->route('medias.index')->with('success','Media updated successfully');
     }
 
