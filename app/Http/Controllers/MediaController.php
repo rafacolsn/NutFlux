@@ -116,18 +116,18 @@ class MediaController extends Controller
             $mediaIsSerie = 1;
         }
         $media = Media::find($id);
-        
+
         $media->title = $request->get('mediaTitle');
         $media->summary = $request->get('mediaSummary');
         $media->year = $request->get('mediaYear');
         $media->trailer = $request->get('mediaTrailer');
-        $media->is_serie = $request->$mediaIsSerie;
+        $media->is_serie = $mediaIsSerie;
         $media->poster = $request->get('mediaPoster');
         $media->director = $request->get('mediaDirector');
         $media->producer = $request->get('mediaProducer');
 
         $media->save();
-  
+
         return redirect()->route('medias.index')->with('success','Media updated successfully');
     }
 
