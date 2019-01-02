@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <meta name="description" content="NutFlux - a movie & tv shows details app">
-        <meta name="author" content="Raphael Colson, Marie Grosjean, Emilie Lamy, Tanguy Scholtes">
+        <meta name="author" content="Raphaël Colson, Marie Grosjean, Emilie Lamy, Tanguy Scholtes">
         <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
 
         <link rel="shortcut icon" type="image/png" href="{{ URL::asset('img/favicon.ico') }}" />

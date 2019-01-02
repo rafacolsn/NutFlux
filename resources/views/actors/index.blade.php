@@ -1,9 +1,13 @@
 @extends( 'layout' )
 
+@if(session('success'))
+{{session('success')}}
+@endif
+
 @section( 'title' )
-    Liste des acteurs
+    Actors index
 @stop
 
 @section( 'content' )
-    <actors-index :actors="{{ json_encode( $actors ) }}"></actors-index>
+    <actors-index :actors="{{ json_encode($actorsAll) }}" csrf="{{ csrf_token() }}"></actors-index>
 @stop

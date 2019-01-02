@@ -1,9 +1,10 @@
 @extends( 'layout' )
 
 @section( 'title' )
-    {{ $actor -> firstname }} {{ $actor -> lastname }}
+{{ $actorsObj->firstname.' '.$actorsObj->lastname }}
 @stop
 
 @section( 'content' )
-    <actors-show :actor="{{ json_encode( $actor ) }}"></actors-show>
+    <actors-show :actor="{{ json_encode($actorsObj) }}"></actors-show>
+    
 @stop
