@@ -26,7 +26,7 @@ class ActorController extends Controller
      */
     public function create()
     {
-        //
+        return view('actors.create');
     }
 
     /**
@@ -37,7 +37,9 @@ class ActorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo("Je suis bien arrivé dans le controlleur - voilà ce que j'ai récupéré : ");
+        echo "<br>";
+        echo $request->newItem->firstname;
     }
 
     /**
