@@ -4,15 +4,15 @@
         <form method="post" :action="'/actors/' + actor.id">
             <p>
                 <label for="actorFirstname">Firstname</label>
-                <input type="text" name="actorFirstname" :value="actor.firstname" v-bind="actorFirstname" />
+                <input type="text" name="actorFirstname" :value="actor.firstname" />
             </p>
             <p>
                 <label for="actorLastname">Lastname</label>
-                <input type="text" name="actorLastname" :value="actor.lastname" v-bind="actorLastname" />
+                <input type="text" name="actorLastname" :value="actor.lastname" />
             </p>
             <p>
                 <label for="actorPicture">Picture</label>
-                <input type="text" name="actorPicture" :value="actor.picture" v-bind="actorPicture" />
+                <input type="text" name="actorPicture" :value="actor.picture" />
             </p>
             <input type="hidden" name="_method" value="PATCH">
             <input type="hidden" name="_token" :value="csrf">

@@ -47858,18 +47858,10 @@ var render = function() {
             _vm._v("Firstname")
           ]),
           _vm._v(" "),
-          _c(
-            "input",
-            _vm._b(
-              {
-                attrs: { type: "text", name: "actorFirstname" },
-                domProps: { value: _vm.actor.firstname }
-              },
-              "input",
-              _vm.actorFirstname,
-              false
-            )
-          )
+          _c("input", {
+            attrs: { type: "text", name: "actorFirstname" },
+            domProps: { value: _vm.actor.firstname }
+          })
         ]),
         _vm._v(" "),
         _c("p", [
@@ -47877,35 +47869,19 @@ var render = function() {
             _vm._v("Lastname")
           ]),
           _vm._v(" "),
-          _c(
-            "input",
-            _vm._b(
-              {
-                attrs: { type: "text", name: "actorLastname" },
-                domProps: { value: _vm.actor.lastname }
-              },
-              "input",
-              _vm.actorLastname,
-              false
-            )
-          )
+          _c("input", {
+            attrs: { type: "text", name: "actorLastname" },
+            domProps: { value: _vm.actor.lastname }
+          })
         ]),
         _vm._v(" "),
         _c("p", [
           _c("label", { attrs: { for: "actorPicture" } }, [_vm._v("Picture")]),
           _vm._v(" "),
-          _c(
-            "input",
-            _vm._b(
-              {
-                attrs: { type: "text", name: "actorPicture" },
-                domProps: { value: _vm.actor.picture }
-              },
-              "input",
-              _vm.actorPicture,
-              false
-            )
-          )
+          _c("input", {
+            attrs: { type: "text", name: "actorPicture" },
+            domProps: { value: _vm.actor.picture }
+          })
         ]),
         _vm._v(" "),
         _c("input", {
@@ -48358,7 +48334,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return video_id;
         },
         send: function send(event) {
-            mediaTrailer = getYoutubeId(mediaTrailer);
+            this.$data.mediaTrailer = this.getYoutubeId(this.$data.mediaTrailer);
 
             axios.patch('/medias/' + media.id).then(function (response) {
                 // handle success
@@ -48389,67 +48365,36 @@ var render = function() {
         _c("p", [
           _c("label", { attrs: { for: "mediaTitle" } }, [_vm._v("Title")]),
           _vm._v(" "),
-          _c(
-            "input",
-            _vm._b(
-              {
-                attrs: { type: "text", name: "mediaTitle" },
-                domProps: { value: _vm.media.title }
-              },
-              "input",
-              _vm.mediaTitle,
-              false
-            )
-          )
+          _c("input", {
+            attrs: { type: "text", name: "mediaTitle" },
+            domProps: { value: _vm.media.title }
+          })
         ]),
         _vm._v(" "),
         _c("p", [
           _c("label", { attrs: { for: "mediaSummary" } }, [_vm._v("Summary")]),
           _vm._v(" "),
-          _c(
-            "textarea",
-            _vm._b(
-              { attrs: { name: "mediaSummary" } },
-              "textarea",
-              _vm.mediaSummary,
-              false
-            ),
-            [_vm._v(_vm._s(_vm.media.summary))]
-          )
+          _c("textarea", { attrs: { name: "mediaSummary" } }, [
+            _vm._v(_vm._s(_vm.media.summary))
+          ])
         ]),
         _vm._v(" "),
         _c("p", [
           _c("label", { attrs: { for: "mediaYear" } }, [_vm._v("Year")]),
           _vm._v(" "),
-          _c(
-            "input",
-            _vm._b(
-              {
-                attrs: { type: "number", step: "1", name: "mediaYear" },
-                domProps: { value: _vm.media.Year }
-              },
-              "input",
-              _vm.mediaYear,
-              false
-            )
-          )
+          _c("input", {
+            attrs: { type: "number", step: "1", name: "mediaYear" },
+            domProps: { value: _vm.media.Year }
+          })
         ]),
         _vm._v(" "),
         _c("p", [
           _c("label", { attrs: { for: "mediaTrailer" } }, [_vm._v("Trailer")]),
           _vm._v(" "),
-          _c(
-            "input",
-            _vm._b(
-              {
-                attrs: { type: "text", name: "mediaTrailer" },
-                domProps: { value: _vm.media.trailer }
-              },
-              "input",
-              _vm.mediaTrailer,
-              false
-            )
-          )
+          _c("input", {
+            attrs: { type: "text", name: "mediaTrailer" },
+            domProps: { value: _vm.media.trailer }
+          })
         ]),
         _vm._v(" "),
         _c("p", [
@@ -48457,35 +48402,19 @@ var render = function() {
             _vm._v("Is it part of a TV Show ?")
           ]),
           _vm._v(" "),
-          _c(
-            "input",
-            _vm._b(
-              {
-                attrs: { type: "checkbox", name: "mediaIsSerie" },
-                domProps: { value: _vm.media.is_serie }
-              },
-              "input",
-              _vm.mediaIsSerie,
-              false
-            )
-          )
+          _c("input", {
+            attrs: { type: "checkbox", name: "mediaIsSerie" },
+            domProps: { value: _vm.media.is_serie }
+          })
         ]),
         _vm._v(" "),
         _c("p", [
           _c("label", { attrs: { for: "mediaPoster" } }, [_vm._v("Poster")]),
           _vm._v(" "),
-          _c(
-            "input",
-            _vm._b(
-              {
-                attrs: { type: "text", name: "mediaPoster" },
-                domProps: { value: _vm.media.poster }
-              },
-              "input",
-              _vm.mediaPoster,
-              false
-            )
-          )
+          _c("input", {
+            attrs: { type: "text", name: "mediaPoster" },
+            domProps: { value: _vm.media.poster }
+          })
         ]),
         _vm._v(" "),
         _c("p", [
@@ -48493,18 +48422,10 @@ var render = function() {
             _vm._v("Director")
           ]),
           _vm._v(" "),
-          _c(
-            "input",
-            _vm._b(
-              {
-                attrs: { type: "text", name: "mediaDirector" },
-                domProps: { value: _vm.media.director }
-              },
-              "input",
-              _vm.mediaDirector,
-              false
-            )
-          )
+          _c("input", {
+            attrs: { type: "text", name: "mediaDirector" },
+            domProps: { value: _vm.media.director }
+          })
         ]),
         _vm._v(" "),
         _c("p", [
@@ -48512,18 +48433,10 @@ var render = function() {
             _vm._v("Producer")
           ]),
           _vm._v(" "),
-          _c(
-            "input",
-            _vm._b(
-              {
-                attrs: { type: "text", name: "mediaProducer" },
-                domProps: { value: _vm.media.producer }
-              },
-              "input",
-              _vm.mediaProducer,
-              false
-            )
-          )
+          _c("input", {
+            attrs: { type: "text", name: "mediaProducer" },
+            domProps: { value: _vm.media.producer }
+          })
         ]),
         _vm._v(" "),
         _c("input", {
@@ -48652,25 +48565,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['csrf'],
     data: function data() {
         return {
-            mediaId: media.id,
-            mediaSummary: media.summary,
-            mediaYear: media.year,
-            mediaTrailer: media.trailer,
-            mediaIsSerie: media.is_serie,
-            mediaPoster: media.poster,
-            mediaDirector: media.director,
-            mediaProducer: media.producer
+            mediaTitle: '',
+            mediaSummary: '',
+            mediaYear: 0,
+            mediaTrailer: '',
+            mediaIsSerie: false,
+            mediaPoster: '',
+            mediaDirector: '',
+            mediaProducer: ''
         };
     },
 
     methods: {
+        getYoutubeId: function getYoutubeId(string) {
+            var video_id = string.split('v=')[1];
+            var ampersandPosition = video_id.indexOf('&');
+            if (ampersandPosition != -1) {
+                video_id = video_id.substring(0, ampersandPosition);
+            }
+            return video_id;
+        },
         send: function send(event) {
+            this.$data.mediaTrailer = this.getYoutubeId(this.$data.mediaTrailer);
+
             axios.post('/medias').then(function (response) {
                 // handle success
                 console.log(response);
             }).catch(function (error) {
                 // handle error
+                console.log('Error creating media : ');
                 console.log(error);
+                die();
             });
         }
     }
@@ -48687,61 +48612,105 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("h1", [_vm._v("Create a media")]),
     _vm._v(" "),
-    _c("form", { attrs: { method: "post", action: "medias" } }, [
+    _c("form", { attrs: { method: "post", action: "/medias" } }, [
       _c("p", [
         _c("label", { attrs: { for: "mediaTitle" } }, [_vm._v("Title")]),
         _vm._v(" "),
-        _c(
-          "input",
-          _vm._b(
-            { attrs: { type: "text", name: "mediaTitle" } },
-            "input",
-            _vm.mediaTitle,
-            false
-          )
-        )
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mediaTitle,
+              expression: "mediaTitle"
+            }
+          ],
+          attrs: { type: "text", name: "mediaTitle" },
+          domProps: { value: _vm.mediaTitle },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.mediaTitle = $event.target.value
+            }
+          }
+        })
       ]),
       _vm._v(" "),
       _c("p", [
         _c("label", { attrs: { for: "mediaSummary" } }, [_vm._v("Summary")]),
         _vm._v(" "),
-        _c(
-          "textarea",
-          _vm._b(
-            { attrs: { name: "mediaSummary" } },
-            "textarea",
-            _vm.mediaSummary,
-            false
-          )
-        )
+        _c("textarea", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mediaSummary,
+              expression: "mediaSummary"
+            }
+          ],
+          attrs: { name: "mediaSummary" },
+          domProps: { value: _vm.mediaSummary },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.mediaSummary = $event.target.value
+            }
+          }
+        })
       ]),
       _vm._v(" "),
       _c("p", [
         _c("label", { attrs: { for: "mediaYear" } }, [_vm._v("Year")]),
         _vm._v(" "),
-        _c(
-          "input",
-          _vm._b(
-            { attrs: { type: "number", step: "1", name: "mediaYear" } },
-            "input",
-            _vm.mediaYear,
-            false
-          )
-        )
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mediaYear,
+              expression: "mediaYear"
+            }
+          ],
+          attrs: { type: "number", step: "1", name: "mediaYear" },
+          domProps: { value: _vm.mediaYear },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.mediaYear = $event.target.value
+            }
+          }
+        })
       ]),
       _vm._v(" "),
       _c("p", [
         _c("label", { attrs: { for: "mediaTrailer" } }, [_vm._v("Trailer")]),
         _vm._v(" "),
-        _c(
-          "input",
-          _vm._b(
-            { attrs: { type: "text", name: "mediaTrailer" } },
-            "input",
-            _vm.mediaTrailer,
-            false
-          )
-        )
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mediaTrailer,
+              expression: "mediaTrailer"
+            }
+          ],
+          attrs: { type: "text", name: "mediaTrailer" },
+          domProps: { value: _vm.mediaTrailer },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.mediaTrailer = $event.target.value
+            }
+          }
+        })
       ]),
       _vm._v(" "),
       _c("p", [
@@ -48749,57 +48718,118 @@ var render = function() {
           _vm._v("Is it part of a TV Show ?")
         ]),
         _vm._v(" "),
-        _c(
-          "input",
-          _vm._b(
-            { attrs: { type: "checkbox", name: "mediaIsSerie" } },
-            "input",
-            _vm.mediaIsSerie,
-            false
-          )
-        )
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mediaIsSerie,
+              expression: "mediaIsSerie"
+            }
+          ],
+          attrs: { type: "checkbox", name: "mediaIsSerie" },
+          domProps: {
+            checked: Array.isArray(_vm.mediaIsSerie)
+              ? _vm._i(_vm.mediaIsSerie, null) > -1
+              : _vm.mediaIsSerie
+          },
+          on: {
+            change: function($event) {
+              var $$a = _vm.mediaIsSerie,
+                $$el = $event.target,
+                $$c = $$el.checked ? true : false
+              if (Array.isArray($$a)) {
+                var $$v = null,
+                  $$i = _vm._i($$a, $$v)
+                if ($$el.checked) {
+                  $$i < 0 && (_vm.mediaIsSerie = $$a.concat([$$v]))
+                } else {
+                  $$i > -1 &&
+                    (_vm.mediaIsSerie = $$a
+                      .slice(0, $$i)
+                      .concat($$a.slice($$i + 1)))
+                }
+              } else {
+                _vm.mediaIsSerie = $$c
+              }
+            }
+          }
+        })
       ]),
       _vm._v(" "),
       _c("p", [
         _c("label", { attrs: { for: "mediaPoster" } }, [_vm._v("Poster")]),
         _vm._v(" "),
-        _c(
-          "input",
-          _vm._b(
-            { attrs: { type: "text", name: "mediaPoster" } },
-            "input",
-            _vm.mediaPoster,
-            false
-          )
-        )
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mediaPoster,
+              expression: "mediaPoster"
+            }
+          ],
+          attrs: { type: "text", name: "mediaPoster" },
+          domProps: { value: _vm.mediaPoster },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.mediaPoster = $event.target.value
+            }
+          }
+        })
       ]),
       _vm._v(" "),
       _c("p", [
         _c("label", { attrs: { for: "mediaDirector" } }, [_vm._v("Director")]),
         _vm._v(" "),
-        _c(
-          "input",
-          _vm._b(
-            { attrs: { type: "text", name: "mediaDirector" } },
-            "input",
-            _vm.mediaDirector,
-            false
-          )
-        )
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mediaDirector,
+              expression: "mediaDirector"
+            }
+          ],
+          attrs: { type: "text", name: "mediaDirector" },
+          domProps: { value: _vm.mediaDirector },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.mediaDirector = $event.target.value
+            }
+          }
+        })
       ]),
       _vm._v(" "),
       _c("p", [
         _c("label", { attrs: { for: "mediaProducer" } }, [_vm._v("Producer")]),
         _vm._v(" "),
-        _c(
-          "input",
-          _vm._b(
-            { attrs: { type: "text", name: "mediaProducer" } },
-            "input",
-            _vm.mediaProducer,
-            false
-          )
-        )
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mediaProducer,
+              expression: "mediaProducer"
+            }
+          ],
+          attrs: { type: "text", name: "mediaProducer" },
+          domProps: { value: _vm.mediaProducer },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.mediaProducer = $event.target.value
+            }
+          }
+        })
       ]),
       _vm._v(" "),
       _c("input", {
