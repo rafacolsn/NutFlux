@@ -4,35 +4,35 @@
         <form method="post" :action="'/medias/' + media.id">
             <p>
                 <label for="mediaTitle">Title</label>
-                <input type="text" name="mediaTitle" :value="media.title" v-bind="mediaTitle" />
+                <input type="text" name="mediaTitle" :value="media.title" />
             </p>
             <p>
                 <label for="mediaSummary">Summary</label>
-                <textarea name="mediaSummary" v-bind="mediaSummary">{{ media.summary }}</textarea>
+                <textarea name="mediaSummary">{{ media.summary }}</textarea>
             </p>
             <p>
                 <label for="mediaYear">Year</label>
-                <input type="number" step="1" name="mediaYear" :value="media.Year" v-bind="mediaYear" />
+                <input type="number" step="1" name="mediaYear" :value="media.Year" />
             </p>
             <p>
                 <label for="mediaTrailer">Trailer</label>
-                <input type="text" name="mediaTrailer" :value="media.trailer" v-bind="mediaTrailer" />
+                <input type="text" name="mediaTrailer" :value="media.trailer" />
             </p>
             <p>
                 <label for="mediaIsSerie">Is it part of a TV Show ?</label>
-                <input type="checkbox" name="mediaIsSerie" :value="media.is_serie" v-bind="mediaIsSerie" />
+                <input type="checkbox" name="mediaIsSerie" :value="media.is_serie" />
             </p>
             <p>
                 <label for="mediaPoster">Poster</label>
-                <input type="text" name="mediaPoster" :value="media.poster" v-bind="mediaPoster" />
+                <input type="text" name="mediaPoster" :value="media.poster" />
             </p>
             <p>
                 <label for="mediaDirector">Director</label>
-                <input type="text" name="mediaDirector" :value="media.director" v-bind="mediaDirector" />
+                <input type="text" name="mediaDirector" :value="media.director" />
             </p>
             <p>
                 <label for="mediaProducer">Producer</label>
-                <input type="text" name="mediaProducer" :value="media.producer" v-bind="mediaProducer" />
+                <input type="text" name="mediaProducer" :value="media.producer" />
             </p>
 
             <input type="hidden" name="_method" value="PATCH">
@@ -68,7 +68,7 @@
                 return video_id;
             },
             send: function ( event ) {
-                mediaTrailer = getYoutubeId( mediaTrailer );
+                this.$data.mediaTrailer = this.getYoutubeId( this.$data.mediaTrailer );
 
                 axios.patch( '/medias/' + media.id )
                     .then( function ( response ) {
