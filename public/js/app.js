@@ -48665,7 +48665,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         send: function send(event) {
-            axios.patch('/medias').then(function (response) {
+            axios.post('/medias').then(function (response) {
                 // handle success
                 console.log(response);
             }).catch(function (error) {
