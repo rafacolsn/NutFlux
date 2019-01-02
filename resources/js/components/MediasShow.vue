@@ -10,7 +10,7 @@
             <li>Actors:
                 <ul :if="media.actors">
                     <li v-for="actor in media.actors">
-                        <a :href="'/actors/' . actor.id">
+                        <a :href="'/actors/'+ actor.id">
                             {{ actor.firstname }} {{ actor.lastname }}
                         </a>
                     </li>
