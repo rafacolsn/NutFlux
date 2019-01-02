@@ -4,15 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AccountController extends Controller {
+use App\Account;
+
+class AccountController extends Controller
+{
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
     public function index()
     {
-        //
+    $accountsAll = Account::orderBy('id')->get();
+    return view('accounts.index',compact('accountsAll'));
     }
 
     /**
@@ -22,7 +26,7 @@ class AccountController extends Controller {
      */
     public function create()
     {
-        //
+    return view('accounts.create');
     }
 
     /**
@@ -32,9 +36,23 @@ class AccountController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   //public function store(Request $request)
+
+        $this->validate($request, [
+            'email' => 'required',
+            'password' => 'required',
+        
+        ]);
+
+        $account = new Account([
+            'email' => $request->get('email'),
+            'password'=> $request->get('password'),
+        
+        ]);
+        $account->save();
+        return redirect('/accounts')->with('success', 'Account has been added');
     }
+
 
     /**
      * Display the specified resource.
@@ -44,7 +62,8 @@ class AccountController extends Controller {
      */
     public function show($id)
     {
-        //
+        $accountObj = Account::find($id);
+        return view('accounts.show', compact('accountObj'));
     }
 
     /**
@@ -53,9 +72,12 @@ class AccountController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
-        //
+        $account = Account::find($id);
+        return view('accounts.edit',compact('account'));
+
     }
 
     /**
@@ -67,8 +89,22 @@ class AccountController extends Controller {
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+            
+        ]);
+        
+        $account = Account::find($id);
+        $account->email = $request->get('email');
+        $account->password = $request->get('password');
+        $account->save();
+
+        return redirect()->route('accounts.index')->with('success','Account updated successfully');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -78,7 +114,9 @@ class AccountController extends Controller {
      */
     public function destroy($id)
     {
-        //
+        $account = Account::find($id);
+        $account->delete();
+        return redirect()->route('accounts.index')->with('success', 'This account has been deleted');
+        
     }
-    //
 }
