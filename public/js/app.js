@@ -48569,7 +48569,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             mediaSummary: '',
             mediaYear: 0,
             mediaTrailer: '',
-            mediaIsSerie: false,
+            mediaIsSerie: 0,
             mediaPoster: '',
             mediaDirector: '',
             mediaProducer: ''
@@ -48593,9 +48593,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 console.log(response);
             }).catch(function (error) {
                 // handle error
-                console.log('Error creating media : ');
                 console.log(error);
-                die();
             });
         }
     }
