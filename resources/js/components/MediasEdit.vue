@@ -12,7 +12,7 @@
             </p>
             <p>
                 <label for="mediaYear">Year</label>
-                <input type="number" step="1" name="mediaYear" :value="media.Year" />
+                <input type="number" step="1" name="mediaYear" :value="media.year" />
             </p>
             <p>
                 <label for="mediaTrailer">Trailer</label>
