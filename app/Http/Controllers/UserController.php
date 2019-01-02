@@ -37,7 +37,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'avatar' => 'required',
+            
+        ]);
+
+        $user = new User([
+            'firstname' => $request->get('firstname'),
+            'lastname'=> $request->get('lastname'),
+            'avatar'=> $request->get('avatar'),
+            'account_id' => 1
+          ]);
+          $user->save();
+          return redirect('/users')->with('success', 'User has been added');
     }
 
     /**
@@ -48,7 +62,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $usersObj = User::find($id);
+        
+        return view('users.show', compact('usersObj'));
     }
 
     /**
@@ -59,7 +75,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -71,7 +88,19 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'userFirstname' => 'required',
+            'userLastname' => 'required',
+            'userAvatar' => 'required',
+        ]);
+        
+        $user = User::find($id);
+        $user->firstname = $request->get('userFirstname');
+        $user->lastname = $request->get('userLastname');
+        $user->avatar = $request->get('userAvatar');
+        $user->save();
+  
+        return redirect()->route('users.index')->with('success','User updated successfully');
     }
 
     /**
@@ -82,6 +111,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('users.index')->with('success', $user->firstname.' '.$user->lastname.' has been deleted');
     }
 }
