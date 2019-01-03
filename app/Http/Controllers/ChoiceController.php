@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
 use App\Choice;
@@ -17,7 +19,14 @@ class ChoiceController extends Controller
      */
     public function index()
     {
-        $choices = Choice::orderBy( 'id' ) -> get();
+        // $choices = Choice::orderBy( 'id' ) -> get();
+        
+        $choices = DB::table('choices')
+                        ->join('medias', 'medias.id', '=', 'choices.media_id')
+                        ->select('medias.title', 'medias.id', 'medias.poster', 'choices.type')
+                        ->where('choices.user_id', '=', '1')
+                        ->get();
+        
         return view( 'choices.index', compact( 'choices' ) );
     }
 
@@ -54,7 +63,7 @@ class ChoiceController extends Controller
         ] );
         $choice -> save();
 
-        return view( 'choices.index' ) -> with( 'success', 'Your media has been added to your choices' );
+        return redirect( '/choices' ) -> with( 'success', 'Your media has been added to your choices' );
     }
 
     /**
@@ -63,9 +72,16 @@ class ChoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($type)
     {
-        //
+        $choicesObj = DB::table('choices')
+                        ->join('medias', 'medias.id', '=', 'choices.media_id')
+                        ->select('medias.title', 'medias.id', 'medias.poster')
+                        ->where('choices.type', '=', $type)
+                        ->where('choices.user_id', '=', '1')
+                        ->get();
+        return view('choices.show', compact('choicesObj', 'type'));
+
     }
 
     /**

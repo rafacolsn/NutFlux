@@ -9,7 +9,5 @@
 @stop
 
 @section( 'content' )
-    <h1>Choices index</h1>
-
-    {{ $choices }}
+    <choices-index :choiceslist="{{ json_encode($choices) }}" csrf="{{ csrf_token() }}"></choices-index>
 @stop

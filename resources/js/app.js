@@ -37,6 +37,9 @@ Vue.component( 'medias-index', require( './components/MediasIndex.vue' ) );
 Vue.component( 'medias-edit', require( './components/MediasEdit.vue' ) );
 Vue.component( 'medias-create', require( './components/MediasCreate.vue' ) );
 
+/* Choices components */
+Vue.component('choices-index', require('./components/ChoicesIndex.vue'));
+
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 

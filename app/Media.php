@@ -13,4 +13,6 @@ class Media extends Model
     {
         return $this->belongsToMany('App\Actor', 'media_actor', 'media_id', 'actor_id');
     }
+
+    
 }
