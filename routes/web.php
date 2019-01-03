@@ -23,4 +23,4 @@ Route::resource('actors', 'ActorController');
 Route::resource('medias', 'MediaController');
 Route::resource('accounts', 'AccountController');
 Route::resource('users', 'UserController');
-
+Route::resource( 'choices', 'ChoiceController' );

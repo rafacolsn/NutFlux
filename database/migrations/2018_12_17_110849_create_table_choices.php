@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableLists extends Migration
+class CreateTableChoices extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTableLists extends Migration
      */
     public function up()
     {
-        Schema::create( 'lists', function ( Blueprint $table ) {
+        Schema::create( 'choices', function ( Blueprint $table ) {
             $table -> increments( 'id' );
             $table -> unsignedInteger( 'user_id' );
             $table -> unsignedInteger( 'media_id' );
@@ -32,6 +32,6 @@ class CreateTableLists extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists( 'lists' );
+        Schema::dropIfExists( 'choices' );
     }
 }
