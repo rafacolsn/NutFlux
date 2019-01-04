@@ -6,10 +6,10 @@
       <li v-for="item in choiceslist" v-if="item.type === 'favourites' ">
         <p>{{ item.title }}</p>
         <form method="post" :action="'/choices/' + choiceslist.id">
-          <input type="hidden" name="id" :value="item.id">
+          <input type="hidden" name="id" :value="choiceslist.id">
           <input type="hidden" name="_method" value="DELETE">
           <input type="hidden" name="_token" :value="csrf">
-          
+
           <button v-on:click="destroy">Delete</button>
         </form>
       </li>
@@ -18,11 +18,11 @@
     <ul>
       <li v-for="item in choiceslist" v-if="item.type === 'watched' ">
         <p>{{ item.title }}</p>
-        <form method="post" :action="'/choices/' + item.id">
-          <input type="hidden" name="id" :value="item.id">
+        <form method="post" :action="'/choices/' + choiceslist.id">
+          <input type="hidden" name="id" :value="choiceslist.id">
           <input type="hidden" name="_method" value="DELETE">
           <input type="hidden" name="_token" :value="csrf">
-          
+
           <button v-on:click="destroy">Delete</button>
         </form>
       </li>
@@ -31,11 +31,11 @@
     <ul>
       <li v-for="item in choiceslist" v-if="item.type === 'later' ">
         <p>{{ item.title }}</p>
-        <form method="post" :action="'/choices/' + item.id">
-          <input type="hidden" name="id" :value="item.id">
+        <form method="post" :action="'/choices/' + choiceslist.id">
+          <input type="hidden" name="id" :value="choiceslist.id">
           <input type="hidden" name="_method" value="DELETE">
           <input type="hidden" name="_token" :value="csrf">
-          
+
           <button v-on:click="destroy">Delete</button>
         </form>
       </li>
@@ -48,7 +48,7 @@ export default {
   props: ["choiceslist", "csrf"],
   methods: {
       destroy: function( event ) {
-          axios.delete('/choices/' + item.id).then( function ( response ) {
+          axios.delete('/choices/' + choiceslist.id).then( function ( response ) {
                         // handle success
                         console.log(response);
                     }   )

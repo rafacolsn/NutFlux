@@ -2584,7 +2584,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ["choiceslist", "csrf"],
     methods: {
         destroy: function destroy(event) {
-            axios.delete('/choices/' + item.id).then(function (response) {
+            axios.delete('/choices/' + choiceslist.id).then(function (response) {
                 // handle success
                 console.log(response);
             }).catch(function (error) {
@@ -2626,7 +2626,7 @@ var render = function() {
                 [
                   _c("input", {
                     attrs: { type: "hidden", name: "id" },
-                    domProps: { value: item.id }
+                    domProps: { value: _vm.choiceslist.id }
                   }),
                   _vm._v(" "),
                   _c("input", {
@@ -2660,11 +2660,16 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "form",
-                { attrs: { method: "post", action: "/choices/" + item.id } },
+                {
+                  attrs: {
+                    method: "post",
+                    action: "/choices/" + _vm.choiceslist.id
+                  }
+                },
                 [
                   _c("input", {
                     attrs: { type: "hidden", name: "id" },
-                    domProps: { value: item.id }
+                    domProps: { value: _vm.choiceslist.id }
                   }),
                   _vm._v(" "),
                   _c("input", {
@@ -2698,11 +2703,16 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "form",
-                { attrs: { method: "post", action: "/choices/" + item.id } },
+                {
+                  attrs: {
+                    method: "post",
+                    action: "/choices/" + _vm.choiceslist.id
+                  }
+                },
                 [
                   _c("input", {
                     attrs: { type: "hidden", name: "id" },
-                    domProps: { value: item.id }
+                    domProps: { value: _vm.choiceslist.id }
                   }),
                   _vm._v(" "),
                   _c("input", {
