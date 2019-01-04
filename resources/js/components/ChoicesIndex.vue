@@ -5,8 +5,8 @@
     <ul>
       <li v-for="item in choiceslist" v-if="item.type === 'favourites' ">
         <p>{{ item.title }}</p>
-        <form method="post" :action="'/choices/' + choiceslist.id">
-          <input type="hidden" name="id" :value="choiceslist.id">
+        <form method="post" :action="'/choices/' + item.choice_id">
+          <input type="hidden" name="id" :value="item.choice_id">
           <input type="hidden" name="_method" value="DELETE">
           <input type="hidden" name="_token" :value="csrf">
 
