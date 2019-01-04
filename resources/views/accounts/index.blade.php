@@ -1,16 +1,13 @@
-@extends( 'layout' )
+<!-- @extends( 'layout' )
 
-@if(session('success'))
-{{session('success')}}
+@if( session( 'success' ) )
+    {{ session( 'success' ) }}
 @endif
 
 @section( 'title' )
-    Account index
+    Accounts index
 @stop
 
 @section( 'content' )
-@foreach ($accountsAll as $item)
-    <p>{{$item->email}}</p>
-@endforeach
-    
-@stop
+    <accounts-index :accounts="{{ json_encode( $accountsAll ) }}" csrf="{{ csrf_token() }}"></accounts-index>
+@stop -->

@@ -41,6 +41,7 @@ Vue.component( 'medias-create', require( './components/MediasCreate.vue' ) );
 /* Accounts components */
 Vue.component( 'accounts-show', require( './components/AccountsShow.vue' ) );
 Vue.component( 'accounts-create', require( './components/AccountsCreate.vue' ) );
+Vue.component( 'accounts-edit', require( './components/AccountsEdit.vue' ) );
 
 
 /* Choices components */

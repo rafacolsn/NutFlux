@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Account;
 
+use Illuminate\Support\Facades\Hash;
+
 class AccountController extends Controller
 {
     /**
@@ -46,7 +48,7 @@ class AccountController extends Controller
 
         $account = new Account([
             'email' => $request->get('email'),
-            'password'=> $request->get('password'),
+            'password'=> Hash::make($request->get('password')),
         
         ]);
         $account->save();
@@ -98,7 +100,9 @@ class AccountController extends Controller
         
         $account = Account::find($id);
         $account->email = $request->get('email');
-        // $account->password = $request->get('password');
+        if($request->get('password')){
+            $account->password = Hash::make($request->get('password'));
+        }
         $account->save();
 
         return redirect()->route('accounts.index')->with('success','Account updated successfully');
