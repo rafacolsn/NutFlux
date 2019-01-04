@@ -1,18 +1,18 @@
 <template>
     <div class="container">
-        <h1>Edit this actor</h1>
-        <form method="post" :action="'/actors/' + actor.id">
+        <h1>Edit this user</h1>
+        <form method="post" :action="'/users/' + user.id">
             <p>
-                <label for="actorFirstname">Firstname</label>
-                <input type="text" name="actorFirstname" :value="actor.firstname" />
+                <label for="userFirstname">Firstname</label>
+                <input type="text" name="userFirstname" :value="user.firstname" />
             </p>
             <p>
-                <label for="actorLastname">Lastname</label>
-                <input type="text" name="actorLastname" :value="actor.lastname" />
+                <label for="userLastname">Lastname</label>
+                <input type="text" name="userLastname" :value="user.lastname" />
             </p>
             <p>
-                <label for="actorPicture">Picture</label>
-                <input type="text" name="actorPicture" :value="actor.picture" />
+                <label for="userAvatar">Avatar</label>
+                <input type="text" name="userAvatar" :value="user.avatar" />
             </p>
             <input type="hidden" name="_method" value="PATCH">
             <input type="hidden" name="_token" :value="csrf">
@@ -24,18 +24,18 @@
 
 <script>
     export default {
-        props: ['actor', 'csrf'],
+        props: ['user', 'csrf'],
         data () {
             return {
-                actorId: actor.id,
-                actorFirstname: actor.firstname,
-                actorLastname: actor.lastname,
-                actorPicture: actor.picture
+                userId: user.id,
+                userFirstname: user.firstname,
+                userLastname: user.lastname,
+                userAvatar: user.avatar
             }
         },
         methods: {
             send: function ( event ) {
-                axios.patch( '/actors/' + actor.id )
+                axios.patch( '/users/' + user.id )
                     .then( function ( response ) {
                         // handle success
                         console.log(response);

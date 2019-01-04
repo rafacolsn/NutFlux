@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-        <h1>Create an actor</h1>
+        <h1>Create a user</h1>
 
-        <form method="post" action="/actors">
+        <form method="post" action="/users">
             <p>
                 <label for="firstname">Firstname :</label>
                 <input type="text" name="firstname" v-model="firstname" />
@@ -12,8 +12,8 @@
                 <input type="text" name="lastname" v-model="lastname" />
             </p>
             <p>
-                <label for="picture">Picture :</label>
-                <input type="text" name="picture" v-model="picture" />
+                <label for="avatar">avatar :</label>
+                <input type="text" name="avatar" v-model="avatar" />
             </p>
 
             <input type="hidden" name="_token" :value="csrf">
@@ -30,12 +30,12 @@
             return {
                 firstname: '',
                 lastname: '',
-                picture: ''
+                avatar: ''
             }
         },
         methods: {
             create: function ( event ) {
-                axios.post( '/actors' )
+                axios.post( '/users' )
                     .then( function ( response ) {
                         // handle success
                         console.log(response);
