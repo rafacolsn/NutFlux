@@ -90,9 +90,10 @@ class ChoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($type)
     {
-        //
+        $choices = Choice::where('type', $type)->get();
+        return view('choices.edit', compact('choices'));
     }
 
     /**
@@ -115,6 +116,8 @@ class ChoiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $choice = Choice::find($id);
+        $choice->delete();
+        return redirect()->route('choices.index')->with('success', 'Choice has been deleted');
     }
 }
