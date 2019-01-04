@@ -28,6 +28,7 @@ Vue.component( 'users-create', require( './components/UsersCreate.vue' ) );
 /* Actors components */
 Vue.component( 'actors-show', require( './components/ActorsShow.vue' ) );
 Vue.component( 'actors-index', require( './components/ActorsIndex.vue' ) );
+Vue.component( 'actors-create', require( './components/ActorsCreate.vue' ) );
 Vue.component( 'actors-edit', require( './components/ActorsEdit.vue' ) );
 Vue.component( 'actors-create', require( './components/ActorsCreate.vue' ) );
 
@@ -36,6 +37,11 @@ Vue.component( 'medias-show', require( './components/MediasShow.vue' ) );
 Vue.component( 'medias-index', require( './components/MediasIndex.vue' ) );
 Vue.component( 'medias-edit', require( './components/MediasEdit.vue' ) );
 Vue.component( 'medias-create', require( './components/MediasCreate.vue' ) );
+
+/* Accounts components */
+Vue.component( 'accounts-show', require( './components/AccountsShow.vue' ) );
+Vue.component( 'accounts-create', require( './components/AccountsCreate.vue' ) );
+
 
 /* Choices components */
 Vue.component('choices-index', require('./components/ChoicesIndex.vue'));
@@ -51,4 +57,8 @@ Vue.component('choices-index', require('./components/ChoicesIndex.vue'));
 
 const app = new Vue( {
     el: '#app'
-} );
+});
+
+
+
+

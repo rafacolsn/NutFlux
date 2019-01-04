@@ -81,7 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel :o ...
+                </div>
+
+
+                <div id="vue-create-actor">
                 </div>
 
                 <div class="links">

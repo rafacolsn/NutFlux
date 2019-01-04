@@ -20,13 +20,13 @@ class ChoiceController extends Controller
     public function index()
     {
         // $choices = Choice::orderBy( 'id' ) -> get();
-        
+
         $choices = DB::table('choices')
                         ->join('medias', 'medias.id', '=', 'choices.media_id')
-                        ->select('medias.title', 'medias.id', 'medias.poster', 'choices.type')
+                        ->select('medias.title', 'medias.id', 'medias.poster', 'choices.type', 'choices.id')
                         ->where('choices.user_id', '=', '1')
                         ->get();
-        
+
         return view( 'choices.index', compact( 'choices' ) );
     }
 
