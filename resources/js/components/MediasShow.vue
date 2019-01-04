@@ -1,13 +1,13 @@
 <template>
     <div class="container">
         <h1>{{ media.title }}</h1>
-        <p :if="media.is_serie">This media is part of a TV show</p>
+        <p v-if="media.is_serie">This media is part of a TV show</p>
         <img :src="media.poster" :alt="media.title" />
         <ul>
             <li>Year: {{ media.year }}</li>
             <li>Director: {{ media.director }}</li>
             <li>Producer: {{ media.producer }}</li>
-            <li :if="media.actors">Actors:
+            <li v-if="media.actors">Actors:
                 <ul>
                     <li v-for="actor in media.actors">
                         <a :href="'/actors/' + actor.id">

@@ -115,7 +115,6 @@ class ChoiceController extends Controller
     public function destroy($id)
     {
         $choice = Choice::find($id);
-        dd($choice);
         $choice->delete();
         return redirect()->route('choices.index')->with('success', 'Choice has been deleted');
     }

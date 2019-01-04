@@ -44,8 +44,10 @@ Vue.component( 'accounts-create', require( './components/AccountsCreate.vue' ) )
 /* Choices components */
 Vue.component( 'choices-index', require( './components/ChoicesIndex.vue' ) );
 Vue.component( 'choices-show', require( './components/ChoicesShow.vue' ) );
-Vue.component( 'choices-edit', require( './components/ChoicesEdit.vue' ) );
 Vue.component( 'choices-create', require( './components/ChoicesCreate.vue' ) );
+/* This component was viewed as unecessary (the app will only allow a user to add a media to its list or remove it from the list) */
+//Vue.component( 'choices-edit', require( './components/ChoicesEdit.vue' ) );
+/* --- */
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
