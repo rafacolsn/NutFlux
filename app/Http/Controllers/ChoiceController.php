@@ -19,14 +19,12 @@ class ChoiceController extends Controller
      */
     public function index()
     {
-        // $choices = Choice::orderBy( 'id' ) -> get();
 
         $choices = DB::table('choices')
                         ->join('medias', 'medias.id', '=', 'choices.media_id')
-                        ->select('medias.title', 'medias.id', 'medias.poster', 'choices.type', 'choices.id')
+                        ->select('choices.id as id_choice', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as id_media')
                         ->where('choices.user_id', '=', '1')
                         ->get();
-
         return view( 'choices.index', compact( 'choices' ) );
     }
 
@@ -117,6 +115,7 @@ class ChoiceController extends Controller
     public function destroy($id)
     {
         $choice = Choice::find($id);
+        dd($choice);
         $choice->delete();
         return redirect()->route('choices.index')->with('success', 'Choice has been deleted');
     }

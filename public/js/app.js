@@ -50124,13 +50124,13 @@ var render = function() {
                 {
                   attrs: {
                     method: "post",
-                    action: "/choices/" + _vm.choiceslist.id
+                    action: "/choices/" + item.choice_id
                   }
                 },
                 [
                   _c("input", {
                     attrs: { type: "hidden", name: "id" },
-                    domProps: { value: _vm.choiceslist.id }
+                    domProps: { value: item.choice_id }
                   }),
                   _vm._v(" "),
                   _c("input", {
