@@ -50088,7 +50088,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ["choiceslist", "csrf"],
     methods: {
         destroy: function destroy(event) {
-            axios.delete('/choices/' + choiceslist.id).then(function (response) {
+            axios.delete('/choices/' + item.id_choice).then(function (response) {
                 // handle success
                 console.log(response);
             }).catch(function (error) {
@@ -50124,13 +50124,13 @@ var render = function() {
                 {
                   attrs: {
                     method: "post",
-                    action: "/choices/" + item.choice_id
+                    action: "/choices/" + item.id_choice
                   }
                 },
                 [
                   _c("input", {
                     attrs: { type: "hidden", name: "id" },
-                    domProps: { value: item.choice_id }
+                    domProps: { value: item.id_choice }
                   }),
                   _vm._v(" "),
                   _c("input", {
@@ -50167,13 +50167,13 @@ var render = function() {
                 {
                   attrs: {
                     method: "post",
-                    action: "/choices/" + _vm.choiceslist.id
+                    action: "/choices/" + item.id_choice
                   }
                 },
                 [
                   _c("input", {
                     attrs: { type: "hidden", name: "id" },
-                    domProps: { value: _vm.choiceslist.id }
+                    domProps: { value: item.id_choice }
                   }),
                   _vm._v(" "),
                   _c("input", {
@@ -50210,13 +50210,13 @@ var render = function() {
                 {
                   attrs: {
                     method: "post",
-                    action: "/choices/" + _vm.choiceslist.id
+                    action: "/choices/" + item.id_choice
                   }
                 },
                 [
                   _c("input", {
                     attrs: { type: "hidden", name: "id" },
-                    domProps: { value: _vm.choiceslist.id }
+                    domProps: { value: item.id_choice }
                   }),
                   _vm._v(" "),
                   _c("input", {
