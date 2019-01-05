@@ -4,7 +4,12 @@
         <ol v-if="users">
             <li v-for="user in users">
                 <p>{{ user.firstname }} {{ user.lastname }}</p>
-                <img :src="user.avatar" :alt="user.firstname + ' ' + user.lastname" />
+                    <form method="GET" action="/users/login">
+                        <input type="hidden" name="id" :value="user.id" />
+                        <a v-on:click="login"><img   :src="user.avatar" :alt="user.firstname + ' ' + user.lastname" /> </a>
+
+                </form>
+                
                 
                 <form method="post" :action="'/users/' + user.id">
                     <input type="hidden" name="id" :value="user.id" />
@@ -25,6 +30,16 @@
             destroy: function ( event ) {
                 axios.delete( '/users/' + user.id )
                     .then( function ( response ) {
+                        // handle success
+                        console.log(response);
+                    }   )
+                    .catch( function ( error ) {
+                        // handle error
+                        console.log( error );
+                    } );
+            },
+            login: function ( event ) {
+                axios.get( '/users/login').then( function ( response ) {
                         // handle success
                         console.log(response);
                     }   )

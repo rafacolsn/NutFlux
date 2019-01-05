@@ -24,3 +24,4 @@ Route::resource('medias', 'MediaController');
 Route::resource('accounts', 'AccountController');
 Route::resource('users', 'UserController');
 Route::resource( 'choices', 'ChoiceController' );
+Route::get('/login/{id}', 'UserController@login')->name('userlogin');

@@ -47713,12 +47713,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['users', 'csrf'],
     methods: {
         destroy: function destroy(event) {
             axios.delete('/users/' + user.id).then(function (response) {
+                // handle success
+                console.log(response);
+            }).catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+        },
+        login: function login(event) {
+            axios.get('/users/login').then(function (response) {
                 // handle success
                 console.log(response);
             }).catch(function (error) {
@@ -47749,12 +47763,21 @@ var render = function() {
                 _vm._v(_vm._s(user.firstname) + " " + _vm._s(user.lastname))
               ]),
               _vm._v(" "),
-              _c("img", {
-                attrs: {
-                  src: user.avatar,
-                  alt: user.firstname + " " + user.lastname
-                }
-              }),
+              _c("form", { attrs: { method: "GET", action: "/users/login" } }, [
+                _c("input", {
+                  attrs: { type: "hidden", name: "id" },
+                  domProps: { value: user.id }
+                }),
+                _vm._v(" "),
+                _c("a", { on: { click: _vm.login } }, [
+                  _c("img", {
+                    attrs: {
+                      src: user.avatar,
+                      alt: user.firstname + " " + user.lastname
+                    }
+                  })
+                ])
+              ]),
               _vm._v(" "),
               _c(
                 "form",
