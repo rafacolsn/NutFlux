@@ -24,8 +24,9 @@ class SearchController extends Controller
         $keywords = explode( ' ', $keyword );
         $skipwords = [ 'a', 'the', 'with', 'i', 'and', 'or', 'an', 'to' ];
         foreach ( $skipwords as $skip ) {
-            if ( array_keys( $keywords, $skip ) ) {
-                foreach ( array_keys( $keywords, $skip ) as $match ) {
+            $indexes = array_keys( $keywords, $skip );
+            if ( $indexes ) {
+                foreach ( $indexes as $match ) {
                     unset( $keywords[ $match ] );
                 }
             }
@@ -42,14 +43,14 @@ class SearchController extends Controller
 
         $mediasSecondary = Media::where( function ( $query ) use ( $keywords ) {
             foreach ( $keywords as $word ) {
-                $query -> orWhere( 'summary', 'like', '%' . $word . '%' );
-                $query -> orWhere( 'year', '=', intval( $word ) );
+                $query -> where( 'summary', 'like', '%' . $word . '%' );
             }
         } );
 
         $medias = Media::where( function ( $query ) use ( $keywords ) {
             foreach ( $keywords as $word ) {
                 $query -> where( 'title', 'like', '%' . $word . '%' );
+                $query -> orWhere( 'year', '=', intval( $word ) );
             }
         } ) -> union( $mediasSecondary ) -> get();
 
