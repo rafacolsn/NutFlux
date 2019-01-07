@@ -4,7 +4,10 @@
     <h2>Favourites</h2>
     <ul>
       <li v-for="item in choiceslist" v-if="item.type === 'favourites' ">
-        <p>{{ item.title }}</p>
+        <a :href="'/medias/' + item.id_media">
+            {{ item.title }}<br />
+            <img :src="item.poster" :alt="item.title" />
+        </a>
         <form method="post" :action="'/choices/' + item.id_choice">
           <input type="hidden" name="id" :value="item.id_choice">
           <input type="hidden" name="_method" value="DELETE">
@@ -17,7 +20,10 @@
     <h2>Watched</h2>
     <ul>
       <li v-for="item in choiceslist" v-if="item.type === 'watched' ">
-        <p>{{ item.title }}</p>
+        <a :href="'/medias/' + item.id_media">
+            {{ item.title }}<br />
+            <img :src="item.poster" :alt="item.title" />
+        </a>
         <form method="post" :action="'/choices/' + item.id_choice">
           <input type="hidden" name="id" :value="item.id_choice">
           <input type="hidden" name="_method" value="DELETE">
@@ -30,7 +36,10 @@
     <h2>To Watch Later</h2>
     <ul>
       <li v-for="item in choiceslist" v-if="item.type === 'later' ">
-        <p>{{ item.title }}</p>
+        <a :href="'/medias/' + item.id_media">
+            {{ item.title }}<br />
+            <img :src="item.poster" :alt="item.title" />
+        </a>
         <form method="post" :action="'/choices/' + item.id_choice">
           <input type="hidden" name="id" :value="item.id_choice">
           <input type="hidden" name="_method" value="DELETE">
