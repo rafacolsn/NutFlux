@@ -49758,12 +49758,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["account"],
-  mounted: function mounted() {
-    console.log("Component mounted.");
-  }
+    props: ['account', 'csrf'],
+    data: function data() {
+        return {
+            accountId: account.id,
+            accountEmail: account.email,
+            accountPassword: account.password
+        };
+    }
 });
 
 /***/ }),
@@ -49775,12 +49789,36 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("Your account")]),
+    _c("h1", [_vm._v("Your account : " + _vm._s(_vm.account.email))]),
     _vm._v(" "),
-    _c("p", [_vm._v("Your email address:  " + _vm._s(_vm.account.email) + " ")])
+    _c("form", [
+      _c("p", [
+        _c("label", { attrs: { for: "email" } }, [_vm._v("Email:")]),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "text", name: "email", disabled: "" },
+          domProps: { value: _vm.account.email }
+        })
+      ]),
+      _vm._v(" "),
+      _vm._m(0)
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("label", { attrs: { for: "password" } }, [_vm._v("Password:")]),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "password", name: "password", disabled: "" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -49868,7 +49906,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["csrf"],
@@ -49881,7 +49918,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     create: function create(event) {
-      axios.post("/account").then(function (response) {
+      axios.post("/register").then(function (response) {
         console.log(response);
       }).catch(function (error) {
         console.log(error);
@@ -49901,7 +49938,7 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("h1", [_vm._v("Create an account")]),
     _vm._v(" "),
-    _c("form", { attrs: { method: "post", action: "/accounts/" } }, [
+    _c("form", { attrs: { method: "post", action: "/register/" } }, [
       _c("label", { attrs: { for: "email" } }, [_vm._v("Email:")]),
       _vm._v(" "),
       _c("input", {
@@ -49960,14 +49997,12 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
       _c("input", {
         attrs: { type: "hidden", name: "_token" },
         domProps: { value: _vm.csrf }
       }),
+      _vm._v(" "),
+      _c("br"),
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),

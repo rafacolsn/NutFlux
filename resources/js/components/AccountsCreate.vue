@@ -3,7 +3,7 @@
 <template>
   <div class="container">
     <h1>Create an account</h1>
-    <form method="post" action="/accounts/">
+    <form method="post" action="/register/">
       <label for="email">Email:</label>
       <input type="email" v-model="email" name="email" placeholder="Your email address">
       
@@ -13,9 +13,8 @@
       <label for="password">Password:</label>
       <input type="password" v-model="password" name="password" placeholder="Type your password">
 
-      <br>
-      <br>
       <input type="hidden" name="_token" :value="csrf">
+      <br>
       <br>
 
       <button @click="create">Submit</button>
@@ -36,7 +35,7 @@ export default {
   methods: {
     create: function(event) {
       axios
-        .post("/account")
+        .post("/register")
         .then(function(response) {
           console.log(response);
         })

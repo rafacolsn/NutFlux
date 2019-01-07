@@ -24,3 +24,5 @@ Route::resource('medias', 'MediaController');
 Route::resource('accounts', 'AccountController');
 Route::resource('users', 'UserController');
 Route::resource( 'choices', 'ChoiceController' );
+Route::get('/register', 'AccountController@create')->name('register');
+Route::post('/register', 'AccountController@store');

@@ -17,8 +17,7 @@ class AccountController extends Controller
     */
     public function index()
     {
-    $accountsAll = Account::orderBy('id')->get();
-    return view('accounts.index',compact('accountsAll'));
+    return view('users.index');
     }
 
     /**
