@@ -11,16 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get( '/', 'Auth\LoginController@showLoginForm' );
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::resource('actors', 'ActorController');
 Route::resource('medias', 'MediaController');
 Route::resource('accounts', 'AccountController');
 Route::resource('users', 'UserController');
 Route::resource( 'choices', 'ChoiceController' );
+Route::get( '/search', 'SearchController@search' ) -> name( 'search' );
