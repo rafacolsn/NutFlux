@@ -30,7 +30,6 @@ Vue.component( 'actors-show', require( './components/ActorsShow.vue' ) );
 Vue.component( 'actors-index', require( './components/ActorsIndex.vue' ) );
 Vue.component( 'actors-create', require( './components/ActorsCreate.vue' ) );
 Vue.component( 'actors-edit', require( './components/ActorsEdit.vue' ) );
-Vue.component( 'actors-create', require( './components/ActorsCreate.vue' ) );
 
 /* Medias components */
 Vue.component( 'medias-show', require( './components/MediasShow.vue' ) );
@@ -43,9 +42,17 @@ Vue.component( 'accounts-show', require( './components/AccountsShow.vue' ) );
 Vue.component( 'accounts-create', require( './components/AccountsCreate.vue' ) );
 Vue.component( 'accounts-edit', require( './components/AccountsEdit.vue' ) );
 
-
 /* Choices components */
-Vue.component('choices-index', require('./components/ChoicesIndex.vue'));
+Vue.component( 'choices-index', require( './components/ChoicesIndex.vue' ) );
+Vue.component( 'choices-show', require( './components/ChoicesShow.vue' ) );
+Vue.component( 'choices-create', require( './components/ChoicesCreate.vue' ) );
+/* This component was viewed as unecessary (the app will only allow a user to add a media to its list or remove it from the list) */
+//Vue.component( 'choices-edit', require( './components/ChoicesEdit.vue' ) );
+/* --- */
+
+/* Search components */
+Vue.component( 'search-field', require( './components/SearchField.vue' ) );
+Vue.component( 'search-results', require( './components/SearchResults.vue' ) );
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -58,8 +65,8 @@ Vue.component('choices-index', require('./components/ChoicesIndex.vue'));
 
 const app = new Vue( {
     el: '#app'
-});
+} );
 
-
-
-
+const menu = new Vue( {
+    el: '#nav'
+} );

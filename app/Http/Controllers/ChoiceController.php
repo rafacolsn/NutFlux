@@ -17,17 +17,20 @@ class ChoiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        // $choices = Choice::orderBy( 'id' ) -> get();
-
-        $choices = DB::table('choices')
-                        ->join('medias', 'medias.id', '=', 'choices.media_id')
-                        ->select('medias.title', 'medias.id', 'medias.poster', 'choices.type', 'choices.id')
-                        ->where('choices.user_id', '=', '1')
-                        ->get();
-
-        return view( 'choices.index', compact( 'choices' ) );
+        if ($request->session()->has('user_id')) {
+            
+            $user_id =  $request->session()->get('user_id');
+            
+            $choices = DB::table('choices')
+                            ->join('medias', 'medias.id', '=', 'choices.media_id')
+                            ->select('choices.id as id_choice', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as id_media')
+                            ->where('choices.user_id', '=', $user_id)
+                            ->get();
+            return view( 'choices.index', compact( 'choices' ) );
+        }
+        return redirect('/users')->with('error', 'You have to choose your profile to see your choices');
     }
 
     /**
@@ -35,10 +38,11 @@ class ChoiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $user_id =  $request->session()->get('user_id');
         $medias = Media::orderBy( 'title' ) -> get();
-        $user = User::find( 1 );
+        $user = User::find( $user_id );
         return view( 'choices.create', compact( 'medias', 'user' ) );
     }
 
@@ -72,13 +76,14 @@ class ChoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($type)
+    public function show(Request $request, $type)
     {
+        $user_id =  $request->session()->get('user_id');
         $choicesObj = DB::table('choices')
                         ->join('medias', 'medias.id', '=', 'choices.media_id')
                         ->select('medias.title', 'medias.id', 'medias.poster')
                         ->where('choices.type', '=', $type)
-                        ->where('choices.user_id', '=', '1')
+                        ->where('choices.user_id', '=', $user_id)
                         ->get();
         return view('choices.show', compact('choicesObj', 'type'));
 
@@ -90,9 +95,10 @@ class ChoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($type)
     {
-        //
+        $choices = Choice::where('type', $type)->get();
+        return view('choices.edit', compact('choices'));
     }
 
     /**
@@ -115,6 +121,13 @@ class ChoiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $choice = Choice::find($id);
+        $choice->delete();
+        return redirect()->route('choices.index')->with('success', 'Choice has been deleted');
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }  
 }

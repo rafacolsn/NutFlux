@@ -11,14 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get( '/', 'Auth\LoginController@showLoginForm' );
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::resource('actors', 'ActorController');
 Route::resource('medias', 'MediaController');
 Route::resource('accounts', 'AccountController');
@@ -26,3 +20,5 @@ Route::resource('users', 'UserController');
 Route::resource( 'choices', 'ChoiceController' );
 Route::get('/register', 'AccountController@create')->name('register');
 Route::post('/register', 'AccountController@store');
+Route::get('/login/{id}', 'UserController@login')->name('userlogin');
+Route::get( '/search', 'SearchController@search' ) -> name( 'search' );

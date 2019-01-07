@@ -149,4 +149,9 @@ class MediaController extends Controller
         $media->delete();
         return redirect()->route('medias.index')->with('success', $media->title.' '.$media->year.' has been deleted');
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

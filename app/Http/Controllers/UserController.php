@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 use App\User;
 
@@ -45,12 +47,12 @@ class UserController extends Controller
             'avatar' => 'required',
             
         ]);
-
+        $id = Auth::id();
         $user = new User([
             'firstname' => $request->get('firstname'),
             'lastname'=> $request->get('lastname'),
             'avatar'=> $request->get('avatar'),
-            'account_id' => 1
+            'account_id' => $id
           ]);
           $user->save();
           return redirect('/users')->with('success', 'User has been added');
@@ -117,4 +119,17 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('users.index')->with('success', $user->firstname.' '.$user->lastname.' has been deleted');
     }
+
+    public function login(Request $request, $id) 
+    {
+        $request->session()->put('user_id', $id);
+        return redirect()->route('choices.index');
+        
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 }
