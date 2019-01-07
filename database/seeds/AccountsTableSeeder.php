@@ -20,6 +20,10 @@ class AccountsTableSeeder extends Seeder
             [
                 'email' => 'tanguy@nutflux.com',
                 'password' => Hash::make( 'toto' )
+            ],
+            [
+                'email' => 'raph@nutflux.com',
+                'password' => Hash::make( 'codesecret' )
             ]
         ] );
     }

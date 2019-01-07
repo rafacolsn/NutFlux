@@ -10,4 +10,5 @@
 
 @section( 'content' )
     <choices-index :choiceslist="{{ json_encode($choices) }}" csrf="{{ csrf_token() }}"></choices-index>
+ 
 @stop
