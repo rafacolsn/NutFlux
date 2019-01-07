@@ -19,14 +19,14 @@ class ChoiceController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->session()->has('user_id')) {
+        if ($request->session()->has('user')) {
             
-            $user_id =  $request->session()->get('user_id');
+            $user =  $request->session()->get('user');
             
             $choices = DB::table('choices')
                             ->join('medias', 'medias.id', '=', 'choices.media_id')
                             ->select('choices.id as id_choice', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as id_media')
-                            ->where('choices.user_id', '=', $user_id)
+                            ->where('choices.user_id', '=', $user->id)
                             ->get();
             return view( 'choices.index', compact( 'choices' ) );
         }

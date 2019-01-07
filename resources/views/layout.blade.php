@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <meta name="description" content="NutFlux - a movie & tv shows details app">
         <meta name="author" content="Raphaël Colson, Marie Grosjean, Emilie Lamy, Tanguy Scholtes">
         <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
@@ -18,8 +17,8 @@
 
         <nav id="nav">
             <!-- include vue component -->
-            <nav-menu></nav-menu>
-            <search-field></search-field>
+            <nav-menu :user="{{ json_encode(session("user")) }}"></nav-menu>
+            
         </nav>
 
         <main id="app">
