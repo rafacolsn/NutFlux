@@ -35,7 +35,6 @@ export default {
   },
   methods: {
     create: function(event) {
-      console.log("coucou");
       axios
         .post("/account")
         .then(function(response) {

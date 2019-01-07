@@ -1,20 +1,7 @@
 
-@section( 'title' )
-{{ $account->email }}
-@stop
-
-@section( 'content' )
-<form method="post" action="/accounts/{{$account->id}}">
-    @csrf
-    @method("PATCH")
-    <input type="text" name="email" value="{{ $account->email }}">
-    <button type="submit">edit</button>
-
-</form>
-
 <template>
     <div class="container">
-        <h1>Edit your account {{account.email}}</h1>
+        <h1>Edit your account : {{account.email}}</h1>
         <form method="post" :action="'/accounts/' + account.id">
             <p>
                 <label for="email">Email:</label>
