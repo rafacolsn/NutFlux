@@ -4,6 +4,10 @@
     {{ session( 'success' ) }}
 @endif
 
+@if( session( 'error' ) )
+    {{ session( 'error' ) }}
+@endif
+
 @section( 'title' )
     Users index
 @stop

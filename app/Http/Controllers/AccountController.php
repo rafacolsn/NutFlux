@@ -25,9 +25,9 @@ class AccountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-    return view('accounts.create');
-    }
+    // {
+    // return view('accounts.create');
+    // }
 
     /**
      * Store a newly created resource in storage.

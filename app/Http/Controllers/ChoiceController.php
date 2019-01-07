@@ -30,7 +30,7 @@ class ChoiceController extends Controller
                             ->get();
             return view( 'choices.index', compact( 'choices' ) );
         }
-        return 'You have to login to see your choices';
+        return redirect('/users')->with('error', 'You have to choose your profile to see your choices');
     }
 
     /**
@@ -125,4 +125,9 @@ class ChoiceController extends Controller
         $choice->delete();
         return redirect()->route('choices.index')->with('success', 'Choice has been deleted');
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }  
 }

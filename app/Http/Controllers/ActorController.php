@@ -115,7 +115,10 @@ class ActorController extends Controller
         $actor = Actor::find($id);
         $actor->delete();
         return redirect()->route('actors.index')->with('success', $actor->firstname.' '.$actor->lastname.' has been deleted');
-        
-    
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 }
