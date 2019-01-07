@@ -10,7 +10,7 @@ use App\Actor;
 class SearchController extends Controller
 {
     public function __construct () {
-        //$this -> middleware( 'auth' );
+        $this -> middleware( 'auth' );
     }
 
     /**
