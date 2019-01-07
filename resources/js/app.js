@@ -46,6 +46,9 @@ Vue.component( 'accounts-create', require( './components/AccountsCreate.vue' ) )
 /* Choices components */
 Vue.component('choices-index', require('./components/ChoicesIndex.vue'));
 
+/* Menu components */
+Vue.component('nav-menu', require('./components/NavMenu.vue'));
+
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 

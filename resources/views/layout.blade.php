@@ -17,6 +17,7 @@
 
         <nav id="nav">
             <!-- include vue component -->
+            <nav-menu></nav-menu>
         </nav>
 
         <main id="app">
