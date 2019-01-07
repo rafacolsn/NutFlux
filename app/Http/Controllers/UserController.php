@@ -15,9 +15,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $usersAll = User::orderBy('lastname')->get();
+        $id = Auth::id();
+        $usersAll = User::where('account_id', $id)->get();
         return view('users.index', compact('usersAll'));
     }
+
 
     /**
      * Show the form for creating a new resource.
