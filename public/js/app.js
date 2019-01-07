@@ -47697,7 +47697,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         login: function login(event) {
-            axios.get('/users/login').then(function (response) {
+            axios.get('/login/' + user.id).then(function (response) {
                 // handle success
                 console.log(response);
             }).catch(function (error) {
@@ -47724,25 +47724,31 @@ var render = function() {
           "ol",
           _vm._l(_vm.users, function(user) {
             return _c("li", [
-              _c("p", [
-                _vm._v(_vm._s(user.firstname) + " " + _vm._s(user.lastname))
-              ]),
-              _vm._v(" "),
-              _c("form", { attrs: { method: "GET", action: "/users/login" } }, [
-                _c("input", {
-                  attrs: { type: "hidden", name: "id" },
-                  domProps: { value: user.id }
-                }),
-                _vm._v(" "),
-                _c("a", { on: { click: _vm.login } }, [
-                  _c("img", {
-                    attrs: {
-                      src: user.avatar,
-                      alt: user.firstname + " " + user.lastname
-                    }
-                  })
-                ])
-              ]),
+              _c(
+                "form",
+                { attrs: { method: "GET", action: "/login/" + user.id } },
+                [
+                  _c("button", { on: { click: _vm.login } }, [
+                    _c("p", [
+                      _vm._v(
+                        _vm._s(user.firstname) + " " + _vm._s(user.lastname)
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "hidden", name: "id" },
+                      domProps: { value: user.id }
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      attrs: {
+                        src: user.avatar,
+                        alt: user.firstname + " " + user.lastname
+                      }
+                    })
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "form",
