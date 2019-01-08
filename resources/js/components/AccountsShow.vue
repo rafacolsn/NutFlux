@@ -7,12 +7,11 @@
         <a :href="'/users/' + user.id + '/edit'">
           {{user.firstname}}
           {{user.lastname}}
-          <img
-            :src="user.avatar"
-            :alt="user.firstname + ' ' + user.lastname"
-          >
+          <br>
+          <br>
+          <img :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
         </a>
-
+        <br>
         <form method="post" :action="'/users/' + user.id">
           <input type="hidden" name="id" :value="user.id">
           <input type="hidden" name="_method" value="DELETE">
@@ -22,12 +21,12 @@
         </form>
       </li>
     </ul>
-      <br>
+    <br>
     <form method="post" :action="'/accounts/' + account.id">
       <input type="hidden" name="id" :value="account.id">
       <input type="hidden" name="_method" value="DELETE">
       <input type="hidden" name="_token" :value="csrf">
-
+      
       <button v-on:click="destroyAccount">Delete my account</button>
     </form>
 

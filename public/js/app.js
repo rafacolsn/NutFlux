@@ -49823,7 +49823,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["account", "csrf", "users"],
@@ -49873,6 +49872,10 @@ var render = function() {
                     _vm._s(user.lastname) +
                     "\n        "
                 ),
+                _c("br"),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
                 _c("img", {
                   attrs: {
                     src: user.avatar,
@@ -49880,6 +49883,8 @@ var render = function() {
                   }
                 })
               ]),
+              _vm._v(" "),
+              _c("br"),
               _vm._v(" "),
               _c(
                 "form",
