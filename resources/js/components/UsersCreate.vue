@@ -32,19 +32,6 @@
                 lastname: '',
                 avatar: ''
             }
-        },
-        methods: {
-            create: function ( event ) {
-                axios.post( '/users' )
-                    .then( function ( response ) {
-                        // handle success
-                        console.log(response);
-                    }   )
-                    .catch( function ( error ) {
-                        // handle error
-                        console.log( error );
-                    } );
-            }
         }
     }
 </script>
