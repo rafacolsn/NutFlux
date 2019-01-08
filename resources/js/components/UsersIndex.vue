@@ -42,11 +42,7 @@
                     } );
             },
             login: function ( event ) {
-<<<<<<< HEAD
                 axios.get( '/login/' + user.id).then( function ( response ) {
-=======
-                axios.get( '/login/' + user.id ).then( function ( response ) {
->>>>>>> 7ab9e022028b54bdbec97e3ff374625b9b52d84b
                         // handle success
                         console.log(response);
                     }   )
