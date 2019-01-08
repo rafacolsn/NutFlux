@@ -14084,6 +14084,7 @@ Vue.component('medias-create', __webpack_require__(73));
 Vue.component('accounts-show', __webpack_require__(76));
 Vue.component('accounts-create', __webpack_require__(79));
 Vue.component('accounts-edit', __webpack_require__(82));
+Vue.component('accounts-login', __webpack_require__(105));
 
 /* Choices components */
 Vue.component('choices-index', __webpack_require__(85));
@@ -49805,16 +49806,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['account', 'csrf'],
-    data: function data() {
-        return {
-            accountId: account.id,
-            accountEmail: account.email,
-            accountPassword: account.password
-        };
+  props: ["account", "csrf", "users"],
+  methods: {
+    destroy: function destroy(event) {
+      axios.delete("/users/" + user.id).then(function (response) {
+        // handle success
+        console.log(response);
+      }).catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+    },
+    destroyAccount: function destroyAccount(event) {
+      axios.delete("/accounts/" + account.id).then(function (response) {
+        // handle success
+        console.log(response);
+      }).catch(function (error) {
+        // handle error
+        console.log(error);
+      });
     }
+  }
 });
 
 /***/ }),
@@ -49828,34 +49860,88 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("h1", [_vm._v("Your account : " + _vm._s(_vm.account.email))]),
     _vm._v(" "),
-    _c("form", [
-      _c("p", [
-        _c("label", { attrs: { for: "email" } }, [_vm._v("Email:")]),
+    _vm.users
+      ? _c(
+          "ul",
+          _vm._l(_vm.users, function(user) {
+            return _c("li", [
+              _c("a", { attrs: { href: "/users/" + user.id + "/edit" } }, [
+                _vm._v(
+                  "\n        " +
+                    _vm._s(user.firstname) +
+                    "\n        " +
+                    _vm._s(user.lastname) +
+                    "\n        "
+                ),
+                _c("img", {
+                  attrs: {
+                    src: user.avatar,
+                    alt: user.firstname + " " + user.lastname
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "form",
+                { attrs: { method: "post", action: "/users/" + user.id } },
+                [
+                  _c("input", {
+                    attrs: { type: "hidden", name: "id" },
+                    domProps: { value: user.id }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_method", value: "DELETE" }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.csrf }
+                  }),
+                  _vm._v(" "),
+                  _c("button", { on: { click: _vm.destroy } }, [
+                    _vm._v("Delete user")
+                  ])
+                ]
+              )
+            ])
+          }),
+          0
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "form",
+      { attrs: { method: "post", action: "/accounts/" + _vm.account.id } },
+      [
+        _c("input", {
+          attrs: { type: "hidden", name: "id" },
+          domProps: { value: _vm.account.id }
+        }),
         _vm._v(" "),
         _c("input", {
-          attrs: { type: "text", name: "email", disabled: "" },
-          domProps: { value: _vm.account.email }
-        })
-      ]),
-      _vm._v(" "),
-      _vm._m(0)
+          attrs: { type: "hidden", name: "_method", value: "DELETE" }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf }
+        }),
+        _vm._v(" "),
+        _c("button", { on: { click: _vm.destroyAccount } }, [
+          _vm._v("Delete my account")
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("a", { attrs: { href: "/accounts/" + _vm.account.id + "/edit" } }, [
+      _vm._v("Edit account")
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _c("label", { attrs: { for: "password" } }, [_vm._v("Password:")]),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "password", name: "password", disabled: "" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -51078,6 +51164,202 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(106)
+/* template */
+var __vue_template__ = __webpack_require__(107)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/AccountsLogin.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-01429548", Component.options)
+  } else {
+    hotAPI.reload("data-v-01429548", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 106 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["csrf"],
+  data: function data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
+
+  methods: {
+    login: function login(event) {
+      axios.post("/login/").then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", [_vm._v("Login")]),
+    _vm._v(" "),
+    _c("form", { attrs: { method: "post", action: "/login/" } }, [
+      _c("label", { attrs: { for: "email" } }, [_vm._v("Email:")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.email,
+            expression: "email"
+          }
+        ],
+        attrs: {
+          type: "email",
+          name: "email",
+          placeholder: "Your email address"
+        },
+        domProps: { value: _vm.email },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.email = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "password" } }, [_vm._v("Password:")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.password,
+            expression: "password"
+          }
+        ],
+        attrs: {
+          type: "password",
+          name: "password",
+          placeholder: "Type your password"
+        },
+        domProps: { value: _vm.password },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.password = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "hidden", name: "_token" },
+        domProps: { value: _vm.csrf }
+      }),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("button", { on: { click: _vm.login } }, [_vm._v("Login")])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-01429548", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

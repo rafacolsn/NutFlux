@@ -8,6 +8,7 @@ use App\Account;
 
 use Illuminate\Support\Facades\Hash;
 
+use App\User;
 class AccountController extends Controller
 {
     /**
@@ -26,9 +27,9 @@ class AccountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    // {
-    // return view('accounts.create');
-    // }
+    {
+    return view('accounts.create');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -64,7 +65,10 @@ class AccountController extends Controller
     public function show($id)
     {
         $accountObj = Account::find($id);
-        return view('accounts.show', compact('accountObj'));
+        // dd($accountObj);
+        $users = User::where("account_id", "=", $id)->get();
+        return view('accounts.show', compact('accountObj', 'users'));
+        
     }
 
     /**

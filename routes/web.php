@@ -22,3 +22,4 @@ Route::get('/register', 'AccountController@create')->name('register');
 Route::post('/register', 'AccountController@store');
 Route::get('/login/{id}', 'UserController@login')->name('userlogin');
 Route::get( '/search', 'SearchController@search' ) -> name( 'search' );
+// Route::get( '/home', 'HomeController@index' ) -> name( 'home' );
