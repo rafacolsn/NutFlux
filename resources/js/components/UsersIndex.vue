@@ -3,14 +3,14 @@
         <h1>Users index</h1>
         <ol v-if="users">
             <li v-for="user in users">
-                <p>{{ user.firstname }} {{ user.lastname }}</p>
-                    <form method="GET" :action="'/login/' + user.id">
+                <form method="GET" :action="'/login/' + user.id">
+                    <button v-on:click="login">
+                        <p>{{ user.firstname }} {{ user.lastname }}</p>
                         <input type="hidden" name="id" :value="user.id" />
-                        <a v-on:click="login"><img   :src="user.avatar" :alt="user.firstname + ' ' + user.lastname" /></a>
-
+                        <img :src="user.avatar" :alt="user.firstname + ' ' + user.lastname" />
+                    </button>
                 </form>
-                
-                
+
                 <form method="post" :action="'/users/' + user.id">
                     <input type="hidden" name="id" :value="user.id" />
                     <input type="hidden" name="_method" value="DELETE">
@@ -18,6 +18,9 @@
 
                     <button v-on:click="destroy">Delete</button>
                 </form>
+            </li>
+            <li>
+                <a href="/users/create">Add a new user to your account</a>
             </li>
         </ol>
     </div>
@@ -39,7 +42,11 @@
                     } );
             },
             login: function ( event ) {
+<<<<<<< HEAD
                 axios.get( '/login/' + user.id).then( function ( response ) {
+=======
+                axios.get( '/login/' + user.id ).then( function ( response ) {
+>>>>>>> 7ab9e022028b54bdbec97e3ff374625b9b52d84b
                         // handle success
                         console.log(response);
                     }   )
