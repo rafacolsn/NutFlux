@@ -19,6 +19,9 @@
                     <button v-on:click="destroy">Delete</button>
                 </form>
             </li>
+            <li>
+                <a href="/users/create">Add a new user to your account</a>
+            </li>
         </ol>
     </div>
 </template>

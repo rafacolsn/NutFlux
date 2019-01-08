@@ -13,6 +13,7 @@
 
 Route::get( '/', 'Auth\LoginController@showLoginForm' );
 Auth::routes();
+Route::get( '/home', 'HomeController@index' ) ->name ( 'home' );
 Route::resource('actors', 'ActorController');
 Route::resource('medias', 'MediaController');
 Route::resource('accounts', 'AccountController');
