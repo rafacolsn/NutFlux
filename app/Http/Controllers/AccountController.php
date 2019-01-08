@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
+
 use App\Account;
 
 class AccountController extends Controller
@@ -25,9 +29,9 @@ class AccountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    // {
-    // return view('accounts.create');
-    // }
+    {
+    return view('accounts.create');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -118,5 +122,13 @@ class AccountController extends Controller
         $account->delete();
         return redirect()->route('accounts.index')->with('success', 'This account has been deleted');
         
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect('/login');
     }
 }
