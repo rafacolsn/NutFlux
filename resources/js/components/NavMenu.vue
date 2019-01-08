@@ -1,30 +1,44 @@
 
 
 <template>
-    
-    <ul>
+  <nav>
+    <div>
+      <a href="/choices">NutFlux</a>
+    </div>
+    <div>
+      <a href="/users">{{user.firstname}}</a>
+    </div>
+    <div>
+      <a href="#">Shows</a>
+      <i class="fas fa-caret-up"></i>
+      <ul>
         <li>
-            <a href="/home">NutFlux</a> 
+          <a href="/medias">All</a>
         </li>
         <li>
-            <a href="/users">{{user.firstname}}</a> 
+          <a href="/choices/favourites">Favourites</a>
         </li>
         <li>
-            <a href="/medias">Shows</a> 
+          <a href="/choices/later">To Watch Later</a>
         </li>
         <li>
-            <a href="/logout">Logout</a> 
+          <a href="/choices/watched">Seen</a>
         </li>
-        <li><search-field></search-field></li>
-    </ul>
-    
+      </ul>
+    </div>
+    <form method="post" action="/logout">
+      <input type="hidden" name="_token" :value="csrf">
+      <button type="submit" >Logout</button>
+    </form>
+    <search-field></search-field>
+  </nav>
 </template>
 
 <script>
-    export default {
-        props: ['user'],
-        mounted() {
-            console.log('Component mounted.')
-        }
-    }
+export default {
+  props: ["user", "csrf"],
+  mounted() {
+    console.log("Component mounted.");
+  },
+};
 </script>

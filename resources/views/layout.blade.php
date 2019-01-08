@@ -15,11 +15,11 @@
     </head>
     <body>
 
-        <nav id="nav">
+        <div id="nav">
             <!-- include vue component -->
-            <nav-menu :user="{{ json_encode(session("user")) }}"></nav-menu>
+        <nav-menu :user="{{ json_encode(session("user")) }}" csrf="{{ csrf_token() }}"></nav-menu>
             
-        </nav>
+        </div>
 
         <main id="app">
             @yield( 'content' )

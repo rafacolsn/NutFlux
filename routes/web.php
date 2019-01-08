@@ -22,3 +22,5 @@ Route::resource( 'choices', 'ChoiceController' );
 Route::get('/login/{id}', 'UserController@login')->name('userlogin');
 
 Route::get( '/search', 'SearchController@search' ) -> name( 'search' );
+
+Route::post('/logout', 'AccountController@logout') -> name('logout');
