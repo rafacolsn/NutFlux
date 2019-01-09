@@ -36,6 +36,7 @@ export default {
     create: function(event) {
       axios
         .post("/register")
+        
         .then(function(response) {
           console.log(response);
         })

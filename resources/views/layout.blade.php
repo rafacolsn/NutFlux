@@ -18,11 +18,14 @@
 
         <nav id="nav">
             <!-- include vue component -->
-            <search-field></search-field>
+            <search-field></search-field><br>
+           
         </nav>
 
         <main id="app">
             @yield( 'content' )
+
+
         </main> <!-- .content -->
 
         <script src="/js/app.js" type="text/javascript"></script>
