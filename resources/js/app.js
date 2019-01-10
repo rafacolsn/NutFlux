@@ -53,6 +53,9 @@ Vue.component( 'choices-create', require( './components/ChoicesCreate.vue' ) );
 Vue.component( 'search-field', require( './components/SearchField.vue' ) );
 Vue.component( 'search-results', require( './components/SearchResults.vue' ) );
 
+/* Menu components */
+Vue.component('nav-menu', require('./components/NavMenu.vue'));
+
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
+
 use App\Account;
 
 class AccountController extends Controller
@@ -26,7 +30,7 @@ class AccountController extends Controller
      */
     public function create()
     {
-        //return view('accounts.create');
+        return view('accounts.create');
     }
 
     /**
@@ -118,4 +122,16 @@ class AccountController extends Controller
         return redirect()->route('accounts.index')->with('success', 'This account has been deleted');
 
     }
+<<<<<<< HEAD
 }
+=======
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect('/login');
+    }
+}
+>>>>>>> 251fef9ba439deaa2cca7b0e2981879311418c16

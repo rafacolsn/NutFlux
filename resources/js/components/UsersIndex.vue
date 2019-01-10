@@ -42,7 +42,7 @@
                     } );
             },
             login: function ( event ) {
-                axios.get( '/login/' + user.id ).then( function ( response ) {
+                axios.get( '/login/' + user.id).then( function ( response ) {
                         // handle success
                         console.log(response);
                     }   )
