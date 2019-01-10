@@ -6,18 +6,22 @@
     <form method="post" action="/login/">
       <label for="email">Email:</label>
       <input type="email" v-model="email" name="email" placeholder="Your email address">
-      
+
       <br>
       <br>
 
       <label for="password">Password:</label>
       <input type="password" v-model="password" name="password" placeholder="Type your password">
-
+      
       <input type="hidden" name="_token" :value="csrf">
       <br>
       <br>
 
       <button @click="login">Login</button>
+
+      <p>
+        <a href="/accounts/create">Don't have an account yet ? Click here to register</a>
+      </p>
     </form>
   </div>
 </template>
@@ -29,14 +33,14 @@ export default {
   data() {
     return {
       email: "",
-      password: "",
+      password: ""
     };
   },
   methods: {
     login: function(event) {
       axios
         .post("/login/")
-        
+
         .then(function(response) {
           console.log(response);
         })

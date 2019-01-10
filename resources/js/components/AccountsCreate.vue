@@ -18,6 +18,11 @@
       <br>
 
       <button @click="create">Submit</button>
+
+      <p>
+        <a href="/login">Click here to login</a>
+      </p>
+
     </form>
   </div>
 </template>

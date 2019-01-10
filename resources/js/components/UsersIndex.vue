@@ -22,9 +22,13 @@
         <a :href="'/users/' + user.id + '/edit'">Edit user information</a>
       </li>
         <br><br>
-      <li v-if="users.length < 3">
-        <a href="/users/create">Add a new user to your account</a>
+              <li v-if="users.length == 0">
+        <p>You haven't created any user yet. That's a shame.</p>
       </li>
+      <li v-if="users.length < 3">
+        <a href="/users/create">Add a new user to your account. </a>
+      </li>
+
     </ol>
   </div>
 </template>
@@ -75,4 +79,9 @@ a {
 li {
   list-style-type: none;
 }
+
+img {
+  max-width: 10%;
+}
+
 </style>
