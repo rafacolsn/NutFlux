@@ -47686,6 +47686,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['users', 'csrf'],
@@ -47725,63 +47728,84 @@ var render = function() {
     _vm.users
       ? _c(
           "ol",
-          _vm._l(_vm.users, function(user) {
-            return _c("li", [
-              _c("p", [
-                _vm._v(_vm._s(user.firstname) + " " + _vm._s(user.lastname))
-              ]),
-              _vm._v(" "),
-              _c(
-                "form",
-                { attrs: { method: "GET", action: "/login/" + user.id } },
-                [
-                  _c("input", {
-                    attrs: { type: "hidden", name: "id" },
-                    domProps: { value: user.id }
-                  }),
-                  _vm._v(" "),
-                  _c("a", { on: { click: _vm.login } }, [
-                    _c("img", {
+          [
+            _vm._l(_vm.users, function(user) {
+              return _c("li", [
+                _c(
+                  "form",
+                  { attrs: { method: "GET", action: "/login/" + user.id } },
+                  [
+                    _c("button", { on: { click: _vm.login } }, [
+                      _c("p", [
+                        _vm._v(
+                          _vm._s(user.firstname) + " " + _vm._s(user.lastname)
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: { type: "hidden", name: "id" },
+                        domProps: { value: user.id }
+                      }),
+                      _vm._v(" "),
+                      _c("img", {
+                        attrs: {
+                          src: user.avatar,
+                          alt: user.firstname + " " + user.lastname
+                        }
+                      })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "form",
+                  { attrs: { method: "post", action: "/users/" + user.id } },
+                  [
+                    _c("input", {
+                      attrs: { type: "hidden", name: "id" },
+                      domProps: { value: user.id }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
                       attrs: {
-                        src: user.avatar,
-                        alt: user.firstname + " " + user.lastname
+                        type: "hidden",
+                        name: "_method",
+                        value: "DELETE"
                       }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "form",
-                { attrs: { method: "post", action: "/users/" + user.id } },
-                [
-                  _c("input", {
-                    attrs: { type: "hidden", name: "id" },
-                    domProps: { value: user.id }
-                  }),
-                  _vm._v(" "),
-                  _c("input", {
-                    attrs: { type: "hidden", name: "_method", value: "DELETE" }
-                  }),
-                  _vm._v(" "),
-                  _c("input", {
-                    attrs: { type: "hidden", name: "_token" },
-                    domProps: { value: _vm.csrf }
-                  }),
-                  _vm._v(" "),
-                  _c("button", { on: { click: _vm.destroy } }, [
-                    _vm._v("Delete")
-                  ])
-                ]
-              )
-            ])
-          }),
-          0
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "hidden", name: "_token" },
+                      domProps: { value: _vm.csrf }
+                    }),
+                    _vm._v(" "),
+                    _c("button", { on: { click: _vm.destroy } }, [
+                      _vm._v("Delete")
+                    ])
+                  ]
+                )
+              ])
+            }),
+            _vm._v(" "),
+            _vm._m(0)
+          ],
+          2
         )
       : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "/users/create" } }, [
+        _vm._v("Add a new user to your account")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
