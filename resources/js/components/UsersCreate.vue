@@ -27,6 +27,8 @@
         <input type="radio" id="duck" name="avatar" value="../../../images/duck.jpg">
       </div>
 
+
+
       <input type="hidden" name="_token" :value="csrf">
       
       <button v-on:click="create">Create</button>

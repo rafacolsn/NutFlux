@@ -95,7 +95,7 @@ class UserController extends Controller
         $request->validate([
             'userFirstname' => 'required',
             'userLastname' => 'required',
-            'userAvatar' => 'required',
+            // 'userAvatar' => 'required',
         ]);
         
         $user = User::find($id);

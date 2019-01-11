@@ -17,7 +17,7 @@ class CreateTableUsers extends Migration
             $table -> increments( 'id' );
             $table -> string( 'firstname' );
             $table -> string( 'lastname' );
-            $table -> string( 'avatar' );
+            $table -> string( 'avatar' )->default('../../../images/cat.jpg');
             $table -> unsignedInteger( 'account_id' );
             $table -> timestamps();
 
