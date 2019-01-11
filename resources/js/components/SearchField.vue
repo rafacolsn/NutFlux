@@ -1,9 +1,9 @@
 <template>
     <div class="container">
-        <form method="get" action="/search">
-            <label for="keyword">Search :</label>
-            <input type="text" name="keyword" />
-            <button v-on:click="send"><span class="fas fa-search"></span></button>
+        <form class="searchfield" method="get" action="/search">
+            <label for="keyword"></label>
+            <input type="text" name="keyword" placeholder="Search"/>
+            <button v-on:click="send"><i class="fas fa-search"></i></button>
         </form>
     </div>
 </template>
