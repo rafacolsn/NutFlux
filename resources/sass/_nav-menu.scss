@@ -1,0 +1,68 @@
+.nav-menu {
+    background-color: $second-bg;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5rem 1rem;
+    font-size: 1.3rem;
+    font-family: Nunito;
+    text-transform: uppercase;
+    max-height: 2rem;
+    .nutflux a {
+      color: $nutflux-color;
+    }
+    .nutflux a:hover {
+      color : $second-color;
+    }
+    a {
+      text-decoration: none;
+      padding: 0rem 1rem;
+    }
+    i {
+      color : $font-color;
+    }
+    form {
+      text-align: right;
+    }
+    button {
+      background: $second-bg;
+      border: none;
+      font-size: 1.3rem;
+      font-family: Nunito;
+      text-transform: uppercase;
+      color: $font-color;
+    }
+    button:hover {
+      color: $nutflux-color;
+    }
+    .searchfield {
+      
+      input {
+        border-radius: 0.7rem;
+        background: $background;
+        border: none;
+        padding: 0.5rem;
+        margin-top: -1rem;        
+      }
+      button {
+        background: $second-bg;
+        border: none;
+      }
+    } 
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-child {
+    display: none;
+    background-color: $second-bg;
+    min-width: 2rem;
+  }
+  .dropdown-child a {
+    padding: 0.8rem;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown:hover .dropdown-child {
+    display: block;
+  }

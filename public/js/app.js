@@ -50714,15 +50714,24 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("form", { attrs: { method: "get", action: "/search" } }, [
-      _c("label", { attrs: { for: "keyword" } }, [_vm._v("Search :")]),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "text", name: "keyword" } }),
-      _vm._v(" "),
-      _c("button", { on: { click: _vm.send } }, [
-        _c("span", { staticClass: "fas fa-search" })
-      ])
-    ])
+    _c(
+      "form",
+      {
+        staticClass: "searchfield",
+        attrs: { method: "get", action: "/search" }
+      },
+      [
+        _c("label", { attrs: { for: "keyword" } }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "text", name: "keyword", placeholder: "Search" }
+        }),
+        _vm._v(" "),
+        _c("button", { on: { click: _vm.send } }, [
+          _c("i", { staticClass: "fas fa-search" })
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []
@@ -50976,11 +50985,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["user", "csrf"],
   mounted: function mounted() {
     console.log("Component mounted.");
+  },
+  data: function data() {
+    return {
+      hover: ""
+    };
   }
 });
 
@@ -50994,6 +51016,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "nav",
+    { staticClass: "nav-menu" },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -51003,7 +51026,35 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(1),
+      _c(
+        "div",
+        {
+          staticClass: "dropdown",
+          on: {
+            mouseover: function($event) {
+              _vm.hover = true
+            },
+            mouseleave: function($event) {
+              _vm.hover = false
+            }
+          }
+        },
+        [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Shows")]),
+          _vm._v(" "),
+          !_vm.hover
+            ? _c("span", [_c("i", { staticClass: "fas fa-caret-down" })])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.hover
+            ? _c("span", [_c("i", { staticClass: "fas fa-caret-up" })])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm._m(1)
+        ]
+      ),
+      _vm._v(" "),
+      _c("search-field"),
       _vm._v(" "),
       _c("form", { attrs: { method: "post", action: "/logout" } }, [
         _c("input", {
@@ -51012,9 +51063,7 @@ var render = function() {
         }),
         _vm._v(" "),
         _c("button", { attrs: { type: "submit" } }, [_vm._v("Logout")])
-      ]),
-      _vm._v(" "),
-      _c("search-field")
+      ])
     ],
     1
   )
@@ -51024,7 +51073,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
+    return _c("div", { staticClass: "nutflux" }, [
       _c("a", { attrs: { href: "/choices" } }, [_vm._v("NutFlux")])
     ])
   },
@@ -51032,29 +51081,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Shows")]),
+    return _c("ul", { staticClass: "dropdown-child" }, [
+      _c("li", [_c("a", { attrs: { href: "/medias" } }, [_vm._v("All")])]),
       _vm._v(" "),
-      _c("i", { staticClass: "fas fa-caret-up" }),
-      _vm._v(" "),
-      _c("ul", [
-        _c("li", [_c("a", { attrs: { href: "/medias" } }, [_vm._v("All")])]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/choices/favourites" } }, [
-            _vm._v("Favourites")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/choices/later" } }, [
-            _vm._v("To Watch Later")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "/choices/watched" } }, [_vm._v("Seen")])
+      _c("li", [
+        _c("a", { attrs: { href: "/choices/favourites" } }, [
+          _vm._v("Favourites")
         ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/choices/later" } }, [
+          _vm._v("To Watch Later")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/choices/watched" } }, [_vm._v("Seen")])
       ])
     ])
   }
