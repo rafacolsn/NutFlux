@@ -122,6 +122,8 @@ class UserController extends Controller
         $user->avatar = $request->get('userAvatar');
         $user->save();
 
+        $request->session()->put('user', $user);
+
         return redirect()->route('users.index')->with('success','User updated successfully');
     }
 
