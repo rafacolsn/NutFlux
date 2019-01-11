@@ -52,7 +52,7 @@ class AccountController extends Controller
         $account = new Account([
             'email' => $request->get('email'),
             'password'=> Hash::make($request->get('password')),
-        
+
         ]);
         $account->save();
         return redirect('/accounts')->with('success', 'Account has been added');
@@ -71,7 +71,7 @@ class AccountController extends Controller
         // dd($accountObj);
         $users = User::where("account_id", "=", $id)->get();
         return view('accounts.show', compact('accountObj', 'users'));
-        
+
     }
 
     /**
@@ -129,9 +129,6 @@ class AccountController extends Controller
         return redirect()->route('accounts.index')->with('success', 'This account has been deleted');
 
     }
-<<<<<<< HEAD
-}
-=======
 
     public function logout(Request $request)
     {
@@ -141,4 +138,3 @@ class AccountController extends Controller
         return redirect('/login');
     }
 }
->>>>>>> 251fef9ba439deaa2cca7b0e2981879311418c16
