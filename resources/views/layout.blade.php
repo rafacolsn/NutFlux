@@ -16,11 +16,14 @@
     </head>
     <body>
 
-        <nav id="nav">
+        <div id="nav">
             <!-- include vue component -->
             <search-field></search-field><br>
            
         </nav>
+        <nav-menu :user="{{ json_encode(session("user")) }}" csrf="{{ csrf_token() }}"></nav-menu>
+            
+        </div>
 
         <main id="app">
             @yield( 'content' )

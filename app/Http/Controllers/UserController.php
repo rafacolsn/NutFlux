@@ -122,7 +122,9 @@ class UserController extends Controller
 
     public function login(Request $request, $id) 
     {
-        $request->session()->put('user_id', $id);
+        $user = User::find($id);
+        $request->session()->put('user', $user);
+        
         return redirect()->route('choices.index');
         
     }

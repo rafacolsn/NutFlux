@@ -14426,6 +14426,9 @@ Vue.component('choices-create', __webpack_require__(106));
 Vue.component('search-field', __webpack_require__(109));
 Vue.component('search-results', __webpack_require__(112));
 
+/* Menu components */
+Vue.component('nav-menu', __webpack_require__(119));
+
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
@@ -48061,70 +48064,9 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 /* 52 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["users", "csrf"],
-  methods: {
-    destroy: function destroy(event) {
-      axios.delete("/users/" + user.id).then(function (response) {
-        // handle success
-        console.log(response);
-      }).catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-    },
-    login: function login(event) {
-      axios.get("/login/" + user.id).then(function (response) {
-        // handle success
-        console.log(response);
-      }).catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-    }
-  }
-
-});
+throw new Error("Module build failed: SyntaxError: Unexpected token (37:0)\n\n\u001b[0m \u001b[90m 35 | \u001b[39m\u001b[90m//\u001b[39m\n \u001b[90m 36 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m {\n \u001b[90m 39 | \u001b[39m  props\u001b[33m:\u001b[39m [\u001b[32m\"users\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"csrf\"\u001b[39m]\u001b[33m,\u001b[39m\n \u001b[90m 40 | \u001b[39m  methods\u001b[33m:\u001b[39m {\u001b[0m\n");
 
 /***/ }),
 /* 53 */
@@ -48674,71 +48616,9 @@ exports.push([module.i, "\nimg {\n  max-width: 10%;\n}\n", ""]);
 
 /***/ }),
 /* 62 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["csrf"],
-  data: function data() {
-    return {
-      firstname: "",
-      lastname: "",
-      avatar: ""
-    };
-  },
-
-  methods: {
-    create: function create(event) {
-      axios.post("/users").then(function (response) {
-        // handle success
-        console.log(response);
-      }).catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-    }
-  }
-});
+throw new Error("Module build failed: SyntaxError: Unexpected token (40:0)\n\n\u001b[0m \u001b[90m 38 | \u001b[39m\u001b[90m//\u001b[39m\n \u001b[90m 39 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m {\n \u001b[90m 42 | \u001b[39m  props\u001b[33m:\u001b[39m [\u001b[32m\"csrf\"\u001b[39m]\u001b[33m,\u001b[39m\n \u001b[90m 43 | \u001b[39m  data() {\u001b[0m\n");
 
 /***/ }),
 /* 63 */
@@ -49971,99 +49851,91 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("h1", [_vm._v("Edit this media")]),
     _vm._v(" "),
-    _c(
-      "form",
-      { attrs: { method: "post", action: "/medias/" + _vm.media.id } },
-      [
-        _c("p", [
-          _c("label", { attrs: { for: "mediaTitle" } }, [_vm._v("Title")]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", name: "mediaTitle" },
-            domProps: { value: _vm.media.title }
-          })
-        ]),
+    _c("form", [
+      _c("p", [
+        _c("label", { attrs: { for: "mediaTitle" } }, [_vm._v("Title")]),
         _vm._v(" "),
-        _c("p", [
-          _c("label", { attrs: { for: "mediaSummary" } }, [_vm._v("Summary")]),
-          _vm._v(" "),
-          _c("textarea", { attrs: { name: "mediaSummary" } }, [
-            _vm._v(_vm._s(_vm.media.summary))
-          ])
-        ]),
+        _c("input", {
+          attrs: { type: "text", name: "mediaTitle" },
+          domProps: { value: _vm.media.title }
+        })
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _c("label", { attrs: { for: "mediaSummary" } }, [_vm._v("Summary")]),
         _vm._v(" "),
-        _c("p", [
-          _c("label", { attrs: { for: "mediaYear" } }, [_vm._v("Year")]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "number", step: "1", name: "mediaYear" },
-            domProps: { value: _vm.media.year }
-          })
-        ]),
+        _c("textarea", { attrs: { name: "mediaSummary" } }, [
+          _vm._v(_vm._s(_vm.media.summary))
+        ])
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _c("label", { attrs: { for: "mediaYear" } }, [_vm._v("Year")]),
         _vm._v(" "),
-        _c("p", [
-          _c("label", { attrs: { for: "mediaTrailer" } }, [_vm._v("Trailer")]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", name: "mediaTrailer" },
-            domProps: { value: _vm.media.trailer }
-          })
-        ]),
+        _c("input", {
+          attrs: { type: "number", step: "1", name: "mediaYear" },
+          domProps: { value: _vm.media.year }
+        })
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _c("label", { attrs: { for: "mediaTrailer" } }, [_vm._v("Trailer")]),
         _vm._v(" "),
-        _c("p", [
-          _c("label", { attrs: { for: "mediaIsSerie" } }, [
-            _vm._v("Is it part of a TV Show ?")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "checkbox", name: "mediaIsSerie" },
-            domProps: { value: _vm.media.is_serie }
-          })
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _c("label", { attrs: { for: "mediaPoster" } }, [_vm._v("Poster")]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", name: "mediaPoster" },
-            domProps: { value: _vm.media.poster }
-          })
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _c("label", { attrs: { for: "mediaDirector" } }, [
-            _vm._v("Director")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", name: "mediaDirector" },
-            domProps: { value: _vm.media.director }
-          })
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _c("label", { attrs: { for: "mediaProducer" } }, [
-            _vm._v("Producer")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", name: "mediaProducer" },
-            domProps: { value: _vm.media.producer }
-          })
+        _c("input", {
+          attrs: { type: "text", name: "mediaTrailer" },
+          domProps: { value: _vm.media.trailer }
+        })
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _c("label", { attrs: { for: "mediaIsSerie" } }, [
+          _vm._v("Is it part of a TV Show ?")
         ]),
         _vm._v(" "),
         _c("input", {
-          attrs: { type: "hidden", name: "_method", value: "PATCH" }
-        }),
+          attrs: { type: "checkbox", name: "mediaIsSerie" },
+          domProps: { value: _vm.media.is_serie }
+        })
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _c("label", { attrs: { for: "mediaPoster" } }, [_vm._v("Poster")]),
         _vm._v(" "),
         _c("input", {
-          attrs: { type: "hidden", name: "_token" },
-          domProps: { value: _vm.csrf }
-        }),
+          attrs: { type: "text", name: "mediaPoster" },
+          domProps: { value: _vm.media.poster }
+        })
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _c("label", { attrs: { for: "mediaDirector" } }, [_vm._v("Director")]),
         _vm._v(" "),
-        _c("button", { on: { click: _vm.send } }, [_vm._v("Edit")])
-      ]
-    )
+        _c("input", {
+          attrs: { type: "text", name: "mediaDirector" },
+          domProps: { value: _vm.media.director }
+        })
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _c("label", { attrs: { for: "mediaProducer" } }, [_vm._v("Producer")]),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "text", name: "mediaProducer" },
+          domProps: { value: _vm.media.producer }
+        })
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "hidden", name: "_method", value: "PATCH" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "hidden", name: "_token" },
+        domProps: { value: _vm.csrf }
+      }),
+      _vm._v(" "),
+      _c("button", { on: { click: _vm.send } }, [_vm._v("Edit")])
+    ])
   ])
 }
 var staticRenderFns = []
@@ -52122,6 +51994,190 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(120)
+/* template */
+var __vue_template__ = __webpack_require__(121)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/NavMenu.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ce029cf2", Component.options)
+  } else {
+    hotAPI.reload("data-v-ce029cf2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 120 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["user", "csrf"],
+  mounted: function mounted() {
+    console.log("Component mounted.");
+  }
+});
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "nav",
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", [
+        _c("a", { attrs: { href: "/users" } }, [
+          _vm._v(_vm._s(_vm.user.firstname))
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c("form", { attrs: { method: "post", action: "/logout" } }, [
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf }
+        }),
+        _vm._v(" "),
+        _c("button", { attrs: { type: "submit" } }, [_vm._v("Logout")])
+      ]),
+      _vm._v(" "),
+      _c("search-field")
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("a", { attrs: { href: "/choices" } }, [_vm._v("NutFlux")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Shows")]),
+      _vm._v(" "),
+      _c("i", { staticClass: "fas fa-caret-up" }),
+      _vm._v(" "),
+      _c("ul", [
+        _c("li", [_c("a", { attrs: { href: "/medias" } }, [_vm._v("All")])]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "/choices/favourites" } }, [
+            _vm._v("Favourites")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "/choices/later" } }, [
+            _vm._v("To Watch Later")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "/choices/watched" } }, [_vm._v("Seen")])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-ce029cf2", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

@@ -6,7 +6,7 @@
     <form method="post" action="/register/">
       <label for="email">Email:</label>
       <input type="email" v-model="email" name="email" placeholder="Your email address">
-      
+
       <br>
       <br>
 

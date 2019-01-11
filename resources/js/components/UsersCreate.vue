@@ -37,6 +37,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 export default {
   props: ["csrf"],
   data() {
@@ -58,6 +59,17 @@ export default {
           // handle error
           console.log(error);
         });
+=======
+    export default {
+        props: [ 'csrf' ],
+        data () {
+            return {
+                firstname: '',
+                lastname: '',
+                avatar: ''
+            }
+        }
+>>>>>>> dev
     }
   }
 };
