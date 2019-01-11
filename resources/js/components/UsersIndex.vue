@@ -34,7 +34,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 export default {
   props: ["users", "csrf"],
   methods: {
@@ -65,34 +64,6 @@ export default {
   },
 
 };
-=======
-    export default {
-        props: ['users', 'csrf'],
-        methods: {
-            destroy: function ( event ) {
-                axios.delete( '/users/' + user.id )
-                    .then( function ( response ) {
-                        // handle success
-                        console.log(response);
-                    }   )
-                    .catch( function ( error ) {
-                        // handle error
-                        console.log( error );
-                    } );
-            },
-            login: function ( event ) {
-                axios.get( '/login/' + user.id).then( function ( response ) {
-                        // handle success
-                        console.log(response);
-                    }   )
-                    .catch( function ( error ) {
-                        // handle error
-                        console.log( error );
-                    } );
-            }
-        }
-    }
->>>>>>> dev
 </script>
 
 
