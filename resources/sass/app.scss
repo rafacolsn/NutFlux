@@ -4,12 +4,16 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
 
 // Variables
 @import 'variables';
 
 // import nav-menu sass
 @import 'nav-menu';
+
+// import users sass
+@import 'users';
 
 .navbar-laravel {
   // background-color: #fff;
@@ -29,7 +33,7 @@ body, html {
 h1 {
   font-size: 1.3rem;
   font-weight: bold;
-  font-family: Robot Slab;
+  font-family: 'Robot Slab';
   text-transform: uppercase;
   color: $second-color;
 }

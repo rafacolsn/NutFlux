@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-    <h1>Create a user</h1>
+  <div class="container create-user">
+    <h1></h1>
+
+    <h2>Create a user</h2>
 
     <form method="post" action="/users">
       <p>
@@ -12,17 +14,17 @@
         <input type="text" name="lastname" v-model="lastname">
       </p>
 
-      <div>
+      <div class="img-avatar">
         <img src="../../../images/dog.jpg" alt="dog">
         <input type="radio" id="dog" name="avatar" checked value="../../../images/dog.jpg">
       </div>
 
-      <div>
+      <div class="img-avatar">
         <img src="../../../images/cat.jpg" alt="cat">
         <input type="radio" id="cat" name="avatar" value="../../../images/cat.jpg">
       </div>
 
-      <div>
+      <div class="img-avatar">
         <img src="../../../images/duck.jpg" alt="duck">
         <input type="radio" id="duck" name="avatar" value="../../../images/duck.jpg">
       </div>
@@ -62,9 +64,3 @@ export default {
   }
 };
 </script>
-
-<style>
-img {
-  max-width: 10%;
-}
-</style>

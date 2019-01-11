@@ -1,0 +1,30 @@
+.create-user{
+    background-color: $second-bg;
+    margin: 10rem auto;
+    max-width: 70%;
+    border-radius: 30px;
+    font-size: 1.3rem;
+
+    h2{
+        color: $third-color;
+        text-transform: uppercase;
+        font-family: Alegreya, sans-serif;
+    
+    }
+    
+    .img-avatar{
+        float: left;
+        padding: 1.5rem;    
+        img{
+        max-width: 3rem;
+        &:hover {
+            color:yellow;
+        }
+        }
+    }
+    form{
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+}
