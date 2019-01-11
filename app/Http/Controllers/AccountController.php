@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
+
 use App\Account;
 
 class AccountController extends Controller
@@ -25,9 +29,9 @@ class AccountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    // {
-    // return view('accounts.create');
-    // }
+    {
+        return view('accounts.create');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,18 +40,17 @@ class AccountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   //public function store(Request $request)
-
+    {
         $this->validate($request, [
             'email' => 'required',
             'password' => 'required',
-        
+
         ]);
 
         $account = new Account([
             'email' => $request->get('email'),
             'password'=> $request->get('password'),
-        
+
         ]);
         $account->save();
         return redirect('/accounts')->with('success', 'Account has been added');
@@ -89,13 +92,13 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $request->validate([
             'email' => 'required',
             // 'password' => 'required',
-            
+
         ]);
-        
+
         $account = Account::find($id);
         $account->email = $request->get('email');
         // $account->password = $request->get('password');
@@ -117,6 +120,18 @@ class AccountController extends Controller
         $account = Account::find($id);
         $account->delete();
         return redirect()->route('accounts.index')->with('success', 'This account has been deleted');
-        
+
+    }
+<<<<<<< HEAD
+}
+=======
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect('/login');
     }
 }
+>>>>>>> 251fef9ba439deaa2cca7b0e2981879311418c16

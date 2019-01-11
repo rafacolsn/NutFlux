@@ -19,14 +19,14 @@ class ChoiceController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->session()->has('user_id')) {
+        if ($request->session()->has('user')) {
             
-            $user_id =  $request->session()->get('user_id');
+            $user =  $request->session()->get('user');
             
             $choices = DB::table('choices')
                             ->join('medias', 'medias.id', '=', 'choices.media_id')
                             ->select('choices.id as id_choice', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as id_media')
-                            ->where('choices.user_id', '=', $user_id)
+                            ->where('choices.user_id', '=', $user->id)
                             ->get();
             return view( 'choices.index', compact( 'choices' ) );
         }
@@ -40,10 +40,10 @@ class ChoiceController extends Controller
      */
     public function create(Request $request)
     {
-        $user_id =  $request->session()->get('user_id');
+        $user =  $request->session()->get('user');
         $medias = Media::orderBy( 'title' ) -> get();
-        $user = User::find( $user_id );
-        return view( 'choices.create', compact( 'medias', 'user' ) );
+        $userid = User::find( $user->id );
+        return view( 'choices.create', compact( 'medias', 'userid' ) );
     }
 
     /**
@@ -78,12 +78,12 @@ class ChoiceController extends Controller
      */
     public function show(Request $request, $type)
     {
-        $user_id =  $request->session()->get('user_id');
+        $user =  $request->session()->get('user');
         $choicesObj = DB::table('choices')
                         ->join('medias', 'medias.id', '=', 'choices.media_id')
                         ->select('medias.title', 'medias.id', 'medias.poster')
                         ->where('choices.type', '=', $type)
-                        ->where('choices.user_id', '=', $user_id)
+                        ->where('choices.user_id', '=', $user->id)
                         ->get();
         return view('choices.show', compact('choicesObj', 'type'));
 
