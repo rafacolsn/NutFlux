@@ -1,10 +1,10 @@
 @extends( 'layout' )
 
 @section( 'title' )
-{{ $accountObj->email.' '.$accountObj->password }} 
+{{ $accountObj->email }} 
 @stop
 
 @section( 'content' )
-    <accounts-show :account="{{ json_encode($accountObj) }}"></accounts-show>
+    <accounts-show :account="{{ json_encode($accountObj) }}" csrf="{{ csrf_token()}}" :users="{{json_encode($users)}}"></accounts-show>
 @stop
 

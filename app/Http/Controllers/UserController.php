@@ -22,6 +22,7 @@ class UserController extends Controller
         return view('users.index', compact('usersAll'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -94,7 +95,7 @@ class UserController extends Controller
         $request->validate([
             'userFirstname' => 'required',
             'userLastname' => 'required',
-            'userAvatar' => 'required',
+            // 'userAvatar' => 'required',
         ]);
         
         $user = User::find($id);

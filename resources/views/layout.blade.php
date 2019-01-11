@@ -7,6 +7,7 @@
         <meta name="description" content="NutFlux - a movie & tv shows details app">
         <meta name="author" content="Raphaël Colson, Marie Grosjean, Emilie Lamy, Tanguy Scholtes">
         <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
         <link rel="shortcut icon" type="image/png" href="{{ URL::asset('img/favicon.ico') }}" />
@@ -17,12 +18,17 @@
 
         <div id="nav">
             <!-- include vue component -->
+            <search-field></search-field><br>
+           
+        </nav>
         <nav-menu :user="{{ json_encode(session("user")) }}" csrf="{{ csrf_token() }}"></nav-menu>
             
         </div>
 
         <main id="app">
             @yield( 'content' )
+
+
         </main> <!-- .content -->
 
         <script src="/js/app.js" type="text/javascript"></script>

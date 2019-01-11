@@ -7,3 +7,4 @@
 @section( 'content' )
     <accounts-create csrf="{{csrf_token()}}"></accounts-create>
 @stop
+

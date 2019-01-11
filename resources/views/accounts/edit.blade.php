@@ -1,15 +1,9 @@
 @extends( 'layout' )
 
 @section( 'title' )
-{{ $account->email }}
+    Edit this user
 @stop
 
 @section( 'content' )
-<form method="post" action="/accounts/{{$account->id}}">
-    @csrf
-    @method("PATCH")
-    <input type="text" name="email" value="{{ $account->email }}">
-    <button type="submit">edit</button>
-
-</form>
+    <accounts-edit :account="{{ json_encode( $account ) }}" csrf="{{ csrf_token() }}"></accounts-edit>
 @stop
