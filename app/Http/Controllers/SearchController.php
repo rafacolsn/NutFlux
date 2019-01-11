@@ -20,7 +20,14 @@ class SearchController extends Controller
      */
     public function search()
     {
+        $results = [];
         $keyword = $_GET[ 'keyword' ];
+
+        if ( !isset( $_GET[ 'keyword' ] ) || $_GET[ 'keyword' ] === '' ) {
+            //if keyword is empty
+            return view( 'search', compact( 'keyword', 'results' ) );
+        }
+
         $keywords = explode( ' ', $keyword );
         $skipwords = [ 'a', 'the', 'with', 'i', 'and', 'or', 'an', 'to' ];
         foreach ( $skipwords as $skip ) {
@@ -54,7 +61,6 @@ class SearchController extends Controller
             }
         } ) -> union( $mediasSecondary ) -> get();
 
-        $results = [];
         foreach( $actors as $item ) {
             $results[] = $item;
         }

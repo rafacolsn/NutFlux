@@ -52042,6 +52042,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['keyword', 'results']
@@ -52058,57 +52063,59 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("h1", [_vm._v('Search results for "' + _vm._s(_vm.keyword) + '"')]),
     _vm._v(" "),
-    _vm.results
-      ? _c(
-          "ul",
-          _vm._l(_vm.results, function(result) {
-            return _c("li", [
-              result.title
-                ? _c("div", [
-                    _c("img", {
-                      attrs: { src: result.poster, alt: result.title }
-                    }),
-                    _vm._v(" "),
-                    _c("h2", [
-                      _c("a", { attrs: { href: "/medias/" + result.id } }, [
-                        _vm._v(
-                          _vm._s(result.title) +
-                            " (" +
-                            _vm._s(result.year) +
-                            ")"
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(result.summary))])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              result.lastname
-                ? _c("div", [
-                    _c("img", {
-                      attrs: {
-                        src: result.picture,
-                        alt: result.firstname + " " + result.lastname
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("h2", [
-                      _c("a", { attrs: { href: "/actors/" + result.id } }, [
-                        _vm._v(
-                          _vm._s(result.firstname) +
-                            " " +
-                            _vm._s(result.lastname)
-                        )
+    _vm.results.length > 0
+      ? _c("div", [
+          _c(
+            "ul",
+            _vm._l(_vm.results, function(result) {
+              return _c("li", [
+                result.title
+                  ? _c("div", [
+                      _c("img", {
+                        attrs: { src: result.poster, alt: result.title }
+                      }),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("a", { attrs: { href: "/medias/" + result.id } }, [
+                          _vm._v(
+                            _vm._s(result.title) +
+                              " (" +
+                              _vm._s(result.year) +
+                              ")"
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(_vm._s(result.summary))])
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                result.lastname
+                  ? _c("div", [
+                      _c("img", {
+                        attrs: {
+                          src: result.picture,
+                          alt: result.firstname + " " + result.lastname
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("h2", [
+                        _c("a", { attrs: { href: "/actors/" + result.id } }, [
+                          _vm._v(
+                            _vm._s(result.firstname) +
+                              " " +
+                              _vm._s(result.lastname)
+                          )
+                        ])
                       ])
                     ])
-                  ])
-                : _vm._e()
-            ])
-          }),
-          0
-        )
-      : _vm._e()
+                  : _vm._e()
+              ])
+            }),
+            0
+          )
+        ])
+      : _c("div", [_c("p", [_vm._v("No result.")])])
   ])
 }
 var staticRenderFns = []
