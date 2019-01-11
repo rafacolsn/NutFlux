@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h1>Edit this media</h1>
-        <form method="post" :action="'/medias/' + media.id">
+        <form >
             <p>
                 <label for="mediaTitle">Title</label>
                 <input type="text" name="mediaTitle" :value="media.title" />
