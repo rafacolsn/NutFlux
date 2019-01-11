@@ -40,6 +40,8 @@ Vue.component( 'medias-create', require( './components/MediasCreate.vue' ) );
 /* Accounts components */
 Vue.component( 'accounts-show', require( './components/AccountsShow.vue' ) );
 Vue.component( 'accounts-create', require( './components/AccountsCreate.vue' ) );
+Vue.component( 'accounts-edit', require( './components/AccountsEdit.vue' ) );
+Vue.component( 'accounts-login', require( './components/AccountsLogin.vue' ) );
 
 /* Choices components */
 Vue.component( 'choices-index', require( './components/ChoicesIndex.vue' ) );
@@ -52,6 +54,9 @@ Vue.component( 'choices-create', require( './components/ChoicesCreate.vue' ) );
 /* Search components */
 Vue.component( 'search-field', require( './components/SearchField.vue' ) );
 Vue.component( 'search-results', require( './components/SearchResults.vue' ) );
+
+/* Menu components */
+Vue.component('nav-menu', require('./components/NavMenu.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))

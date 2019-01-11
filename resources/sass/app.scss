@@ -1,14 +1,36 @@
+//Reset Eric Meyer
+@import 'reset';
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// import nav-menu sass
+@import 'nav-menu';
 
 .navbar-laravel {
-  background-color: #fff;
+  // background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+body, html {
+  background: $background;
+  a {
+    color: $font-color;
+  }
+  a:hover, a:active {
+    color: $nutflux-color;
+  }
+}
+
+h1 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: Robot Slab;
+  text-transform: uppercase;
+  color: $second-color;
+}
+
