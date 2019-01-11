@@ -178,6 +178,7 @@ table {
   font-family: Nunito;
   text-transform: uppercase;
   color: #9FA3A4;
+  cursor: pointer;
 }
 
 .nav-menu button:hover {
@@ -206,12 +207,18 @@ table {
   display: none;
   background-color: #282828;
   min-width: 2rem;
+  padding-top: 1.7rem;
 }
 
 .dropdown-child a {
   padding: 0.8rem;
   text-decoration: none;
   display: block;
+}
+
+.dropdown-child li a:hover {
+  background: #E57255;
+  color: #282828;
 }
 
 .dropdown:hover .dropdown-child {

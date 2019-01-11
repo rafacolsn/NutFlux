@@ -30,6 +30,7 @@
       font-family: Nunito;
       text-transform: uppercase;
       color: $font-color;
+      cursor: pointer;
     }
     button:hover {
       color: $nutflux-color;
@@ -57,11 +58,16 @@
     display: none;
     background-color: $second-bg;
     min-width: 2rem;
+    padding-top: 1.7rem;
   }
   .dropdown-child a {
     padding: 0.8rem;
     text-decoration: none;
     display: block;
+  }
+  .dropdown-child li a:hover {
+    background: $nutflux-color;
+    color: $second-bg;
   }
   .dropdown:hover .dropdown-child {
     display: block;
