@@ -48064,9 +48064,70 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 /* 52 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token (37:0)\n\n\u001b[0m \u001b[90m 35 | \u001b[39m\u001b[90m//\u001b[39m\n \u001b[90m 36 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m {\n \u001b[90m 39 | \u001b[39m  props\u001b[33m:\u001b[39m [\u001b[32m\"users\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"csrf\"\u001b[39m]\u001b[33m,\u001b[39m\n \u001b[90m 40 | \u001b[39m  methods\u001b[33m:\u001b[39m {\u001b[0m\n");
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["users", "csrf"],
+  methods: {
+    destroy: function destroy(event) {
+      axios.delete("/users/" + user.id).then(function (response) {
+        // handle success
+        console.log(response);
+      }).catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+    },
+    login: function login(event) {
+      axios.get("/login/" + user.id).then(function (response) {
+        // handle success
+        console.log(response);
+      }).catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+    }
+  }
+
+});
 
 /***/ }),
 /* 53 */
