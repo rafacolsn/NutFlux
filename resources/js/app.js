@@ -40,6 +40,8 @@ Vue.component( 'medias-create', require( './components/MediasCreate.vue' ) );
 /* Accounts components */
 Vue.component( 'accounts-show', require( './components/AccountsShow.vue' ) );
 Vue.component( 'accounts-create', require( './components/AccountsCreate.vue' ) );
+Vue.component( 'accounts-edit', require( './components/AccountsEdit.vue' ) );
+Vue.component( 'accounts-login', require( './components/AccountsLogin.vue' ) );
 
 /* Choices components */
 Vue.component( 'choices-index', require( './components/ChoicesIndex.vue' ) );
