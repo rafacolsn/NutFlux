@@ -5,10 +5,10 @@
       <span v-if="type === 'watched'">Watched</span>
       <span v-if="type === 'later'">To Watch Later</span>
     </h1>
-    <ol>
+    <ol class="media-list">
       <li v-for="media in choice">
-        <img :src="media.poster" :alt="media.title" class="poster">
         <a class="media-title" :href="'/medias/' + media.id">
+          <img :src="media.poster" :alt="media.title" class="poster">
           <p>{{ media.title }}</p>
         </a>
       </li>
@@ -19,19 +19,5 @@
 <script>
 export default {
   props: ["choice", "type"],
-  methods: {
-    destroy: function(event) {
-      axios
-        .delete("/choices/" + item.id_choice)
-        .then(function(response) {
-          // handle success
-          console.log(response);
-        })
-        .catch(function(error) {
-          // handle error
-          console.log(error);
-        });
-    }
-  }
 };
 </script>
