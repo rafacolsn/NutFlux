@@ -1,6 +1,11 @@
 .media-list {
     display: flex;
     flex-wrap: wrap;
+    .media-list-item{
+        &:hover {
+            color: $nutflux-color;
+        }
+    }
     img {
         height: 15rem;
         width: 10rem;
@@ -13,7 +18,7 @@
             border : 3px solid $second-color;
             transform: scale(1.1);
         }
-    }   
+    }
     a {
         text-decoration: none;
         p {
@@ -21,9 +26,6 @@
             text-align: center;
             padding: 2rem 0;
             max-width: 10rem;
-            &:hover {
-                color: $nutflux-color;
-            }
         }
     }
 }
@@ -44,7 +46,7 @@
             border : 3px solid $second-color;
             transform: scale(1.1);
         }
-    }   
+    }
     a {
         text-decoration: none;
         p {

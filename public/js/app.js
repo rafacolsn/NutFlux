@@ -49885,16 +49885,17 @@ var render = function() {
           "ol",
           { staticClass: "media-list" },
           _vm._l(_vm.medias, function(media) {
-            return _c("li", [
+            return _c("li", { staticClass: "media-list-item" }, [
               _c("a", { attrs: { href: "/medias/" + media.id } }, [
                 _c("img", { attrs: { src: media.poster, alt: media.title } })
               ]),
               _vm._v(" "),
-              _c("p"),
+              _c("p", { staticClass: "choices-form-wrapper" }),
               _vm.isInChoices(media.id, "favourites")
                 ? _c(
                     "form",
                     {
+                      staticClass: "choices-form",
                       attrs: {
                         action:
                           "/choices/" + _vm.isInChoices(media.id, "favourites"),
@@ -49923,7 +49924,10 @@ var render = function() {
               !_vm.isInChoices(media.id, "favourites")
                 ? _c(
                     "form",
-                    { attrs: { action: "/choices", method: "post" } },
+                    {
+                      staticClass: "choices-form",
+                      attrs: { action: "/choices", method: "post" }
+                    },
                     [
                       _c("input", {
                         attrs: { type: "hidden", name: "mediaId" },
@@ -49952,6 +49956,7 @@ var render = function() {
                 ? _c(
                     "form",
                     {
+                      staticClass: "choices-form",
                       attrs: {
                         action:
                           "/choices/" + _vm.isInChoices(media.id, "later"),
@@ -49980,7 +49985,10 @@ var render = function() {
               !_vm.isInChoices(media.id, "later")
                 ? _c(
                     "form",
-                    { attrs: { action: "/choices", method: "post" } },
+                    {
+                      staticClass: "choices-form",
+                      attrs: { action: "/choices", method: "post" }
+                    },
                     [
                       _c("input", {
                         attrs: { type: "hidden", name: "mediaId" },
@@ -50005,6 +50013,7 @@ var render = function() {
                 ? _c(
                     "form",
                     {
+                      staticClass: "choices-form",
                       attrs: {
                         action:
                           "/choices/" + _vm.isInChoices(media.id, "watched"),
@@ -50033,7 +50042,10 @@ var render = function() {
               !_vm.isInChoices(media.id, "watched")
                 ? _c(
                     "form",
-                    { attrs: { action: "/choices", method: "post" } },
+                    {
+                      staticClass: "choices-form",
+                      attrs: { action: "/choices", method: "post" }
+                    },
                     [
                       _c("input", {
                         attrs: { type: "hidden", name: "mediaId" },

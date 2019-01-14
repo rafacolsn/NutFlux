@@ -2,20 +2,20 @@
   <div class="content">
     <h1>All Shows</h1>
     <ol v-if="medias" class="media-list">
-        <li v-for="media in medias">
+        <li v-for="media in medias" class="media-list-item">
             <a :href="'/medias/' + media.id" >
               <img :src="media.poster" :alt="media.title">
             </a>
-            <p>
+            <p class="choices-form-wrapper">
                 <!-- Favourites -->
-                <form v-if="isInChoices( media.id, 'favourites' )"
+                <form class="choices-form" v-if="isInChoices( media.id, 'favourites' )"
                     :action="'/choices/' + isInChoices( media.id, 'favourites' )"
                     method="post" >
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" :value="csrf">
                     <button type="submit" class="choices favourites-delete"><span class="fas fa-heart"></span></button>
                 </form>
-                <form v-if="!isInChoices( media.id, 'favourites' )"
+                <form class="choices-form" v-if="!isInChoices( media.id, 'favourites' )"
                     action="/choices"
                     method="post" >
                     <input type="hidden" name="mediaId" :value="media.id">
@@ -23,16 +23,15 @@
                     <input type="hidden" name="_token" :value="csrf">
                     <button type="submit" class="choices favourites"><span class="far fa-heart"></span></button>
                 </form>
-
                 <!-- To see later -->
-                <form v-if="isInChoices( media.id, 'later' )"
+                <form class="choices-form" v-if="isInChoices( media.id, 'later' )"
                     :action="'/choices/' + isInChoices( media.id, 'later' )"
                     method="post" >
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" :value="csrf">
                     <button type="submit" class="choices later-delete"><span class="fas fa-clock"></span></button>
                 </form>
-                <form v-if="!isInChoices( media.id, 'later' )"
+                <form class="choices-form" v-if="!isInChoices( media.id, 'later' )"
                     action="/choices"
                     method="post" >
                     <input type="hidden" name="mediaId" :value="media.id">
@@ -40,16 +39,15 @@
                     <input type="hidden" name="_token" :value="csrf">
                     <button type="submit" class="choices later"><span class="far fa-clock"></span></button>
                 </form>
-                
                 <!-- Watched -->
-                <form v-if="isInChoices( media.id, 'watched' )"
+                <form class="choices-form" v-if="isInChoices( media.id, 'watched' )"
                     :action="'/choices/' + isInChoices( media.id, 'watched' )"
                     method="post" >
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" :value="csrf">
                     <button type="submit" class="choices watched-delete"><span class="fas fa-check"></span></button>
                 </form>
-                <form v-if="!isInChoices( media.id, 'watched' )"
+                <form class="choices-form" v-if="!isInChoices( media.id, 'watched' )"
                     action="/choices"
                     method="post" >
                     <input type="hidden" name="mediaId" :value="media.id">

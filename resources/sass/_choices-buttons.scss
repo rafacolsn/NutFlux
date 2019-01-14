@@ -1,0 +1,39 @@
+.choices-form-wrapper{
+    margin: 0;
+    padding: 0;
+    max-width: 10rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.choices-form{
+    display: inline-block;
+    text-align: center;
+    width: 3.2rem;
+    margin: 1em 0;
+}
+
+.choices{
+    font-size: 1rem;
+    padding: 0;
+    background-color: inherit;
+    color: $font-color;
+    border: none;
+    transition: all 500ms ease;
+    &:hover, &:focus{
+        transform: scale(1.2);
+        transition: all 500ms ease;
+    }
+}
+
+.favourites:hover, .favourites:focus, .favourites-delete{
+    color: $favourites-color;
+}
+
+.later:hover, .later:focus, .later-delete{
+    color: $later-color;
+}
+
+.watched:hover, .watched:focus, .watched-delete{
+    color: $watched-color;
+}

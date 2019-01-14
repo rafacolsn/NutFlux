@@ -236,6 +236,10 @@ table {
       flex-wrap: wrap;
 }
 
+.media-list .media-list-item:hover {
+  color: #E57255;
+}
+
 .media-list img {
   height: 15rem;
   width: 10rem;
@@ -264,10 +268,6 @@ table {
   text-align: center;
   padding: 2rem 0;
   max-width: 10rem;
-}
-
-.media-list a p:hover {
-  color: #E57255;
 }
 
 .media-card {
@@ -318,6 +318,61 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.choices-form-wrapper {
+  margin: 0;
+  padding: 0;
+  max-width: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.choices-form {
+  display: inline-block;
+  text-align: center;
+  width: 3.2rem;
+  margin: 1em 0;
+}
+
+.choices {
+  font-size: 1rem;
+  padding: 0;
+  background-color: inherit;
+  color: #9FA3A4;
+  border: none;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.choices:hover,
+.choices:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.favourites:hover,
+.favourites:focus,
+.favourites-delete {
+  color: #ff328c;
+}
+
+.later:hover,
+.later:focus,
+.later-delete {
+  color: #3250ff;
+}
+
+.watched:hover,
+.watched:focus,
+.watched-delete {
+  color: #1e9b23;
 }
 
 .navbar-laravel {
