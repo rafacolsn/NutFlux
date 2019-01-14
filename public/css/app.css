@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);/* http://meyerweb.com/eric/tools/css/reset/ 
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);@import url(https://fonts.googleapis.com/css?family=Alegreya);/* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -201,13 +201,16 @@ table {
 .dropdown {
   position: relative;
   display: inline-block;
+  min-width: 13rem;
 }
 
 .dropdown-child {
   display: none;
   background-color: #282828;
-  min-width: 2rem;
+  min-width: 13rem;
   padding-top: 1.7rem;
+  z-index: 100;
+  position: relative;
 }
 
 .dropdown-child a {
@@ -223,6 +226,48 @@ table {
 
 .dropdown:hover .dropdown-child {
   display: block;
+}
+
+.media-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.media-list img {
+  height: 15rem;
+  width: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  margin-right: 3rem;
+}
+
+.media-list img:hover {
+  border: 3px solid rgba(70, 189, 223, 0.9);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.media-list a {
+  text-decoration: none;
+}
+
+.media-list a p {
+  font-family: Nunito;
+  text-align: center;
+  padding: 2rem 0;
+  max-width: 10rem;
+}
+
+.media-list a p:hover {
+  color: #E57255;
 }
 
 .navbar-laravel {
@@ -247,11 +292,18 @@ html a:active {
   color: #E57255;
 }
 
-h1 {
+h1,
+.list-title {
   font-size: 1.3rem;
   font-weight: bold;
-  font-family: Robot Slab;
+  font-family: Alegrey;
   text-transform: uppercase;
   color: rgba(70, 189, 223, 0.9);
+  margin: 0 0 3rem 0;
+}
+
+.content {
+  width: 80%;
+  margin: 3rem auto;
 }
 

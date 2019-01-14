@@ -4,12 +4,16 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
 
 // Variables
 @import 'variables';
 
 // import nav-menu sass
 @import 'nav-menu';
+
+//import sass for medias
+@import 'medias';
 
 .navbar-laravel {
   // background-color: #fff;
@@ -26,11 +30,18 @@ body, html {
   }
 }
 
-h1 {
+h1, .list-title {
   font-size: 1.3rem;
   font-weight: bold;
-  font-family: Robot Slab;
+  font-family: Alegrey;
   text-transform: uppercase;
   color: $second-color;
+  margin: 0 0 3rem 0; 
+
+}
+
+.content {
+  width: 80%;
+  margin: 3rem auto;
 }
 

@@ -18,5 +18,11 @@
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
         "vue": "^2.5.17"
+    },
+    "dependencies": {
+        "add": "^2.0.6",
+        "or": "^0.2.0",
+        "vue-owl-carousel": "^2.0.3",
+        "yarn": "^1.13.0"
     }
 }

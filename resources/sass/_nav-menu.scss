@@ -53,12 +53,15 @@
   .dropdown {
     position: relative;
     display: inline-block;
+    min-width: 13rem;
   }
   .dropdown-child {
     display: none;
     background-color: $second-bg;
-    min-width: 2rem;
+    min-width: 13rem;
     padding-top: 1.7rem;
+    z-index: 100;
+    position: relative;
   }
   .dropdown-child a {
     padding: 0.8rem;
