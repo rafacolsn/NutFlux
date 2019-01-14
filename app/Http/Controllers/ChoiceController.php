@@ -20,9 +20,9 @@ class ChoiceController extends Controller
     public function index(Request $request)
     {
         if ($request->session()->has('user')) {
-            
+
             $user =  $request->session()->get('user');
-            
+
             $choices = DB::table('choices')
                             ->join('medias', 'medias.id', '=', 'choices.media_id')
                             ->select('choices.id as id_choice', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as id_media')
@@ -40,10 +40,12 @@ class ChoiceController extends Controller
      */
     public function create(Request $request)
     {
+        /*
         $user =  $request->session()->get('user');
         $medias = Media::orderBy( 'title' ) -> get();
         $userid = User::find( $user->id );
         return view( 'choices.create', compact( 'medias', 'userid' ) );
+        */
     }
 
     /**
@@ -56,18 +58,19 @@ class ChoiceController extends Controller
     {
         $this -> validate( $request, [
             'mediaId' => 'required',
-            'userId' => 'required',
             'type' => 'required'
         ] );
 
+        $user =  $request -> session() -> get('user');
+
         $choice = new Choice( [
             'media_id' => $request -> get( 'mediaId' ),
-            'user_id' => $request -> get( 'userId' ),
+            'user_id' => $user -> id,
             'type' => $request -> get( 'type' )
         ] );
         $choice -> save();
 
-        return redirect( '/choices' ) -> with( 'success', 'Your media has been added to your choices' );
+        return redirect() -> back();
     }
 
     /**
@@ -97,8 +100,10 @@ class ChoiceController extends Controller
      */
     public function edit($type)
     {
+        /*
         $choices = Choice::where('type', $type)->get();
         return view('choices.edit', compact('choices'));
+        */
     }
 
     /**
@@ -123,11 +128,11 @@ class ChoiceController extends Controller
     {
         $choice = Choice::find($id);
         $choice->delete();
-        return redirect()->route('choices.index')->with('success', 'Choice has been deleted');
+        return redirect()->back();
     }
 
     public function __construct()
     {
         $this->middleware('auth');
-    }  
+    }
 }

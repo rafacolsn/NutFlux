@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Media;
 use App\Actor;
+use App\Choice;
 
 class MediaController extends Controller
 {
@@ -14,10 +16,19 @@ class MediaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request )
     {
+        if ( !$request->session()->has('user') ) {
+            return redirect('/users')->with('error', 'You have to choose your profile to see your choices');
+        }
+        $user =  $request->session()->get('user');
+        $choices = DB::table('choices')
+                        ->join('medias', 'medias.id', '=', 'choices.media_id')
+                        ->select('choices.id as id', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as media_id')
+                        ->where('choices.user_id', '=', $user->id)
+                        ->get();
         $mediasAll = Media::orderBy('title')->get();
-        return view('medias.index', compact('mediasAll'));
+        return view('medias.index', compact('mediasAll', 'user', 'choices'));
     }
 
     /**
@@ -77,9 +88,9 @@ class MediaController extends Controller
     public function show($id)
     {
         $mediasObj = Media::find($id);
-        
+
         $mediasObj->actors = $mediasObj->actors()->get();
-  
+
         return view('medias.show', compact('mediasObj'));
     }
 
@@ -115,9 +126,9 @@ class MediaController extends Controller
             'mediaProducer' => 'required',
         ]);
 
-        
+
         $media = Media::find($id);
-        
+
         $mediaIsSerie = 0;
         if ( $request -> get( 'mediaIsSerie' ) == true || $request -> get( 'mediaIsSerie' ) == 1 ) {
             $mediaIsSerie = 1;
