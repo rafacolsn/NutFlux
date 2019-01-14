@@ -270,6 +270,56 @@ table {
   color: #E57255;
 }
 
+.media-card {
+  padding: 2rem 1rem 2rem 2rem;
+  background: #282828;
+  border-radius: 3%;
+}
+
+.media-card img {
+  height: 15rem;
+  width: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  margin-right: 3rem;
+}
+
+.media-card img:hover {
+  border: 3px solid rgba(70, 189, 223, 0.9);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.media-card a {
+  text-decoration: none;
+}
+
+.media-card a p {
+  font-family: Nunito;
+  text-align: center;
+  padding: 2rem 0;
+  max-width: 10rem;
+}
+
+.media-card a p:hover {
+  color: #E57255;
+}
+
+.media-card iframe {
+  border-radius: 8px;
+}
+
+.media-card .media-trailer-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .navbar-laravel {
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -293,13 +343,23 @@ html a:active {
 }
 
 h1,
+h2,
 .list-title {
   font-size: 1.3rem;
   font-weight: bold;
-  font-family: Alegrey;
   text-transform: uppercase;
-  color: rgba(70, 189, 223, 0.9);
   margin: 0 0 3rem 0;
+}
+
+h1,
+.list-title {
+  font-family: Alegrey;
+  color: rgba(70, 189, 223, 0.9);
+}
+
+h2 {
+  font-family: Nunito;
+  color: #E95065;
 }
 
 .content {

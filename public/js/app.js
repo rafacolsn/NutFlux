@@ -49602,6 +49602,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['media']
@@ -49615,60 +49631,94 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v(_vm._s(_vm.media.title))]),
-    _vm._v(" "),
-    _vm.media.is_serie
-      ? _c("p", [_vm._v("This media is part of a TV show")])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("img", { attrs: { src: _vm.media.poster, alt: _vm.media.title } }),
-    _vm._v(" "),
-    _c("ul", [
-      _c("li", [_vm._v("Year: " + _vm._s(_vm.media.year))]),
+  return _c("div", { staticClass: "content" }, [
+    _c("h1", [
+      _vm._v("Home > \n            "),
+      _vm.media.is_serie ? _c("span", [_vm._v("TV Show")]) : _vm._e(),
       _vm._v(" "),
-      _c("li", [_vm._v("Director: " + _vm._s(_vm.media.director))]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Producer: " + _vm._s(_vm.media.producer))]),
-      _vm._v(" "),
-      _vm.media.actors
-        ? _c("li", [
-            _vm._v("Actors:\n            "),
-            _c(
-              "ul",
-              _vm._l(_vm.media.actors, function(actor) {
-                return _c("li", [
-                  _c("a", { attrs: { href: "/actors/" + actor.id } }, [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(actor.firstname) +
-                        " " +
-                        _vm._s(actor.lastname) +
-                        "\n                    "
-                    )
-                  ])
-                ])
-              }),
-              0
-            )
-          ])
-        : _vm._e()
+      _vm.media.is_serie == 0 ? _c("span", [_vm._v("Movie")]) : _vm._e(),
+      _vm._v(" \n            > " + _vm._s(_vm.media.title) + "\n        ")
     ]),
     _vm._v(" "),
-    _c("iframe", {
-      attrs: {
-        width: "500",
-        height: "500",
-        src: "https://www.youtube.com/embed/" + _vm.media.trailer,
-        frameborder: "0",
-        allowfullscreen: ""
-      }
-    }),
-    _vm._v(" "),
-    _c("div", [_vm._v("\n        " + _vm._s(_vm.media.summary) + "\n    ")])
+    _c("div", { staticClass: "media-card" }, [
+      _c("div", { staticClass: "media-trailer-wrap" }, [
+        _c("h2", [
+          _vm._v(
+            _vm._s(_vm.media.title) + " ( " + _vm._s(_vm.media.year) + " ) "
+          )
+        ]),
+        _vm._v(" "),
+        _vm.media.is_serie
+          ? _c("p", [_vm._v("This media is part of a TV show")])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("img", { attrs: { src: _vm.media.poster, alt: _vm.media.title } }),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("iframe", {
+          attrs: {
+            width: "500",
+            height: "281",
+            src: "https://www.youtube.com/embed/" + _vm.media.trailer,
+            frameborder: "0",
+            allowfullscreen: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("div", [
+          _c("h3", [_vm._v("Summary")]),
+          _vm._v(
+            "\n                " + _vm._s(_vm.media.summary) + "\n            "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "actors-choices-wrap" }, [
+        _c("ul", [
+          _c("li", [_vm._v("Year: " + _vm._s(_vm.media.year))]),
+          _vm._v(" "),
+          _c("li", [_vm._v("Director: " + _vm._s(_vm.media.director))]),
+          _vm._v(" "),
+          _c("li", [_vm._v("Producer: " + _vm._s(_vm.media.producer))]),
+          _vm._v(" "),
+          _vm.media.actors
+            ? _c("li", [
+                _vm._v("Actors:\n                    "),
+                _c(
+                  "ul",
+                  _vm._l(_vm.media.actors, function(actor) {
+                    return _c("li", [
+                      _c("a", { attrs: { href: "/actors/" + actor.id } }, [
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(actor.firstname) +
+                            " " +
+                            _vm._s(actor.lastname) +
+                            "\n                            "
+                        )
+                      ])
+                    ])
+                  }),
+                  0
+                )
+              ])
+            : _vm._e()
+        ])
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "trailer" }, [
+      _c("h2", [_vm._v("Trailer")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -51630,9 +51680,10 @@ var render = function() {
     _vm._v(" "),
     _c(
       "ul",
+      { staticClass: "media-list" },
       _vm._l(_vm.choiceslist, function(item) {
         return item.type === "favourites"
-          ? _c("li", { staticClass: "media-list" }, [
+          ? _c("li", [
               _c("a", { attrs: { href: "/medias/" + item.id_media } }, [
                 _c("img", { attrs: { src: item.poster, alt: item.title } }),
                 _vm._v(" "),
@@ -51648,9 +51699,10 @@ var render = function() {
     _vm._v(" "),
     _c(
       "ul",
+      { staticClass: "media-list" },
       _vm._l(_vm.choiceslist, function(item) {
         return item.type === "watched"
-          ? _c("li", { staticClass: "media-list" }, [
+          ? _c("li", [
               _c("a", { attrs: { href: "/medias/" + item.id_media } }, [
                 _c("img", { attrs: { src: item.poster, alt: item.title } }),
                 _vm._v(" "),
@@ -51666,9 +51718,10 @@ var render = function() {
     _vm._v(" "),
     _c(
       "ul",
+      { staticClass: "media-list" },
       _vm._l(_vm.choiceslist, function(item) {
         return item.type === "later"
-          ? _c("li", { staticClass: "media-list" }, [
+          ? _c("li", [
               _c("a", { attrs: { href: "/medias/" + item.id_media } }, [
                 _c("img", { attrs: { src: item.poster, alt: item.title } }),
                 _vm._v(" "),
@@ -51764,18 +51817,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["choice", "type"],
-  methods: {
-    destroy: function destroy(event) {
-      axios.delete("/choices/" + item.id_choice).then(function (response) {
-        // handle success
-        console.log(response);
-      }).catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-    }
-  }
+  props: ["choice", "type"]
 });
 
 /***/ }),
@@ -51797,20 +51839,23 @@ var render = function() {
     _vm._v(" "),
     _c(
       "ol",
+      { staticClass: "media-list" },
       _vm._l(_vm.choice, function(media) {
         return _c("li", [
-          _c("img", {
-            staticClass: "poster",
-            attrs: { src: media.poster, alt: media.title }
-          }),
-          _vm._v(" "),
           _c(
             "a",
             {
               staticClass: "media-title",
               attrs: { href: "/medias/" + media.id }
             },
-            [_c("p", [_vm._v(_vm._s(media.title))])]
+            [
+              _c("img", {
+                staticClass: "poster",
+                attrs: { src: media.poster, alt: media.title }
+              }),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(media.title))])
+            ]
           )
         ])
       }),
