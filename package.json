@@ -20,10 +20,6 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
-        "add": "^2.0.6",
-        "or": "^0.2.0",
-        "vue-owl-carousel": "^2.0.3",
-        "yarn": "^1.13.0"
         "vue-router": "^3.0.2",
         "vuex": "^3.0.1"
     }
