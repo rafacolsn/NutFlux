@@ -13,7 +13,8 @@
 @import 'nav-menu';
 
 // import users sass
-@import 'users';
+@import 'users-create';
+@import 'users-edit';
 
 .navbar-laravel {
   // background-color: #fff;
@@ -22,6 +23,7 @@
 
 body, html {
   background: $background;
+  font-family: "Alegreya", serif;
   a {
     color: $font-color;
   }
@@ -33,8 +35,14 @@ body, html {
 h1 {
   font-size: 1.3rem;
   font-weight: bold;
-  font-family: 'Robot Slab';
+  font-family: "Robot Slab";
   text-transform: uppercase;
   color: $second-color;
 }
 
+h2{
+  color: $third-color;
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  padding: 2rem;
+}

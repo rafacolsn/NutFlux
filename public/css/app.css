@@ -145,7 +145,7 @@ table {
           justify-content: space-between;
   padding: 2rem 5rem 1rem;
   font-size: 1.3rem;
-  font-family: Nunito;
+  font-family: 'Nunito';
   text-transform: uppercase;
   max-height: 2rem;
 }
@@ -225,36 +225,166 @@ table {
   display: block;
 }
 
-.create-user {
+.users-create {
   background-color: #282828;
-  margin: 10rem auto;
-  max-width: 70%;
+  margin: 4rem auto;
+  max-width: 60%;
   border-radius: 30px;
   font-size: 1.3rem;
+  min-height: 20rem;
 }
 
-.create-user h2 {
-  color: #E95065;
-  text-transform: uppercase;
-  font-family: Alegreya, sans-serif;
+.users-create p {
+  margin: 0 1em;
 }
 
-.create-user .img-avatar {
+.users-create .img-avatar {
   float: left;
-  padding: 1.5rem;
+  padding: 0.5rem;
+  margin-left: 1em;
+  margin-top: 0.5em;
 }
 
-.create-user .img-avatar img {
-  max-width: 3rem;
+.users-create img {
+  max-width: 4rem;
+  border-radius: 10px;
+  border: 2px solid #282828;
 }
 
-.create-user .img-avatar img:hover {
-  color: yellow;
+.users-create img:hover {
+  border: 2px solid #E95065;
 }
 
-.create-user form {
+.users-create form {
   max-width: 90%;
   margin: 0 auto;
+}
+
+.users-create form input {
+  border-radius: 10px;
+  background-color: #353535;
+  margin: 0.5rem;
+  height: 25px;
+  color: #C7B7B6;
+  padding: 0.2rem 0.4rem;
+  border: none;
+}
+
+.users-create .container-button {
+  clear: both;
+  padding: 1rem;
+}
+
+.users-create .btn {
+  border-radius: 28px;
+  background-color: #E95065;
+  width: 10em;
+  height: 3em;
+  text-align: center;
+  color: #353535;
+  border: none;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.users-create .btn:hover {
+  background: rgba(70, 189, 223, 0.9);
+  color: #353535;
+  font-style: bold;
+}
+
+.users-edit {
+  background-color: #282828;
+  margin: 4rem auto;
+  max-width: 60%;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  min-height: 20rem;
+}
+
+.users-edit p {
+  margin: 0 1em;
+}
+
+.users-edit .img-avatar {
+  float: left;
+  padding: 0.5rem;
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
+
+.users-edit img {
+  max-width: 4rem;
+  border-radius: 10px;
+  border: 2px solid #282828;
+}
+
+.users-edit img:hover {
+  border: 2px solid #E95065;
+}
+
+.users-edit #avatar-user:hover {
+  border: 2px solid #282828;
+}
+
+.users-edit form {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.users-edit form input {
+  border-radius: 10px;
+  background-color: #353535;
+  margin: 0.5rem;
+  height: 25px;
+  color: #C7B7B6;
+  padding: 0.2rem 0.4rem;
+  border: none;
+}
+
+.users-edit .container-button {
+  clear: both;
+  padding: 2rem;
+}
+
+.users-edit .btn {
+  border-radius: 28px;
+  background-color: #E95065;
+  width: 10em;
+  height: 3em;
+  text-align: center;
+  color: #353535;
+  border: none;
+  font-size: 0.8em;
+  text-decoration: none;
+  margin: 0 1em;
+}
+
+.users-edit .btn:hover {
+  background: rgba(70, 189, 223, 0.9);
+  color: #353535;
+  font-style: bold;
+}
+
+.users-edit .float {
+  float: left;
+  margin: 1em 0em;
+  padding: 0;
+}
+
+.users-edit .clear {
+  clear: both;
+}
+
+.users-edit a {
+  text-decoration: none;
+  color: #353535;
+}
+
+.users-edit a:hover {
+  background: rgba(70, 189, 223, 0.9);
+  color: #353535;
+  font-style: bold;
 }
 
 .navbar-laravel {
@@ -265,6 +395,7 @@ table {
 body,
 html {
   background: #4A4A4A;
+  font-family: "Alegreya", serif;
 }
 
 body a,
@@ -282,8 +413,15 @@ html a:active {
 h1 {
   font-size: 1.3rem;
   font-weight: bold;
-  font-family: 'Robot Slab';
+  font-family: "Robot Slab";
   text-transform: uppercase;
   color: rgba(70, 189, 223, 0.9);
+}
+
+h2 {
+  color: #E95065;
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  padding: 2rem;
 }
 

@@ -129,9 +129,6 @@ class AccountController extends Controller
         return redirect()->route('accounts.index')->with('success', 'This account has been deleted');
 
     }
-<<<<<<< HEAD
-}
-=======
 
     public function logout(Request $request)
     {
@@ -141,4 +138,3 @@ class AccountController extends Controller
         return redirect('/login');
     }
 }
->>>>>>> 251fef9ba439deaa2cca7b0e2981879311418c16
