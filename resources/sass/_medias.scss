@@ -37,13 +37,9 @@
         width: 10rem;
         object-fit: cover;
         border-radius: 5px;
-        transition: all .2s ease-in-out;
-        transform: scale(1);
+        
         margin-right: 3rem;
-        &:hover {
-            border : 3px solid $second-color;
-            transform: scale(1.1);
-        }
+        
     }   
     a {
         text-decoration: none;
@@ -57,10 +53,31 @@
             }
         }
     }
-    iframe {
-        border-radius: 8px;
-    }
-    .media-trailer-wrap {
+    .row1 {
         display: flex;
+    }
+    .row1-column1 {
+        img {
+            float: left;
+        }
+        .summary {
+            padding-right: 2rem;
+        }
+    }
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
+    }
+    .top {
+        margin-top: 2rem;
+    }
+    .trailer {
+        width: 25rem;
+        height: 14rem;
+        border-radius: 8px;
+        overflow: hidden;
+        // float: left;
     }
 }

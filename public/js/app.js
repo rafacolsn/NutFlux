@@ -49618,6 +49618,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['media']
@@ -49641,84 +49653,81 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "media-card" }, [
-      _c("div", { staticClass: "media-trailer-wrap" }, [
-        _c("h2", [
-          _vm._v(
-            _vm._s(_vm.media.title) + " ( " + _vm._s(_vm.media.year) + " ) "
-          )
+      _c("div", { staticClass: "row1" }, [
+        _c("div", { staticClass: "row1-column1" }, [
+          _c("h2", [
+            _vm._v(
+              _vm._s(_vm.media.title) + " ( " + _vm._s(_vm.media.year) + " ) "
+            )
+          ]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: _vm.media.poster, alt: _vm.media.title } }),
+          _vm._v(" "),
+          _c("div", { staticClass: "summary" }, [
+            _c("h3", [_vm._v("Summary")]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.media.summary))])
+          ])
         ]),
         _vm._v(" "),
-        _vm.media.is_serie
-          ? _c("p", [_vm._v("This media is part of a TV show")])
-          : _vm._e(),
-        _vm._v(" "),
-        _c("img", { attrs: { src: _vm.media.poster, alt: _vm.media.title } }),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c("iframe", {
-          attrs: {
-            width: "500",
-            height: "281",
-            src: "https://www.youtube.com/embed/" + _vm.media.trailer,
-            frameborder: "0",
-            allowfullscreen: ""
-          }
-        }),
-        _vm._v(" "),
-        _c("div", [
-          _c("h3", [_vm._v("Summary")]),
-          _vm._v(
-            "\n                " + _vm._s(_vm.media.summary) + "\n            "
-          )
+        _c("div", { staticClass: "row1-column2" }, [
+          _c("h2", [_vm._v("Trailer")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "trailer" }, [
+            _c("iframe", {
+              attrs: {
+                width: "400",
+                height: "225",
+                src: "https://www.youtube.com/embed/" + _vm.media.trailer,
+                frameborder: "0",
+                allowfullscreen: ""
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "left top" }, [
+            _c("h3", [_vm._v("Director :")]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.media.director))])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "right top" }, [
+            _c("h3", [_vm._v("Producer :")]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.media.producer))])
+          ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "actors-choices-wrap" }, [
-        _c("ul", [
-          _c("li", [_vm._v("Year: " + _vm._s(_vm.media.year))]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Director: " + _vm._s(_vm.media.director))]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Producer: " + _vm._s(_vm.media.producer))]),
-          _vm._v(" "),
-          _vm.media.actors
-            ? _c("li", [
-                _vm._v("Actors:\n                    "),
-                _c(
-                  "ul",
-                  _vm._l(_vm.media.actors, function(actor) {
-                    return _c("li", [
-                      _c("a", { attrs: { href: "/actors/" + actor.id } }, [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(actor.firstname) +
-                            " " +
-                            _vm._s(actor.lastname) +
-                            "\n                            "
-                        )
-                      ])
-                    ])
-                  }),
-                  0
-                )
+      _c("div", { staticClass: "actors" }, [
+        _vm.media.actors ? _c("h2", [_vm._v("Actors :")]) : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "ul",
+          { staticClass: "actors-list" },
+          _vm._l(_vm.media.actors, function(actor) {
+            return _c("li", [
+              _c("a", { attrs: { href: "/actors/" + actor.id } }, [
+                _vm._v(
+                  "\n                                " +
+                    _vm._s(actor.firstname) +
+                    " " +
+                    _vm._s(actor.lastname) +
+                    "\n                                "
+                ),
+                _c("img", {
+                  attrs: { src: actor.picture, alt: actor.lastname }
+                })
               ])
-            : _vm._e()
-        ])
+            ])
+          }),
+          0
+        )
       ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "trailer" }, [
-      _c("h2", [_vm._v("Trailer")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
