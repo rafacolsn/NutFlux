@@ -30,6 +30,9 @@ body, html {
   a:hover, a:active {
     color: $nutflux-color;
   }
+  input {
+    color: $font-color;
+  }
 }
 
 h1, h2, .list-title {

@@ -314,6 +314,33 @@ table {
   padding-right: 2rem;
 }
 
+.media-card .trailer {
+  width: 25rem;
+  height: 14rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.media-card .row2 h2 {
+  margin-bottom: 2rem;
+}
+
+.media-card .row2 p {
+  padding: 0 2rem 1rem 0;
+  text-align: left;
+}
+
+.media-card .row2 .actors-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.media-card .row2 .actors-list img {
+  height: 8rem;
+  width: 5rem;
+}
+
 .media-card .left {
   float: left;
 }
@@ -324,13 +351,6 @@ table {
 
 .media-card .top {
   margin-top: 2rem;
-}
-
-.media-card .trailer {
-  width: 25rem;
-  height: 14rem;
-  border-radius: 8px;
-  overflow: hidden;
 }
 
 .navbar-laravel {
@@ -355,6 +375,11 @@ body a:active,
 html a:hover,
 html a:active {
   color: #E57255;
+}
+
+body input,
+html input {
+  color: #9FA3A4;
 }
 
 h1,

@@ -53,7 +53,7 @@
             }
         }
     }
-    .row1 {
+    .row1, {
         display: flex;
     }
     .row1-column1 {
@@ -62,6 +62,29 @@
         }
         .summary {
             padding-right: 2rem;
+        }
+    }
+    .trailer {
+        width: 25rem;
+        height: 14rem;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .row2 {
+        h2 {
+            margin-bottom: 2rem;
+        }
+        p {
+            padding : 0 2rem 1rem 0;
+            text-align: left;
+        }
+
+        .actors-list {
+            display: flex;
+            img {
+                height: 8rem;
+                width: 5rem;
+            }
         }
     }
     .left {
@@ -73,11 +96,5 @@
     .top {
         margin-top: 2rem;
     }
-    .trailer {
-        width: 25rem;
-        height: 14rem;
-        border-radius: 8px;
-        overflow: hidden;
-        // float: left;
-    }
+    
 }
