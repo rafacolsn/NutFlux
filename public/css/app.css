@@ -135,6 +135,60 @@ table {
   border-spacing: 0;
 }
 
+body,
+html {
+  background: #4A4A4A;
+  font-family: Nunito;
+  color: #9FA3A4;
+}
+
+body a,
+html a {
+  color: #9FA3A4;
+}
+
+body a:hover,
+body a:active,
+html a:hover,
+html a:active {
+  color: #E57255;
+}
+
+body input,
+html input {
+  color: #9FA3A4;
+}
+
+h1,
+h2,
+.list-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0 3rem 0;
+}
+
+h1,
+.list-title {
+  font-family: Alegrey;
+  color: rgba(70, 189, 223, 0.9);
+}
+
+h2 {
+  font-family: Nunito;
+  color: #E95065;
+}
+
+h3 {
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.content {
+  width: 80%;
+  margin: 3rem auto;
+}
+
 .nav-menu {
   background-color: #282828;
   display: -webkit-box;
@@ -353,62 +407,58 @@ table {
   margin-top: 2rem;
 }
 
-.navbar-laravel {
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.choices-form-wrapper {
+  margin: 0;
+  padding: 0;
+  max-width: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-body,
-html {
-  background: #4A4A4A;
-  font-family: Nunito;
+.choices-form {
+  display: inline-block;
+  text-align: center;
+  width: 3.2rem;
+  margin: 1em 0;
+}
+
+.choices {
+  font-size: 1rem;
+  padding: 0;
+  background-color: inherit;
   color: #9FA3A4;
+  border: none;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 
-body a,
-html a {
-  color: #9FA3A4;
+.choices:hover,
+.choices:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 
-body a:hover,
-body a:active,
-html a:hover,
-html a:active {
-  color: #E57255;
-}
-
-body input,
-html input {
-  color: #9FA3A4;
-}
-
-h1,
-h2,
-.list-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 0 0 3rem 0;
-}
-
-h1,
-.list-title {
-  font-family: Alegrey;
-  color: rgba(70, 189, 223, 0.9);
-}
-
-h2 {
-  font-family: Nunito;
+.favourites:hover,
+.favourites:focus,
+.favourites-delete {
   color: #E95065;
 }
 
-h3 {
-  font-weight: bold;
-  padding-bottom: 1rem;
+.later:hover,
+.later:focus,
+.later-delete {
+  color: rgba(70, 189, 223, 0.9);
 }
 
-.content {
-  width: 80%;
-  margin: 3rem auto;
+.watched:hover,
+.watched:focus,
+.watched-delete {
+  color: #E57255;
 }
 
