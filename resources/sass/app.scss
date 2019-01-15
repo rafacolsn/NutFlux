@@ -15,10 +15,8 @@
 //import sass for medias
 @import 'medias';
 
-.navbar-laravel {
-  // background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+//import sass for medias
+@import 'choices-buttons';
 
 body, html {
   background: $background;
@@ -39,7 +37,7 @@ h1, h2, .list-title {
   font-size: 1.3rem;
   font-weight: bold;
   text-transform: uppercase;
-  margin: 0 0 3rem 0; 
+  margin: 0 0 3rem 0;
 }
 h1, .list-title {
   font-family: Alegrey;

@@ -1,13 +1,13 @@
 <template>
     <div class="content">
-        <h1>Home > 
+        <h1>Home >
                 <span v-if="media.is_serie">TV Show</span>
-                <span v-if="media.is_serie == 0">Movie</span> 
+                <span v-if="media.is_serie == 0">Movie</span>
                 > {{ media.title }}
             </h1>
         <div class="media-card">
-            
-            
+
+
             <div class="row1">
                 <div class="row1-column1">
                     <h2>{{ media.title }} ( {{ media.year }} ) </h2>
@@ -16,9 +16,9 @@
                         <h3>Summary</h3>
                         <p>{{ media.summary }}</p>
                     </div>
-                </div>    
-                
-                
+                </div>
+
+
                 <div class="row1-column2">
                     <h2>Trailer</h2>
                     <div class="trailer">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row2">
                     <h2 v-if="media.actors">Actors :</h2>
                         <ul class="actors-list">
@@ -95,8 +95,8 @@
                     <button type="submit" class="choices watched"><span class="far fa-eye"></span></button>
                 </form>
             </p>
-            </div>      
-                
+            </div>
+
             </div>
         </div>
     </div>
@@ -104,7 +104,7 @@
 
 <script>
     export default {
-        props: ['media'],
+        props: ['media', 'choices', 'user', 'csrf'],
         methods: {
         isInChoices: function ( mediaId, type ) {
             // Check if the media of ID mediaId is in the users choices

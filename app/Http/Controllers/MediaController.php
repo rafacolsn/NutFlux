@@ -85,11 +85,20 @@ class MediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
+        if ( !$request->session()->has('user') ) {
+            return redirect('/users')->with('error', 'You have to choose your profile to see your choices');
+        }
+        $user =  $request->session()->get('user');
+        $choices = DB::table('choices')
+                        ->join('medias', 'medias.id', '=', 'choices.media_id')
+                        ->select('choices.id as id', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as media_id')
+                        ->where('choices.user_id', '=', $user->id)
+                        ->get();
         $mediasObj = Media::find($id);
         $mediasObj->actors = $mediasObj->actors()->get();
-        return view('medias.show', compact('mediasObj'));
+        return view('medias.show', compact('mediasObj', 'choices', 'user'));
     }
 
     /**
