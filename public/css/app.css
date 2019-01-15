@@ -126,7 +126,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -137,12 +137,8 @@ table {
 
 .nav-menu {
   background-color: #282828;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding: 2rem 5rem 1rem;
   font-size: 1.3rem;
   font-family: Nunito;
@@ -229,11 +225,8 @@ table {
 }
 
 .media-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .media-list img {
@@ -242,8 +235,7 @@ table {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   -webkit-transform: scale(1);
           transform: scale(1);
   margin-right: 3rem;
@@ -301,8 +293,6 @@ table {
 }
 
 .media-card .row1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -334,8 +324,7 @@ table {
 }
 
 .navbar-laravel {
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 body,
