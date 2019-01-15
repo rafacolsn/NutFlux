@@ -48000,7 +48000,7 @@ var content = __webpack_require__(50);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("88294e7e", content, false, {});
+var update = __webpack_require__(5)("8fb5d158", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -48024,7 +48024,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.container {\r\n  color: #fff;\n}\na {\r\n  color: #fff;\n}\nli {\r\n  list-style-type: none;\n}\nimg {\r\n  max-width: 10%;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.container {\n  color: #fff;\n}\na {\n  color: #fff;\n}\nli {\n  list-style-type: none;\n}\nimg {\n  max-width: 10%;\n}\n\n", ""]);
 
 // exports
 
@@ -48302,7 +48302,7 @@ var content = __webpack_require__(56);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("3e5bceab", content, false, {});
+var update = __webpack_require__(5)("257671b8", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -48326,7 +48326,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.container {\r\n  color: #fff;\n}\na {\r\n  color: #000;\n}\nli {\r\n  list-style-type: none;\n}\nimg {\r\n  max-width: 10%;\n}\r\n", ""]);
+exports.push([module.i, "\n.container {\n  color: #fff;\n}\na {\n  color: #000;\n}\nli {\n  list-style-type: none;\n}\nimg {\n  max-width: 10%;\n}\n", ""]);
 
 // exports
 
@@ -48646,7 +48646,7 @@ var content = __webpack_require__(61);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("19ee6500", content, false, {});
+var update = __webpack_require__(5)("b6270e66", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -48670,7 +48670,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\nimg {\r\n  max-width: 10%;\n}\r\n", ""]);
+exports.push([module.i, "\nimg {\n  max-width: 10%;\n}\n", ""]);
 
 // exports
 
@@ -49618,9 +49618,87 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['media']
+    props: ['media'],
+    methods: {
+        isInChoices: function isInChoices(mediaId, type) {
+            // Check if the media of ID mediaId is in the users choices
+            // AND if the media is of the given type in the users choices
+            // Return id of user choice matching criterias or false
+            var choiceId = false;
+            this.choices.forEach(function (choice) {
+                console.log(choice);
+                if (choice.media_id == mediaId && choice.type == type) {
+                    choiceId = choice.id;
+                    console.log('match !');
+                }
+            });
+            return choiceId;
+        }
+    }
 });
 
 /***/ }),
@@ -49641,70 +49719,234 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "media-card" }, [
-      _c("div", { staticClass: "media-trailer-wrap" }, [
-        _c("h2", [
-          _vm._v(
-            _vm._s(_vm.media.title) + " ( " + _vm._s(_vm.media.year) + " ) "
-          )
+      _c("div", { staticClass: "row1" }, [
+        _c("div", { staticClass: "row1-column1" }, [
+          _c("h2", [
+            _vm._v(
+              _vm._s(_vm.media.title) + " ( " + _vm._s(_vm.media.year) + " ) "
+            )
+          ]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: _vm.media.poster, alt: _vm.media.title } }),
+          _vm._v(" "),
+          _c("div", { staticClass: "summary" }, [
+            _c("h3", [_vm._v("Summary")]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.media.summary))])
+          ])
         ]),
         _vm._v(" "),
-        _vm.media.is_serie
-          ? _c("p", [_vm._v("This media is part of a TV show")])
-          : _vm._e(),
-        _vm._v(" "),
-        _c("img", { attrs: { src: _vm.media.poster, alt: _vm.media.title } }),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c("iframe", {
-          attrs: {
-            width: "500",
-            height: "281",
-            src: "https://www.youtube.com/embed/" + _vm.media.trailer,
-            frameborder: "0",
-            allowfullscreen: ""
-          }
-        }),
-        _vm._v(" "),
-        _c("div", [
-          _c("h3", [_vm._v("Summary")]),
-          _vm._v(
-            "\n                " + _vm._s(_vm.media.summary) + "\n            "
-          )
+        _c("div", { staticClass: "row1-column2" }, [
+          _c("h2", [_vm._v("Trailer")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "trailer" }, [
+            _c("iframe", {
+              attrs: {
+                width: "400",
+                height: "225",
+                src: "https://www.youtube.com/embed/" + _vm.media.trailer,
+                frameborder: "0",
+                allowfullscreen: ""
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "left top" }, [
+            _c("h3", [_vm._v("Director :")]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.media.director))])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "right top" }, [
+            _c("h3", [_vm._v("Producer :")]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.media.producer))])
+          ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "actors-choices-wrap" }, [
-        _c("ul", [
-          _c("li", [_vm._v("Year: " + _vm._s(_vm.media.year))]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Director: " + _vm._s(_vm.media.director))]),
-          _vm._v(" "),
-          _c("li", [_vm._v("Producer: " + _vm._s(_vm.media.producer))]),
-          _vm._v(" "),
-          _vm.media.actors
-            ? _c("li", [
-                _vm._v("Actors:\n                    "),
-                _c(
-                  "ul",
-                  _vm._l(_vm.media.actors, function(actor) {
-                    return _c("li", [
-                      _c("a", { attrs: { href: "/actors/" + actor.id } }, [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(actor.firstname) +
-                            " " +
-                            _vm._s(actor.lastname) +
-                            "\n                            "
-                        )
-                      ])
-                    ])
-                  }),
-                  0
-                )
+      _c("div", { staticClass: "row2" }, [
+        _vm.media.actors ? _c("h2", [_vm._v("Actors :")]) : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "ul",
+          { staticClass: "actors-list" },
+          _vm._l(_vm.media.actors, function(actor) {
+            return _c("li", [
+              _c("a", { attrs: { href: "/actors/" + actor.id } }, [
+                _c("p", [
+                  _vm._v(_vm._s(actor.firstname) + " " + _vm._s(actor.lastname))
+                ]),
+                _vm._v(" "),
+                _c("img", {
+                  attrs: { src: actor.picture, alt: actor.lastname }
+                })
               ])
-            : _vm._e()
-        ])
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "choices-form-wrapper" }),
+        _vm.isInChoices(_vm.media.id, "favourites")
+          ? _c(
+              "form",
+              {
+                staticClass: "choices-form",
+                attrs: {
+                  action:
+                    "/choices/" + _vm.isInChoices(_vm.media.id, "favourites"),
+                  method: "post"
+                }
+              },
+              [
+                _c("input", {
+                  attrs: { type: "hidden", name: "_method", value: "DELETE" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: _vm.csrf }
+                }),
+                _vm._v(" "),
+                _vm._m(0)
+              ]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        !_vm.isInChoices(_vm.media.id, "favourites")
+          ? _c(
+              "form",
+              {
+                staticClass: "choices-form",
+                attrs: { action: "/choices", method: "post" }
+              },
+              [
+                _c("input", {
+                  attrs: { type: "hidden", name: "mediaId" },
+                  domProps: { value: _vm.media.id }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "type", value: "favourites" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: _vm.csrf }
+                }),
+                _vm._v(" "),
+                _vm._m(1)
+              ]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.isInChoices(_vm.media.id, "later")
+          ? _c(
+              "form",
+              {
+                staticClass: "choices-form",
+                attrs: {
+                  action: "/choices/" + _vm.isInChoices(_vm.media.id, "later"),
+                  method: "post"
+                }
+              },
+              [
+                _c("input", {
+                  attrs: { type: "hidden", name: "_method", value: "DELETE" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: _vm.csrf }
+                }),
+                _vm._v(" "),
+                _vm._m(2)
+              ]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        !_vm.isInChoices(_vm.media.id, "later")
+          ? _c(
+              "form",
+              {
+                staticClass: "choices-form",
+                attrs: { action: "/choices", method: "post" }
+              },
+              [
+                _c("input", {
+                  attrs: { type: "hidden", name: "mediaId" },
+                  domProps: { value: _vm.media.id }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "type", value: "later" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: _vm.csrf }
+                }),
+                _vm._v(" "),
+                _vm._m(3)
+              ]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.isInChoices(_vm.media.id, "watched")
+          ? _c(
+              "form",
+              {
+                staticClass: "choices-form",
+                attrs: {
+                  action:
+                    "/choices/" + _vm.isInChoices(_vm.media.id, "watched"),
+                  method: "post"
+                }
+              },
+              [
+                _c("input", {
+                  attrs: { type: "hidden", name: "_method", value: "DELETE" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: _vm.csrf }
+                }),
+                _vm._v(" "),
+                _vm._m(4)
+              ]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        !_vm.isInChoices(_vm.media.id, "watched")
+          ? _c(
+              "form",
+              {
+                staticClass: "choices-form",
+                attrs: { action: "/choices", method: "post" }
+              },
+              [
+                _c("input", {
+                  attrs: { type: "hidden", name: "mediaId" },
+                  domProps: { value: _vm.media.id }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "type", value: "watched" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: _vm.csrf }
+                }),
+                _vm._v(" "),
+                _vm._m(5)
+              ]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _c("p")
       ])
     ])
   ])
@@ -49714,9 +49956,61 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "trailer" }, [
-      _c("h2", [_vm._v("Trailer")])
-    ])
+    return _c(
+      "button",
+      { staticClass: "choices favourites-delete", attrs: { type: "submit" } },
+      [_c("span", { staticClass: "fas fa-heart" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "choices favourites", attrs: { type: "submit" } },
+      [_c("span", { staticClass: "far fa-heart" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "choices later-delete", attrs: { type: "submit" } },
+      [_c("span", { staticClass: "fas fa-clock" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "choices later", attrs: { type: "submit" } },
+      [_c("span", { staticClass: "far fa-clock" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "choices watched-delete", attrs: { type: "submit" } },
+      [_c("span", { staticClass: "fas fa-check" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "choices watched", attrs: { type: "submit" } },
+      [_c("span", { staticClass: "far fa-eye" })]
+    )
   }
 ]
 render._withStripped = true
@@ -52253,6 +52547,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['keyword', 'results']
@@ -52266,30 +52562,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "content" }, [
     _c("h1", [_vm._v('Search results for "' + _vm._s(_vm.keyword) + '"')]),
     _vm._v(" "),
     _vm.results.length > 0
-      ? _c("div", [
+      ? _c("div", { staticClass: "media-card" }, [
           _c(
             "ul",
             _vm._l(_vm.results, function(result) {
               return _c("li", [
                 result.title
-                  ? _c("div", [
-                      _c("img", {
-                        attrs: { src: result.poster, alt: result.title }
-                      }),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("a", { attrs: { href: "/medias/" + result.id } }, [
+                  ? _c("div", { staticClass: "media-list" }, [
+                      _c("a", { attrs: { href: "/medias/" + result.id } }, [
+                        _c("h2", [
                           _vm._v(
                             _vm._s(result.title) +
                               " (" +
                               _vm._s(result.year) +
                               ")"
                           )
-                        ])
+                        ]),
+                        _vm._v(" "),
+                        _c("img", {
+                          attrs: { src: result.poster, alt: result.title }
+                        })
                       ]),
                       _vm._v(" "),
                       _c("p", [_vm._v(_vm._s(result.summary))])
@@ -52297,7 +52593,7 @@ var render = function() {
                   : _vm._e(),
                 _vm._v(" "),
                 result.lastname
-                  ? _c("div", [
+                  ? _c("div", { staticClass: "actors-list" }, [
                       _c("img", {
                         attrs: {
                           src: result.picture,

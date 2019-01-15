@@ -1,11 +1,6 @@
 .media-list {
     display: flex;
     flex-wrap: wrap;
-    .media-list-item{
-        &:hover {
-            color: $nutflux-color;
-        }
-    }
     img {
         height: 15rem;
         width: 10rem;
@@ -18,7 +13,7 @@
             border : 3px solid $second-color;
             transform: scale(1.1);
         }
-    }
+    }   
     a {
         text-decoration: none;
         p {
@@ -26,6 +21,9 @@
             text-align: center;
             padding: 2rem 0;
             max-width: 10rem;
+            &:hover {
+                color: $nutflux-color;
+            }
         }
     }
 }
@@ -39,14 +37,10 @@
         width: 10rem;
         object-fit: cover;
         border-radius: 5px;
-        transition: all .2s ease-in-out;
-        transform: scale(1);
+        
         margin-right: 3rem;
-        &:hover {
-            border : 3px solid $second-color;
-            transform: scale(1.1);
-        }
-    }
+        
+    }   
     a {
         text-decoration: none;
         p {
@@ -59,10 +53,48 @@
             }
         }
     }
-    iframe {
-        border-radius: 8px;
-    }
-    .media-trailer-wrap {
+    .row1, {
         display: flex;
     }
+    .row1-column1 {
+        img {
+            float: left;
+        }
+        .summary {
+            padding-right: 2rem;
+        }
+    }
+    .trailer {
+        width: 25rem;
+        height: 14rem;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .row2 {
+        h2 {
+            margin-bottom: 2rem;
+        }
+        p {
+            padding : 0 2rem 1rem 0;
+            text-align: left;
+        }
+
+        .actors-list {
+            display: flex;
+            img {
+                height: 8rem;
+                width: 5rem;
+            }
+        }
+    }
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
+    }
+    .top {
+        margin-top: 2rem;
+    }
+    
 }
