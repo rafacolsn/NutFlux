@@ -407,6 +407,12 @@ h3 {
   margin-top: 2rem;
 }
 
+.actors-choices-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .choices-form-wrapper {
   margin: 0;
   padding: 0;
@@ -424,6 +430,14 @@ h3 {
   text-align: center;
   width: 3.2rem;
   margin: 1em 0;
+}
+
+.choices-form-show {
+  margin-bottom: 1rem;
+}
+
+.choices-form-card-wrapper {
+  margin: 0 auto;
 }
 
 .choices {
@@ -460,5 +474,11 @@ h3 {
 .watched:focus,
 .watched-delete {
   color: #E57255;
+}
+
+.text-button {
+  font-family: Alegrey;
+  color: rgba(70, 189, 223, 0.9);
+  margin-left: 1rem;
 }
 

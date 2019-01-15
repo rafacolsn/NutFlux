@@ -36,67 +36,67 @@
             </div>
 
             <div class="row2">
-                    <h2 v-if="media.actors">Actors :</h2>
-                        <ul class="actors-list">
-                            <li v-for="actor in media.actors">
-                                <a :href="'/actors/' + actor.id">
-                                    <p>{{ actor.firstname }} {{ actor.lastname }}</p>
-                                    <img :src="actor.picture" :alt="actor.lastname"/>
-                                </a>
-                            </li>
-                        </ul>
-                    <p class="choices-form-wrapper">
-                <!-- Favourites -->
-                <form class="choices-form" v-if="isInChoices( media.id, 'favourites' )"
-                    :action="'/choices/' + isInChoices( media.id, 'favourites' )"
-                    method="post" >
-                    <input type="hidden" name="_method" value="DELETE">
-                    <input type="hidden" name="_token" :value="csrf">
-                    <button type="submit" class="choices favourites-delete"><span class="fas fa-heart"></span></button>
-                </form>
-                <form class="choices-form" v-if="!isInChoices( media.id, 'favourites' )"
-                    action="/choices"
-                    method="post" >
-                    <input type="hidden" name="mediaId" :value="media.id">
-                    <input type="hidden" name="type" value="favourites">
-                    <input type="hidden" name="_token" :value="csrf">
-                    <button type="submit" class="choices favourites"><span class="far fa-heart"></span></button>
-                </form>
-                <!-- To see later -->
-                <form class="choices-form" v-if="isInChoices( media.id, 'later' )"
-                    :action="'/choices/' + isInChoices( media.id, 'later' )"
-                    method="post" >
-                    <input type="hidden" name="_method" value="DELETE">
-                    <input type="hidden" name="_token" :value="csrf">
-                    <button type="submit" class="choices later-delete"><span class="fas fa-clock"></span></button>
-                </form>
-                <form class="choices-form" v-if="!isInChoices( media.id, 'later' )"
-                    action="/choices"
-                    method="post" >
-                    <input type="hidden" name="mediaId" :value="media.id">
-                    <input type="hidden" name="type" value="later">
-                    <input type="hidden" name="_token" :value="csrf">
-                    <button type="submit" class="choices later"><span class="far fa-clock"></span></button>
-                </form>
-                <!-- Watched -->
-                <form class="choices-form" v-if="isInChoices( media.id, 'watched' )"
-                    :action="'/choices/' + isInChoices( media.id, 'watched' )"
-                    method="post" >
-                    <input type="hidden" name="_method" value="DELETE">
-                    <input type="hidden" name="_token" :value="csrf">
-                    <button type="submit" class="choices watched-delete"><span class="fas fa-check"></span></button>
-                </form>
-                <form class="choices-form" v-if="!isInChoices( media.id, 'watched' )"
-                    action="/choices"
-                    method="post" >
-                    <input type="hidden" name="mediaId" :value="media.id">
-                    <input type="hidden" name="type" value="watched">
-                    <input type="hidden" name="_token" :value="csrf">
-                    <button type="submit" class="choices watched"><span class="far fa-eye"></span></button>
-                </form>
-            </p>
-            </div>
-
+                <h2 v-if="media.actors">Actors :</h2>
+                <div class="actors-choices-wrapper">
+                    <ul class="actors-list">
+                        <li v-for="actor in media.actors">
+                            <a :href="'/actors/' + actor.id">
+                                <p>{{ actor.firstname }} {{ actor.lastname }}</p>
+                                <img :src="actor.picture" :alt="actor.lastname"/>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="choices-form-card-wrapper">
+                        <!-- Favourites -->
+                        <form class="choices-form-show" v-if="isInChoices( media.id, 'favourites' )"
+                            :action="'/choices/' + isInChoices( media.id, 'favourites' )"
+                            method="post" >
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" :value="csrf">
+                            <button type="submit" class="choices favourites-delete"><span class="fas fa-heart"><span class="text-button">Favourite</span></span></button>
+                        </form>
+                        <form class="choices-form-show" v-if="!isInChoices( media.id, 'favourites' )"
+                            action="/choices"
+                            method="post" >
+                            <input type="hidden" name="mediaId" :value="media.id">
+                            <input type="hidden" name="type" value="favourites">
+                            <input type="hidden" name="_token" :value="csrf">
+                            <button type="submit" class="choices favourites"><span class="far fa-heart"><span class="text-button">Favourite</span></span></button>
+                        </form>
+                        <!-- To see later -->
+                        <form class="choices-form-show" v-if="isInChoices( media.id, 'later' )"
+                            :action="'/choices/' + isInChoices( media.id, 'later' )"
+                            method="post" >
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" :value="csrf">
+                            <button type="submit" class="choices later-delete"><span class="fas fa-clock"><span class="text-button">To Watch Later</span></span></button>
+                        </form>
+                        <form class="choices-form-show" v-if="!isInChoices( media.id, 'later' )"
+                            action="/choices"
+                            method="post" >
+                            <input type="hidden" name="mediaId" :value="media.id">
+                            <input type="hidden" name="type" value="later">
+                            <input type="hidden" name="_token" :value="csrf">
+                            <button type="submit" class="choices later"><span class="far fa-clock"><span class="text-button">To Watch Later</span></span></button>
+                        </form>
+                        <!-- Watched -->
+                        <form class="choices-form-show" v-if="isInChoices( media.id, 'watched' )"
+                            :action="'/choices/' + isInChoices( media.id, 'watched' )"
+                            method="post" >
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" :value="csrf">
+                            <button type="submit" class="choices watched-delete"><span class="fas fa-check"><span class="text-button">Seen</span></span></button>
+                        </form>
+                        <form class="choices-form-show" v-if="!isInChoices( media.id, 'watched' )"
+                            action="/choices"
+                            method="post" >
+                            <input type="hidden" name="mediaId" :value="media.id">
+                            <input type="hidden" name="type" value="watched">
+                            <input type="hidden" name="_token" :value="csrf">
+                            <button type="submit" class="choices watched"><span class="far fa-eye"><span class="text-button">Seen</span></span></button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
