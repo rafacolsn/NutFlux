@@ -27,13 +27,13 @@
 }
 
 .favourites:hover, .favourites:focus, .favourites-delete{
-    color: $favourites-color;
+    color: $third-color;
 }
 
 .later:hover, .later:focus, .later-delete{
-    color: $later-color;
+    color: $second-color;
 }
 
 .watched:hover, .watched:focus, .watched-delete{
-    color: $watched-color;
+    color: $nutflux-color;
 }

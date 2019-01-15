@@ -9,15 +9,6 @@
 // Variables
 @import 'variables';
 
-// import nav-menu sass
-@import 'nav-menu';
-
-//import sass for medias
-@import 'medias';
-
-//import sass for medias
-@import 'choices-buttons';
-
 body, html {
   background: $background;
   font-family: Nunito;
@@ -55,3 +46,11 @@ h3 {
   width: 80%;
   margin: 3rem auto;
 }
+
+// import nav-menu sass
+@import 'nav-menu';
+
+//import sass for medias
+@import 'medias';
+
+@import 'choices-buttons';
