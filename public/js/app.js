@@ -48000,7 +48000,7 @@ var content = __webpack_require__(50);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("88294e7e", content, false, {});
+var update = __webpack_require__(5)("8fb5d158", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -48024,7 +48024,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.container {\r\n  color: #fff;\n}\na {\r\n  color: #fff;\n}\nli {\r\n  list-style-type: none;\n}\nimg {\r\n  max-width: 10%;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.container {\n  color: #fff;\n}\na {\n  color: #fff;\n}\nli {\n  list-style-type: none;\n}\nimg {\n  max-width: 10%;\n}\n\n", ""]);
 
 // exports
 
@@ -48302,7 +48302,7 @@ var content = __webpack_require__(56);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("3e5bceab", content, false, {});
+var update = __webpack_require__(5)("257671b8", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -48326,7 +48326,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.container {\r\n  color: #fff;\n}\na {\r\n  color: #000;\n}\nli {\r\n  list-style-type: none;\n}\nimg {\r\n  max-width: 10%;\n}\r\n", ""]);
+exports.push([module.i, "\n.container {\n  color: #fff;\n}\na {\n  color: #000;\n}\nli {\n  list-style-type: none;\n}\nimg {\n  max-width: 10%;\n}\n", ""]);
 
 // exports
 
@@ -48646,7 +48646,7 @@ var content = __webpack_require__(61);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("19ee6500", content, false, {});
+var update = __webpack_require__(5)("b6270e66", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -48670,7 +48670,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\nimg {\r\n  max-width: 10%;\n}\r\n", ""]);
+exports.push([module.i, "\nimg {\n  max-width: 10%;\n}\n", ""]);
 
 // exports
 
