@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Session;
 
 
 use App\Account;
+use App\User;
 
 use Illuminate\Support\Facades\Hash;
 
-use App\User;
 class AccountController extends Controller
 {
     /**
@@ -43,19 +43,28 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $this -> validate( $request, [
             'email' => 'required',
             'password' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'avatar' => 'required'
+        ] );
 
-        ]);
+        $account = new Account( [
+            'email' => $request -> get( 'email' ),
+            'password' => Hash::make( $request -> get( 'password' ) ),
+        ] );
+        $account -> save();
 
-        $account = new Account([
-            'email' => $request->get('email'),
-            'password'=> Hash::make($request->get('password')),
-
-        ]);
-        $account->save();
-        return redirect('/accounts')->with('success', 'Account has been added');
+        $user = new User( [
+            'firstname' => $request -> get( 'firstname' ),
+            'lastname' => $request -> get( 'lastname' ),
+            'avatar' => $request -> get( 'avatar' ),
+            'account_id' => $account -> id
+        ] );
+        $user -> save();
+        return redirect( '/accounts' ) -> with( 'success', 'Account has been added' );
     }
 
 
