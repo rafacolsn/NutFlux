@@ -23,7 +23,7 @@ class SearchController extends Controller
         $results = [];
         $keyword = $_GET[ 'keyword' ];
 
-        if ( !isset( $_GET[ 'keyword' ] ) || $_GET[ 'keyword' ] === '' ) {
+        if ( !isset( $_GET[ 'keyword' ] ) || $_GET[ 'keyword' ] === '' || $_GET[ 'keyword' ] === ' ' ) {
             //if keyword is empty
             return view( 'search', compact( 'keyword', 'results' ) );
         }
@@ -48,6 +48,8 @@ class SearchController extends Controller
             }
         } ) -> get();
 
+        //dd($actors);
+
         $mediasSecondary = Media::where( function ( $query ) use ( $keywords ) {
             foreach ( $keywords as $word ) {
                 $query -> where( 'summary', 'like', '%' . $word . '%' );
@@ -60,6 +62,7 @@ class SearchController extends Controller
                 $query -> orWhere( 'year', '=', intval( $word ) );
             }
         } ) -> union( $mediasSecondary ) -> get();
+
 
         foreach( $actors as $item ) {
             $results[] = $item;
