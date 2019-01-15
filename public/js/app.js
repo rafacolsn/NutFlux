@@ -51385,13 +51385,54 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["csrf"],
   data: function data() {
     return {
       email: "",
-      password: ""
+      password: "",
+      firstname: "",
+      lastname: "",
+      avatar: "../../../images/dog.jpg"
     };
   },
 
@@ -51415,79 +51456,303 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("Create an account")]),
-    _vm._v(" "),
-    _c("form", { attrs: { method: "post", action: "/register/" } }, [
-      _c("label", { attrs: { for: "email" } }, [_vm._v("Email:")]),
+    _c("div", { staticClass: "content-wrapper" }, [
+      _c("p", { staticClass: "site-title" }, [_vm._v("Nutflux")]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
+      _c("div", { staticClass: "wrapper" }, [
+        _c("h1", [_vm._v("Sign Up")]),
+        _vm._v(" "),
+        _c(
+          "form",
           {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.email,
-            expression: "email"
-          }
-        ],
-        attrs: {
-          type: "email",
-          name: "email",
-          placeholder: "Your email address"
-        },
-        domProps: { value: _vm.email },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.email = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "password" } }, [_vm._v("Password:")]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.password,
-            expression: "password"
-          }
-        ],
-        attrs: {
-          type: "password",
-          name: "password",
-          placeholder: "Type your password"
-        },
-        domProps: { value: _vm.password },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.password = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "hidden", name: "_token" },
-        domProps: { value: _vm.csrf }
-      }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("button", { on: { click: _vm.create } }, [_vm._v("Submit")]),
-      _vm._v(" "),
-      _vm._m(0)
+            staticClass: "guest-form",
+            attrs: { method: "post", action: "/register/" }
+          },
+          [
+            _c("p", { staticClass: "input-wrapper" }, [
+              _c(
+                "label",
+                { staticClass: "input-label", attrs: { for: "email" } },
+                [_vm._v("Email:")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.email,
+                    expression: "email"
+                  }
+                ],
+                staticClass: "input-field",
+                attrs: {
+                  type: "email",
+                  name: "email",
+                  placeholder: "Your email address"
+                },
+                domProps: { value: _vm.email },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.email = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "input-wrapper" }, [
+              _c(
+                "label",
+                { staticClass: "input-label", attrs: { for: "password" } },
+                [_vm._v("Password:")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.password,
+                    expression: "password"
+                  }
+                ],
+                staticClass: "input-field",
+                attrs: {
+                  type: "password",
+                  name: "password",
+                  placeholder: "Type your password"
+                },
+                domProps: { value: _vm.password },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.password = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "input-wrapper" }, [
+              _c(
+                "label",
+                { staticClass: "input-label", attrs: { for: "firstname" } },
+                [_vm._v("Firstname :")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.firstname,
+                    expression: "firstname"
+                  }
+                ],
+                staticClass: "input-field",
+                attrs: {
+                  type: "text",
+                  name: "firstname",
+                  placeholder: "Firstname"
+                },
+                domProps: { value: _vm.firstname },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.firstname = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "input-wrapper" }, [
+              _c(
+                "label",
+                { staticClass: "input-label", attrs: { for: "lastname" } },
+                [_vm._v("Lastname :")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.lastname,
+                    expression: "lastname"
+                  }
+                ],
+                staticClass: "input-field",
+                attrs: {
+                  type: "text",
+                  name: "lastname",
+                  placeholder: "Lastname"
+                },
+                domProps: { value: _vm.lastname },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.lastname = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "image-picker-wrapper" }, [
+              _c("p", { staticClass: "input-label" }, [
+                _vm._v("Pick an avatar :")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "image-picker" }, [
+                _c("label", { attrs: { for: "dog" } }, [
+                  _c("img", {
+                    staticClass: "image-picker-content",
+                    class: [
+                      _vm.avatar == "../../../images/dog.jpg"
+                        ? "selected-image"
+                        : ""
+                    ],
+                    attrs: {
+                      src: __webpack_require__(15),
+                      alt: "dog"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.avatar,
+                      expression: "avatar"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    id: "dog",
+                    name: "avatar",
+                    checked: "",
+                    value: "../../../images/dog.jpg"
+                  },
+                  domProps: {
+                    checked: _vm._q(_vm.avatar, "../../../images/dog.jpg")
+                  },
+                  on: {
+                    change: function($event) {
+                      _vm.avatar = "../../../images/dog.jpg"
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "image-picker" }, [
+                _c("label", { attrs: { for: "cat" } }, [
+                  _c("img", {
+                    staticClass: "image-picker-content",
+                    class: [
+                      _vm.avatar == "../../../images/cat.jpg"
+                        ? "selected-image"
+                        : ""
+                    ],
+                    attrs: {
+                      src: __webpack_require__(16),
+                      alt: "cat"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.avatar,
+                      expression: "avatar"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    id: "cat",
+                    name: "avatar",
+                    value: "../../../images/cat.jpg"
+                  },
+                  domProps: {
+                    checked: _vm._q(_vm.avatar, "../../../images/cat.jpg")
+                  },
+                  on: {
+                    change: function($event) {
+                      _vm.avatar = "../../../images/cat.jpg"
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "image-picker" }, [
+                _c("label", { attrs: { for: "duck" } }, [
+                  _c("img", {
+                    staticClass: "image-picker-content",
+                    class: [
+                      _vm.avatar == "../../../images/duck.jpg"
+                        ? "selected-image"
+                        : ""
+                    ],
+                    attrs: {
+                      src: __webpack_require__(17),
+                      alt: "duck"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.avatar,
+                      expression: "avatar"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    id: "duck",
+                    name: "avatar",
+                    value: "../../../images/duck.jpg"
+                  },
+                  domProps: {
+                    checked: _vm._q(_vm.avatar, "../../../images/duck.jpg")
+                  },
+                  on: {
+                    change: function($event) {
+                      _vm.avatar = "../../../images/duck.jpg"
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              attrs: { type: "hidden", name: "_token" },
+              domProps: { value: _vm.csrf }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "container-button" }, [
+              _c("button", { staticClass: "btn", on: { click: _vm.create } }, [
+                _vm._v("Register")
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
+      ])
     ])
   ])
 }
@@ -51496,8 +51761,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", [
-      _c("a", { attrs: { href: "/login" } }, [_vm._v("Click here to login")])
+    return _c("p", { staticClass: "register-link" }, [
+      _c("a", { attrs: { href: "/login" } }, [
+        _vm._v("Already have an account ? Log in !")
+      ])
     ])
   }
 ]
@@ -51750,6 +52017,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["csrf"],
@@ -51780,79 +52051,102 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("Login")]),
-    _vm._v(" "),
-    _c("form", { attrs: { method: "post", action: "/login/" } }, [
-      _c("label", { attrs: { for: "email" } }, [_vm._v("Email:")]),
+    _c("div", { staticClass: "content-wrapper-center" }, [
+      _c("p", { staticClass: "site-title" }, [_vm._v("Nutflux")]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
+      _c("div", { staticClass: "wrapper" }, [
+        _c("h1", [_vm._v("Login")]),
+        _vm._v(" "),
+        _c(
+          "form",
           {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.email,
-            expression: "email"
-          }
-        ],
-        attrs: {
-          type: "email",
-          name: "email",
-          placeholder: "Your email address"
-        },
-        domProps: { value: _vm.email },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.email = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "password" } }, [_vm._v("Password:")]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.password,
-            expression: "password"
-          }
-        ],
-        attrs: {
-          type: "password",
-          name: "password",
-          placeholder: "Type your password"
-        },
-        domProps: { value: _vm.password },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.password = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "hidden", name: "_token" },
-        domProps: { value: _vm.csrf }
-      }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("button", { on: { click: _vm.login } }, [_vm._v("Login")]),
-      _vm._v(" "),
-      _vm._m(0)
+            staticClass: "guest-form",
+            attrs: { method: "post", action: "/login/" }
+          },
+          [
+            _c("p", { staticClass: "input-wrapper" }, [
+              _c(
+                "label",
+                { staticClass: "input-label", attrs: { for: "email" } },
+                [_vm._v("Email:")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.email,
+                    expression: "email"
+                  }
+                ],
+                staticClass: "input-field",
+                attrs: {
+                  type: "email",
+                  name: "email",
+                  placeholder: "Your email address"
+                },
+                domProps: { value: _vm.email },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.email = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "input-wrapper" }, [
+              _c(
+                "label",
+                { staticClass: "input-label", attrs: { for: "password" } },
+                [_vm._v("Password:")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.password,
+                    expression: "password"
+                  }
+                ],
+                staticClass: "input-field",
+                attrs: {
+                  type: "password",
+                  name: "password",
+                  placeholder: "Type your password"
+                },
+                domProps: { value: _vm.password },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.password = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              attrs: { type: "hidden", name: "_token" },
+              domProps: { value: _vm.csrf }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "container-button" }, [
+              _c("button", { staticClass: "btn", on: { click: _vm.login } }, [
+                _vm._v("Login")
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
+      ])
     ])
   ])
 }
@@ -51861,7 +52155,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", [
+    return _c("p", { staticClass: "register-link" }, [
       _c("a", { attrs: { href: "/accounts/create" } }, [
         _vm._v("Don't have an account yet ? Click here to register")
       ])

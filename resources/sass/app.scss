@@ -31,7 +31,7 @@ h1, h2, .list-title {
   margin: 0 0 3rem 0;
 }
 h1, .list-title {
-  font-family: Alegrey;
+  font-family: Alegreya;
   color: $second-color;
 }
 h2 {
@@ -54,3 +54,5 @@ h3 {
 @import 'medias';
 
 @import 'choices-buttons';
+
+@import 'guest-forms';

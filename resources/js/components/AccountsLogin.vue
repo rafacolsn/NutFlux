@@ -1,29 +1,33 @@
-
-
 <template>
-  <div class="container">
-    <h1>Login</h1>
-    <form method="post" action="/login/">
-      <label for="email">Email:</label>
-      <input type="email" v-model="email" name="email" placeholder="Your email address">
+    <div class="container">
+        <div class="content-wrapper-center">
+            <p class="site-title">Nutflux</p>
+            <div class="wrapper">
+                <h1>Login</h1>
+                <form class="guest-form" method="post" action="/login/">
+                    <p class="input-wrapper">
+                        <label class="input-label" for="email">Email:</label>
+                        <input class="input-field" type="email" v-model="email" name="email" placeholder="Your email address">
+                    </p>
 
-      <br>
-      <br>
+                    <p class="input-wrapper">
+                        <label class="input-label" for="password">Password:</label>
+                        <input class="input-field" type="password" v-model="password" name="password" placeholder="Type your password">
+                    </p>
 
-      <label for="password">Password:</label>
-      <input type="password" v-model="password" name="password" placeholder="Type your password">
-      
-      <input type="hidden" name="_token" :value="csrf">
-      <br>
-      <br>
+                    <input type="hidden" name="_token" :value="csrf">
 
-      <button @click="login">Login</button>
+                    <div class="container-button">
+                        <button class="btn" @click="login">Login</button>
+                    </div>
 
-      <p>
-        <a href="/accounts/create">Don't have an account yet ? Click here to register</a>
-      </p>
-    </form>
-  </div>
+                    <p class="register-link">
+                        <a href="/accounts/create">Don't have an account yet ? Click here to register</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
 </template>
 
 

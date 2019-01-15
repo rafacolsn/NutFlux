@@ -1,29 +1,67 @@
-
-
 <template>
   <div class="container">
-    <h1>Create an account</h1>
-    <form method="post" action="/register/">
-      <label for="email">Email:</label>
-      <input type="email" v-model="email" name="email" placeholder="Your email address">
+    <div class="content-wrapper">
+        <p class="site-title">Nutflux</p>
+        <div class="wrapper">
+            <h1>Sign Up</h1>
+            <form class="guest-form" method="post" action="/register/">
+                <p class="input-wrapper">
+                    <label class="input-label" for="email">Email:</label>
+                    <input class="input-field" type="email" v-model="email" name="email" placeholder="Your email address">
+                </p>
 
-      <br>
-      <br>
+                <p class="input-wrapper">
+                    <label class="input-label" for="password">Password:</label>
+                    <input class="input-field" type="password" v-model="password" name="password" placeholder="Type your password">
+                </p>
 
-      <label for="password">Password:</label>
-      <input type="password" v-model="password" name="password" placeholder="Type your password">
+                <p class="input-wrapper">
+                    <label class="input-label" for="firstname">Firstname :</label>
+                    <input class="input-field" type="text" name="firstname" v-model="firstname" placeholder="Firstname">
+                </p>
 
-      <input type="hidden" name="_token" :value="csrf">
-      <br>
-      <br>
+                <p class="input-wrapper">
+                    <label class="input-label" for="lastname">Lastname :</label>
+                    <input class="input-field" type="text" name="lastname" v-model="lastname" placeholder="Lastname">
+                </p>
 
-      <button @click="create">Submit</button>
+                <div class="image-picker-wrapper">
+                    <p class="input-label">Pick an avatar :</p>
+                    <div class="image-picker">
+                        <label for="dog">
+                            <img :class="[ avatar == '../../../images/dog.jpg' ? 'selected-image' : '' ]" class="image-picker-content" src="../../../images/dog.jpg" alt="dog">
+                        </label>
+                        <input type="radio" id="dog" name="avatar" checked value="../../../images/dog.jpg" v-model="avatar">
+                    </div>
 
-      <p>
-        <a href="/login">Click here to login</a>
-      </p>
+                    <div class="image-picker">
+                        <label for="cat">
+                            <img :class="[ avatar == '../../../images/cat.jpg' ? 'selected-image' : '' ]" class="image-picker-content" src="../../../images/cat.jpg" alt="cat">
+                        </label>
+                        <input type="radio" id="cat" name="avatar" value="../../../images/cat.jpg" v-model="avatar">
+                    </div>
 
-    </form>
+                    <div class="image-picker">
+                        <label for="duck">
+                            <img :class="[ avatar == '../../../images/duck.jpg' ? 'selected-image' : '' ]" class="image-picker-content" src="../../../images/duck.jpg" alt="duck">
+                        </label>
+                        <input type="radio" id="duck" name="avatar" value="../../../images/duck.jpg" v-model="avatar">
+                    </div>
+                </div>
+
+
+                <input type="hidden" name="_token" :value="csrf">
+
+                <div class="container-button">
+                    <button class="btn" @click="create">Register</button>
+                </div>
+
+                <p class="register-link">
+                    <a href="/login">Already have an account ? Log in !</a>
+                </p>
+            </form>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -35,13 +73,16 @@ export default {
     return {
       email: "",
       password: "",
+      firstname: "",
+      lastname: "",
+      avatar: "../../../images/dog.jpg"
     };
   },
   methods: {
     create: function(event) {
       axios
         .post("/register")
-        
+
         .then(function(response) {
           console.log(response);
         })
