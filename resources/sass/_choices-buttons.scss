@@ -1,7 +1,14 @@
-.choices-form-wrapper{
-    margin: 0;
-    padding: 0;
-    max-width: 10rem;
+.choices-form-wrapper {
+    opacity: 0;
+    transition:opacity .7s linear;
+    background: rgba(black, .7);
+    position: absolute;
+    bottom: 0;
+    padding-top: 1rem;
+    border-radius: 5px;
+    width: 10rem;
+    height: 2rem;
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
 }
@@ -10,7 +17,6 @@
     display: inline-block;
     text-align: center;
     width: 3.2rem;
-    margin: 1em 0;
 }
 .choices-form-show {
     margin-bottom: 1rem;
@@ -43,7 +49,7 @@
     color: $nutflux-color;
 }
 .text-button {
-        font-family: Alegrey;
+        font-family: Nunito;
         color : $second-color;
         margin-left: 1rem;
 }

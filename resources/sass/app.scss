@@ -9,7 +9,30 @@
 // Variables
 @import 'variables';
 
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
 body, html {
+  @include scrollbars(0.3rem, #4A4A4A, $second-color);
   background: $background;
   font-family: Nunito;
   color: $font-color;
@@ -31,7 +54,7 @@ h1, h2, .list-title {
   margin: 0 0 3rem 0;
 }
 h1, .list-title {
-  font-family: Alegrey;
+  font-family: Alegreya;
   color: $second-color;
 }
 h2 {
