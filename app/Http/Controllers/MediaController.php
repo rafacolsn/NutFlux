@@ -162,7 +162,7 @@ class MediaController extends Controller
 
         $media->save();
 
-        return redirect()->route('medias.index')->with('success','Media updated successfully');
+        return redirect('/medias/' . $media->id);
     }
 
     /**

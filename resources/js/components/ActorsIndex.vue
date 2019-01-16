@@ -1,17 +1,17 @@
 <template>
     <div class="content">
-        <h1>Actors index</h1>
-        <ol v-if="actors">
-            <li v-for="actor in actors">
+        <h1>Actors' List</h1>
+        <ol class="actor-card flex" v-if="actors">
+            <li class="actors-list" v-for="actor in actors">
                 <a :href="'/actors/' + actor.id">
-                    <p>{{ actor.firstname }} {{ actor.lastname }}</p>
+                    <h3>{{ actor.firstname }} {{ actor.lastname }}</h3>
                     <img :src="actor.picture" :alt="actor.firstname + ' ' +  actor.lastname" />
                     <form method="post" :action="'/actors/' + actor.id">
                         <input type="hidden" name="id" :value="actor.id" />
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" :value="csrf">
 
-                        <button v-on:click="destroy">Delete</button>
+                        <button v-on:click="destroy">Delete this actor</button>
                     </form>
                 </a>
             </li>
