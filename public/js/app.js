@@ -50188,9 +50188,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ["medias", "csrf", "user", "choices"],
+    props: ["medias", "csrf", "user", "choices", "movies", "tv_shows"],
+    data: function data() {
+        return {
+            types: [{ title: "Movies", medias: this.movies, id: "movies" }, { title: "TV Shows", medias: this.tv_shows, id: "tv-shows" }]
+        };
+    },
+
     methods: {
         isInChoices: function isInChoices(mediaId, type) {
             // Check if the media of ID mediaId is in the users choices
@@ -50217,218 +50227,231 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "content" }, [
-    _c("h1", [_vm._v("All Shows")]),
-    _vm._v(" "),
-    _vm.medias
-      ? _c(
-          "ol",
-          { staticClass: "media-list" },
-          _vm._l(_vm.medias, function(media) {
-            return _c("li", { staticClass: "media-list-item" }, [
-              _c("a", { attrs: { href: "/medias/" + media.id } }, [
-                _c("div", { staticClass: "poster" }, [
-                  _c("img", { attrs: { src: media.poster, alt: media.title } }),
+  return _c(
+    "div",
+    { staticClass: "content" },
+    [
+      _c("h1", [_vm._v("All Shows")]),
+      _vm._v(" "),
+      _vm._l(_vm.types, function(type) {
+        return _c("div", [
+          _c("h2", { attrs: { id: type.id } }, [_vm._v(_vm._s(type.title))]),
+          _vm._v(" "),
+          _c(
+            "ul",
+            { staticClass: "media-list", attrs: { if: type.medias } },
+            _vm._l(type.medias, function(media) {
+              return _c("li", { staticClass: "media-list-item" }, [
+                _c("a", { attrs: { href: "/medias/" + media.id } }, [
+                  _c("div", { staticClass: "poster" }, [
+                    _c("img", {
+                      attrs: { src: media.poster, alt: media.title }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "choices-form-wrapper" }, [
+                      _vm.isInChoices(media.id, "favourites")
+                        ? _c(
+                            "form",
+                            {
+                              staticClass: "choices-form",
+                              attrs: {
+                                action:
+                                  "/choices/" +
+                                  _vm.isInChoices(media.id, "favourites"),
+                                method: "post"
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: {
+                                  type: "hidden",
+                                  name: "_method",
+                                  value: "DELETE"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: { type: "hidden", name: "_token" },
+                                domProps: { value: _vm.csrf }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(0, true)
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      !_vm.isInChoices(media.id, "favourites")
+                        ? _c(
+                            "form",
+                            {
+                              staticClass: "choices-form",
+                              attrs: { action: "/choices", method: "post" }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "hidden", name: "mediaId" },
+                                domProps: { value: media.id }
+                              }),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: {
+                                  type: "hidden",
+                                  name: "type",
+                                  value: "favourites"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: { type: "hidden", name: "_token" },
+                                domProps: { value: _vm.csrf }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(1, true)
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.isInChoices(media.id, "later")
+                        ? _c(
+                            "form",
+                            {
+                              staticClass: "choices-form",
+                              attrs: {
+                                action:
+                                  "/choices/" +
+                                  _vm.isInChoices(media.id, "later"),
+                                method: "post"
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: {
+                                  type: "hidden",
+                                  name: "_method",
+                                  value: "DELETE"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: { type: "hidden", name: "_token" },
+                                domProps: { value: _vm.csrf }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(2, true)
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      !_vm.isInChoices(media.id, "later")
+                        ? _c(
+                            "form",
+                            {
+                              staticClass: "choices-form",
+                              attrs: { action: "/choices", method: "post" }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "hidden", name: "mediaId" },
+                                domProps: { value: media.id }
+                              }),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: {
+                                  type: "hidden",
+                                  name: "type",
+                                  value: "later"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: { type: "hidden", name: "_token" },
+                                domProps: { value: _vm.csrf }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(3, true)
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.isInChoices(media.id, "watched")
+                        ? _c(
+                            "form",
+                            {
+                              staticClass: "choices-form",
+                              attrs: {
+                                action:
+                                  "/choices/" +
+                                  _vm.isInChoices(media.id, "watched"),
+                                method: "post"
+                              }
+                            },
+                            [
+                              _c("input", {
+                                attrs: {
+                                  type: "hidden",
+                                  name: "_method",
+                                  value: "DELETE"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: { type: "hidden", name: "_token" },
+                                domProps: { value: _vm.csrf }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(4, true)
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      !_vm.isInChoices(media.id, "watched")
+                        ? _c(
+                            "form",
+                            {
+                              staticClass: "choices-form",
+                              attrs: { action: "/choices", method: "post" }
+                            },
+                            [
+                              _c("input", {
+                                attrs: { type: "hidden", name: "mediaId" },
+                                domProps: { value: media.id }
+                              }),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: {
+                                  type: "hidden",
+                                  name: "type",
+                                  value: "watched"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: { type: "hidden", name: "_token" },
+                                domProps: { value: _vm.csrf }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(5, true)
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "choices-form-wrapper" }, [
-                    _vm.isInChoices(media.id, "favourites")
-                      ? _c(
-                          "form",
-                          {
-                            staticClass: "choices-form",
-                            attrs: {
-                              action:
-                                "/choices/" +
-                                _vm.isInChoices(media.id, "favourites"),
-                              method: "post"
-                            }
-                          },
-                          [
-                            _c("input", {
-                              attrs: {
-                                type: "hidden",
-                                name: "_method",
-                                value: "DELETE"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              attrs: { type: "hidden", name: "_token" },
-                              domProps: { value: _vm.csrf }
-                            }),
-                            _vm._v(" "),
-                            _vm._m(0, true)
-                          ]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    !_vm.isInChoices(media.id, "favourites")
-                      ? _c(
-                          "form",
-                          {
-                            staticClass: "choices-form",
-                            attrs: { action: "/choices", method: "post" }
-                          },
-                          [
-                            _c("input", {
-                              attrs: { type: "hidden", name: "mediaId" },
-                              domProps: { value: media.id }
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              attrs: {
-                                type: "hidden",
-                                name: "type",
-                                value: "favourites"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              attrs: { type: "hidden", name: "_token" },
-                              domProps: { value: _vm.csrf }
-                            }),
-                            _vm._v(" "),
-                            _vm._m(1, true)
-                          ]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.isInChoices(media.id, "later")
-                      ? _c(
-                          "form",
-                          {
-                            staticClass: "choices-form",
-                            attrs: {
-                              action:
-                                "/choices/" +
-                                _vm.isInChoices(media.id, "later"),
-                              method: "post"
-                            }
-                          },
-                          [
-                            _c("input", {
-                              attrs: {
-                                type: "hidden",
-                                name: "_method",
-                                value: "DELETE"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              attrs: { type: "hidden", name: "_token" },
-                              domProps: { value: _vm.csrf }
-                            }),
-                            _vm._v(" "),
-                            _vm._m(2, true)
-                          ]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    !_vm.isInChoices(media.id, "later")
-                      ? _c(
-                          "form",
-                          {
-                            staticClass: "choices-form",
-                            attrs: { action: "/choices", method: "post" }
-                          },
-                          [
-                            _c("input", {
-                              attrs: { type: "hidden", name: "mediaId" },
-                              domProps: { value: media.id }
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              attrs: {
-                                type: "hidden",
-                                name: "type",
-                                value: "later"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              attrs: { type: "hidden", name: "_token" },
-                              domProps: { value: _vm.csrf }
-                            }),
-                            _vm._v(" "),
-                            _vm._m(3, true)
-                          ]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.isInChoices(media.id, "watched")
-                      ? _c(
-                          "form",
-                          {
-                            staticClass: "choices-form",
-                            attrs: {
-                              action:
-                                "/choices/" +
-                                _vm.isInChoices(media.id, "watched"),
-                              method: "post"
-                            }
-                          },
-                          [
-                            _c("input", {
-                              attrs: {
-                                type: "hidden",
-                                name: "_method",
-                                value: "DELETE"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              attrs: { type: "hidden", name: "_token" },
-                              domProps: { value: _vm.csrf }
-                            }),
-                            _vm._v(" "),
-                            _vm._m(4, true)
-                          ]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    !_vm.isInChoices(media.id, "watched")
-                      ? _c(
-                          "form",
-                          {
-                            staticClass: "choices-form",
-                            attrs: { action: "/choices", method: "post" }
-                          },
-                          [
-                            _c("input", {
-                              attrs: { type: "hidden", name: "mediaId" },
-                              domProps: { value: media.id }
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              attrs: {
-                                type: "hidden",
-                                name: "type",
-                                value: "watched"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              attrs: { type: "hidden", name: "_token" },
-                              domProps: { value: _vm.csrf }
-                            }),
-                            _vm._v(" "),
-                            _vm._m(5, true)
-                          ]
-                        )
-                      : _vm._e()
+                  _c("p", [
+                    _vm._v(
+                      _vm._s(media.title) + " (" + _vm._s(media.year) + ")"
+                    )
                   ])
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(_vm._s(media.title) + " (" + _vm._s(media.year) + ")")
                 ])
               ])
-            ])
-          }),
-          0
-        )
-      : _vm._e()
-  ])
+            }),
+            0
+          )
+        ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {

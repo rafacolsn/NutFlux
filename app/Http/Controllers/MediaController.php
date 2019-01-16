@@ -28,7 +28,17 @@ class MediaController extends Controller
                         ->where('choices.user_id', '=', $user->id)
                         ->get();
         $mediasAll = Media::orderBy('title')->get();
-        return view('medias.index', compact('mediasAll', 'user', 'choices'));
+
+        $movies = [];
+        $tv_shows = [];
+        foreach ( $mediasAll as $media ) {
+            if ( $media -> is_serie == 0 ) {
+                $movies[] = $media;
+            } else {
+                $tv_shows[] = $media;
+            }
+        }
+        return view('medias.index', compact('mediasAll', 'user', 'choices', 'movies', 'tv_shows'));
     }
 
     /**
