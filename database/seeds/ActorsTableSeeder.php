@@ -25,7 +25,7 @@ class ActorsTableSeeder extends Seeder
             [
                 'firstname' => 'Serge',
                 'lastname' => 'Hazanavicius',
-                'picture' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Serge-Hazanavicius-Il-y-a-longtemps.JPG/220px-Serge-Hazanavicius-Il-y-a-longtemps.JPG'
+                'picture' => 'http://fr.web.img6.acsta.net/c_215_290/medias/nmedia/18/36/36/34/19720308.jpg'
             ],
             [
                 'firstname' => 'Marion',
@@ -65,7 +65,7 @@ class ActorsTableSeeder extends Seeder
             [
                 'firstname' => 'Emmanuelle',
                 'lastname' => 'Bercot',
-                'picture' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Emmanuelle_Bercot_au_Festival_des_Busters_2017_%28cropped%29.jpg/220px-Emmanuelle_Bercot_au_Festival_des_Busters_2017_%28cropped%29.jpg'
+                'picture' => 'https://cineuropa.org/imgCache/2016/03/09/1457518802146_0570x0400_1457518839513.jpg'
             ],
             [
                 'firstname' => 'Vincent',

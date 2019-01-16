@@ -1,5 +1,6 @@
 <template>
     <div class="content">
+        <button class="add-show"><i class="fas fa-plus"></i>Add a show</button>
         <h1 class="breadcrump">
             <a href="/choices"> Home</a> > 
                 <span v-if="media.is_serie">
@@ -15,7 +16,13 @@
 
             <div class="row1">
                 <div class="row1-column1">
-                    <h2>{{ media.title }} ( {{ media.year }} ) </h2>
+                    <h2>{{ media.title }} ({{ media.year }}) 
+                        <span class="edit-icon">
+                            <a :href="'/medias/' + media.id + '/edit' ">
+                                <i class="far fa-edit"></i>
+                            </a>
+                        </span>
+                    </h2>
                     <img :src="media.poster" :alt="media.title" />
                     <div class="summary">
                         <h3>Summary</h3>

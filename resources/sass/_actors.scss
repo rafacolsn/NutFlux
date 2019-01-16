@@ -1,11 +1,37 @@
 .actor-card {
     background: $background;
+    margin-bottom: 3rem;
     img {
         height: 15rem;
         width: 10rem;
+        object-fit: cover;
         border-radius: 5px;
     }
+    .actors-list {
+        margin-right: 3rem;
+        a {
+            text-decoration: none;
+        }
+        h3 {
+            margin: 3rem 0 .5rem 0;
+        }
+        button {
+            background: $background;
+            border: none;
+            color: $font-color;
+            float: right;
+            &:hover {
+                color: $third-color;
+                border: 1px solid $third-color;
+                border-radius: 5px;
+                transform: scale(1.2);
+            }
+        }
+    }
 }
+
+
 .actors-shows-title {
-    margin: 2rem 0 3rem 2rem;
+    padding: 2rem 0 0rem 2rem;
+    margin-bottom: 0;
 }

@@ -49464,15 +49464,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content" }, [
-    _c("h1", [_vm._v("Actors index")]),
+    _c("h1", [_vm._v("Actors' List")]),
     _vm._v(" "),
     _vm.actors
       ? _c(
           "ol",
+          { staticClass: "actor-card flex" },
           _vm._l(_vm.actors, function(actor) {
-            return _c("li", [
+            return _c("li", { staticClass: "actors-list" }, [
               _c("a", { attrs: { href: "/actors/" + actor.id } }, [
-                _c("p", [
+                _c("h3", [
                   _vm._v(_vm._s(actor.firstname) + " " + _vm._s(actor.lastname))
                 ]),
                 _vm._v(" "),
@@ -49506,7 +49507,7 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("button", { on: { click: _vm.destroy } }, [
-                      _vm._v("Delete")
+                      _vm._v("Delete this actor")
                     ])
                   ]
                 )
@@ -50070,6 +50071,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['media', 'choices', 'user', 'csrf'],
@@ -50100,6 +50108,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content" }, [
+    _vm._m(0),
+    _vm._v(" "),
     _c("h1", { staticClass: "breadcrump" }, [
       _c("a", { attrs: { href: "/choices" } }, [_vm._v(" Home")]),
       _vm._v(" > \n            "),
@@ -50124,8 +50134,18 @@ var render = function() {
         _c("div", { staticClass: "row1-column1" }, [
           _c("h2", [
             _vm._v(
-              _vm._s(_vm.media.title) + " ( " + _vm._s(_vm.media.year) + " ) "
-            )
+              _vm._s(_vm.media.title) +
+                " (" +
+                _vm._s(_vm.media.year) +
+                ") \n                    "
+            ),
+            _c("span", { staticClass: "edit-icon" }, [
+              _c(
+                "a",
+                { attrs: { href: "/medias/" + _vm.media.id + "/edit" } },
+                [_c("i", { staticClass: "far fa-edit" })]
+              )
+            ])
           ]),
           _vm._v(" "),
           _c("img", { attrs: { src: _vm.media.poster, alt: _vm.media.title } }),
@@ -50218,7 +50238,7 @@ var render = function() {
                       domProps: { value: _vm.csrf }
                     }),
                     _vm._v(" "),
-                    _vm._m(0)
+                    _vm._m(1)
                   ]
                 )
               : _vm._e(),
@@ -50249,7 +50269,7 @@ var render = function() {
                       domProps: { value: _vm.csrf }
                     }),
                     _vm._v(" "),
-                    _vm._m(1)
+                    _vm._m(2)
                   ]
                 )
               : _vm._e(),
@@ -50279,7 +50299,7 @@ var render = function() {
                       domProps: { value: _vm.csrf }
                     }),
                     _vm._v(" "),
-                    _vm._m(2)
+                    _vm._m(3)
                   ]
                 )
               : _vm._e(),
@@ -50306,7 +50326,7 @@ var render = function() {
                       domProps: { value: _vm.csrf }
                     }),
                     _vm._v(" "),
-                    _vm._m(3)
+                    _vm._m(4)
                   ]
                 )
               : _vm._e(),
@@ -50336,7 +50356,7 @@ var render = function() {
                       domProps: { value: _vm.csrf }
                     }),
                     _vm._v(" "),
-                    _vm._m(4)
+                    _vm._m(5)
                   ]
                 )
               : _vm._e(),
@@ -50363,7 +50383,7 @@ var render = function() {
                       domProps: { value: _vm.csrf }
                     }),
                     _vm._v(" "),
-                    _vm._m(5)
+                    _vm._m(6)
                   ]
                 )
               : _vm._e()
@@ -50374,6 +50394,15 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "add-show" }, [
+      _c("i", { staticClass: "fas fa-plus" }),
+      _vm._v("Add a show")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -51070,94 +51099,107 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "content" }, [
     _c("h1", [_vm._v("Edit this media")]),
     _vm._v(" "),
-    _c("form", [
-      _c("p", [
-        _c("label", { attrs: { for: "mediaTitle" } }, [_vm._v("Title")]),
+    _c(
+      "form",
+      {
+        staticClass: "media-edit flex",
+        attrs: { action: "/medias/" + _vm.media.id, method: "post" }
+      },
+      [
+        _c("div", { staticClass: "edit" }, [
+          _c("label", { attrs: { for: "mediaTitle" } }, [_vm._v("Title")]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "text", name: "mediaTitle" },
+            domProps: { value: _vm.media.title }
+          })
+        ]),
         _vm._v(" "),
-        _c("input", {
-          attrs: { type: "text", name: "mediaTitle" },
-          domProps: { value: _vm.media.title }
-        })
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _c("label", { attrs: { for: "mediaSummary" } }, [_vm._v("Summary")]),
+        _c("div", { staticClass: "edit summary" }, [
+          _c("label", { attrs: { for: "mediaSummary" } }, [_vm._v("Summary")]),
+          _vm._v(" "),
+          _c("textarea", { attrs: { name: "mediaSummary" } }, [
+            _vm._v(_vm._s(_vm.media.summary))
+          ])
+        ]),
         _vm._v(" "),
-        _c("textarea", { attrs: { name: "mediaSummary" } }, [
-          _vm._v(_vm._s(_vm.media.summary))
-        ])
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _c("label", { attrs: { for: "mediaYear" } }, [_vm._v("Year")]),
+        _c("div", { staticClass: "edit year" }, [
+          _c("label", { attrs: { for: "mediaYear" } }, [_vm._v("Year")]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "number", step: "1", name: "mediaYear" },
+            domProps: { value: _vm.media.year }
+          })
+        ]),
         _vm._v(" "),
-        _c("input", {
-          attrs: { type: "number", step: "1", name: "mediaYear" },
-          domProps: { value: _vm.media.year }
-        })
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _c("label", { attrs: { for: "mediaTrailer" } }, [_vm._v("Trailer")]),
+        _c("div", { staticClass: "edit" }, [
+          _c("label", { attrs: { for: "mediaTrailer" } }, [_vm._v("Trailer")]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "text", name: "mediaTrailer" },
+            domProps: { value: _vm.media.trailer }
+          })
+        ]),
         _vm._v(" "),
-        _c("input", {
-          attrs: { type: "text", name: "mediaTrailer" },
-          domProps: { value: _vm.media.trailer }
-        })
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _c("label", { attrs: { for: "mediaIsSerie" } }, [
-          _vm._v("Is it part of a TV Show ?")
+        _c("div", { staticClass: "edit" }, [
+          _c("label", { attrs: { for: "mediaIsSerie" } }, [
+            _vm._v("Is it part of a TV Show ?")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "checkbox", name: "mediaIsSerie" },
+            domProps: { value: _vm.media.is_serie }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "edit show-poster" }, [
+          _c("label", { attrs: { for: "mediaPoster" } }, [_vm._v("Poster")]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "text", name: "mediaPoster" },
+            domProps: { value: _vm.media.poster }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "edit" }, [
+          _c("label", { attrs: { for: "mediaDirector" } }, [
+            _vm._v("Director")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "text", name: "mediaDirector" },
+            domProps: { value: _vm.media.director }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "edit" }, [
+          _c("label", { attrs: { for: "mediaProducer" } }, [
+            _vm._v("Producer")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "text", name: "mediaProducer" },
+            domProps: { value: _vm.media.producer }
+          })
         ]),
         _vm._v(" "),
         _c("input", {
-          attrs: { type: "checkbox", name: "mediaIsSerie" },
-          domProps: { value: _vm.media.is_serie }
-        })
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _c("label", { attrs: { for: "mediaPoster" } }, [_vm._v("Poster")]),
+          attrs: { type: "hidden", name: "_method", value: "PATCH" }
+        }),
         _vm._v(" "),
         _c("input", {
-          attrs: { type: "text", name: "mediaPoster" },
-          domProps: { value: _vm.media.poster }
-        })
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _c("label", { attrs: { for: "mediaDirector" } }, [_vm._v("Director")]),
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf }
+        }),
         _vm._v(" "),
-        _c("input", {
-          attrs: { type: "text", name: "mediaDirector" },
-          domProps: { value: _vm.media.director }
-        })
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _c("label", { attrs: { for: "mediaProducer" } }, [_vm._v("Producer")]),
-        _vm._v(" "),
-        _c("input", {
-          attrs: { type: "text", name: "mediaProducer" },
-          domProps: { value: _vm.media.producer }
-        })
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "hidden", name: "_method", value: "PATCH" }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "hidden", name: "_token" },
-        domProps: { value: _vm.csrf }
-      }),
-      _vm._v(" "),
-      _c("button", { on: { click: _vm.send } }, [_vm._v("Edit")])
-    ])
+        _c("button", { attrs: { type: "submit" }, on: { click: _vm.send } }, [
+          _vm._v("Save")
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []
