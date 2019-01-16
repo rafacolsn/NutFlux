@@ -66,7 +66,12 @@ class ActorController extends Controller
     {
         $actorsObj = Actor::find( $id );
         $actorsObj -> medias = $actorsObj -> medias() -> get();
-        return view('actors.show', compact('actorsObj'));
+        $choices = DB::table('choices')
+                        ->join('medias', 'medias.id', '=', 'choices.media_id')
+                        ->select('choices.id as id', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as media_id')
+                        ->where('choices.user_id', '=', $user->id)
+                        ->get();
+        return view('actors.show', compact('actorsObj', 'choices'));
     }
 
 
