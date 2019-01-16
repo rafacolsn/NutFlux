@@ -59,13 +59,9 @@
                         </form>
                     </div>
                 </div>
-            </a>
-            <a :href="'/medias/' + media.id" >
                 <p>{{ media.title }} ({{ media.year }})</p>
             </a>
-
         </li>
-
     </ol>
   </div>
 </template>

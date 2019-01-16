@@ -1,10 +1,8 @@
 <template>
   <div class="content">
-    <h1>
-      <span v-if="type === 'favourites'">Favourites</span>
-      <span v-if="type === 'watched'">Watched</span>
-      <span v-if="type === 'later'">To Watch Later</span>
-    </h1>
+    <h1 v-if="type === 'favourites'"><span class="fas fa-heart"></span> Favourites</span></h1>
+    <h1 v-if="type === 'watched'"><span class="fas fa-clock"></span> Watched</span></h1>
+    <h1 v-if="type === 'later'"><span class="fas fa-eye"></span> To Watch Later</span></h1>
     <ul class="media-list">
       <li class="media-list-item" v-for="item in choices" v-if="type === item.type">
         <a :href="'/medias/' + item.media_id">
@@ -62,8 +60,6 @@
                     </form>
                 </div>
             </div>
-        </a>
-        <a :href="'/medias/' + item.media_id" >
             <p>{{ item.title }} ({{ item.year }})</p>
         </a>
       </li>

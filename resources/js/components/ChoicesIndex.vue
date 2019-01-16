@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div v-for="list in lists" >
-        <h2 :id="list.slug" class="list-title">{{ list.title }}</h2>
+        <h2 :id="list.slug" class="list-title"><span :class="list.icon"></span> {{ list.title }}</h2>
         <ul class="media-list">
           <li class="media-list-item" v-for="item in choiceslist" v-if="item.type === list.slug">
 
@@ -61,8 +61,6 @@
                         </form>
                     </div>
                 </div>
-            </a>
-            <a :href="'/medias/' + item.id" >
                 <p>{{ item.title }} ({{ item.year }})</p>
             </a>
           </li>
@@ -77,9 +75,9 @@ export default {
   data () {
       return {
           lists: [
-              { title: "Favourites", slug: "favourites" },
-              { title: "Watched", slug: "watched" },
-              { title: "To Watch Later", slug: "later" }
+              { title: 'Favourites', slug: "favourites", icon: 'fas fa-heart' },
+              { title: 'To Watch Later', slug: "later", icon: 'fas fa-clock' },
+              { title: 'Watched', slug: "watched", icon: 'fas fa-eye' }
           ]
       }
   },

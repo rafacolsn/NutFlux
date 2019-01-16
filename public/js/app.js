@@ -50188,10 +50188,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ["medias", "csrf", "user", "choices"],
@@ -50421,10 +50417,8 @@ var render = function() {
                         )
                       : _vm._e()
                   ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("a", { attrs: { href: "/medias/" + media.id } }, [
+                ]),
+                _vm._v(" "),
                 _c("p", [
                   _vm._v(_vm._s(media.title) + " (" + _vm._s(media.year) + ")")
                 ])
@@ -52353,14 +52347,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ["choiceslist", "csrf", "user"],
     data: function data() {
         return {
-            lists: [{ title: "Favourites", slug: "favourites" }, { title: "Watched", slug: "watched" }, { title: "To Watch Later", slug: "later" }]
+            lists: [{ title: 'Favourites', slug: "favourites", icon: 'fas fa-heart' }, { title: 'To Watch Later', slug: "later", icon: 'fas fa-clock' }, { title: 'Watched', slug: "watched", icon: 'fas fa-eye' }]
         };
     },
 
@@ -52396,7 +52388,8 @@ var render = function() {
     _vm._l(_vm.lists, function(list) {
       return _c("div", [
         _c("h2", { staticClass: "list-title", attrs: { id: list.slug } }, [
-          _vm._v(_vm._s(list.title))
+          _c("span", { class: list.icon }),
+          _vm._v(" " + _vm._s(list.title))
         ]),
         _vm._v(" "),
         _c(
@@ -52592,10 +52585,8 @@ var render = function() {
                             )
                           : _vm._e()
                       ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: "/medias/" + item.id } }, [
+                    ]),
+                    _vm._v(" "),
                     _c("p", [
                       _vm._v(
                         _vm._s(item.title) + " (" + _vm._s(item.year) + ")"
@@ -52805,10 +52796,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ["choices", "type"],
@@ -52839,13 +52826,26 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content" }, [
-    _c("h1", [
-      _vm.type === "favourites" ? _c("span", [_vm._v("Favourites")]) : _vm._e(),
-      _vm._v(" "),
-      _vm.type === "watched" ? _c("span", [_vm._v("Watched")]) : _vm._e(),
-      _vm._v(" "),
-      _vm.type === "later" ? _c("span", [_vm._v("To Watch Later")]) : _vm._e()
-    ]),
+    _vm.type === "favourites"
+      ? _c("h1", [
+          _c("span", { staticClass: "fas fa-heart" }),
+          _vm._v(" Favourites")
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.type === "watched"
+      ? _c("h1", [
+          _c("span", { staticClass: "fas fa-clock" }),
+          _vm._v(" Watched")
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.type === "later"
+      ? _c("h1", [
+          _c("span", { staticClass: "fas fa-eye" }),
+          _vm._v(" To Watch Later")
+        ])
+      : _vm._e(),
     _vm._v(" "),
     _c(
       "ul",
@@ -53038,10 +53038,8 @@ var render = function() {
                         )
                       : _vm._e()
                   ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("a", { attrs: { href: "/medias/" + item.media_id } }, [
+                ]),
+                _vm._v(" "),
                 _c("p", [
                   _vm._v(_vm._s(item.title) + " (" + _vm._s(item.year) + ")")
                 ])
