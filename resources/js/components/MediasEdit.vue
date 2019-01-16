@@ -1,44 +1,44 @@
 <template>
-    <div class="container">
+    <div class="content">
         <h1>Edit this media</h1>
-        <form >
-            <p>
+        <form :action="'/medias/' + media.id" method="post" class="media-edit flex">
+            <div class="edit">
                 <label for="mediaTitle">Title</label>
                 <input type="text" name="mediaTitle" :value="media.title" />
-            </p>
-            <p>
+            </div>
+            <div class="edit summary">
                 <label for="mediaSummary">Summary</label>
                 <textarea name="mediaSummary">{{ media.summary }}</textarea>
-            </p>
-            <p>
+            </div>
+            <div class="edit year">
                 <label for="mediaYear">Year</label>
                 <input type="number" step="1" name="mediaYear" :value="media.year" />
-            </p>
-            <p>
+            </div>
+            <div class="edit">
                 <label for="mediaTrailer">Trailer</label>
                 <input type="text" name="mediaTrailer" :value="media.trailer" />
-            </p>
-            <p>
+            </div>
+            <div class="edit">
                 <label for="mediaIsSerie">Is it part of a TV Show ?</label>
                 <input type="checkbox" name="mediaIsSerie" :value="media.is_serie" />
-            </p>
-            <p>
+            </div>
+            <div class="edit show-poster">
                 <label for="mediaPoster">Poster</label>
                 <input type="text" name="mediaPoster" :value="media.poster" />
-            </p>
-            <p>
+            </div>
+            <div class="edit">
                 <label for="mediaDirector">Director</label>
                 <input type="text" name="mediaDirector" :value="media.director" />
-            </p>
-            <p>
+            </div>
+            <div class="edit">
                 <label for="mediaProducer">Producer</label>
                 <input type="text" name="mediaProducer" :value="media.producer" />
-            </p>
+            </div>
 
             <input type="hidden" name="_method" value="PATCH">
             <input type="hidden" name="_token" :value="csrf">
 
-            <button v-on:click="send">Edit</button>
+            <button type="submit" v-on:click="send">Save</button>
         </form>
     </div>
 </template>

@@ -376,6 +376,24 @@ h3 {
   opacity: 1;
 }
 
+.edit-icon {
+  color: #9FA3A4;
+  float: right;
+  margin-right: 2rem;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.edit-icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: rgba(70, 189, 223, 0.9);
+}
+
+.edit-icon a:hover {
+  color: rgba(70, 189, 223, 0.9);
+}
+
 .poster {
   position: relative;
   -webkit-transition: border 0.5s ease-in-out;
@@ -441,6 +459,7 @@ h3 {
 .media-card .summary p {
   overflow-y: auto;
   min-height: 13rem;
+  text-align: justify;
 }
 
 .media-card .row1 {
@@ -510,6 +529,74 @@ h3 {
 
 .search-title {
   margin: 2rem 0 1rem;
+}
+
+.media-edit {
+  background: #282828;
+  border-radius: 8px;
+  padding: 0 0 0 2rem;
+}
+
+.media-edit input,
+.media-edit textarea {
+  margin: 1rem 0 2rem 2rem;
+  color: #282828;
+}
+
+.media-edit textarea {
+  min-height: 8rem;
+  min-width: 20rem;
+}
+
+.media-edit button {
+  background: #282828;
+  font-family: Nunito;
+  color: #9FA3A4;
+  font-size: x-large;
+  border: 1px solid #9FA3A4;
+  border-radius: 3px;
+  height: 100%;
+  margin: 1rem 0 0 20rem;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.media-edit button:hover {
+  color: #E95065;
+  border-color: #E95065;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+
+.media-edit .show-poster input {
+  width: 56rem;
+}
+
+.edit {
+  margin-right: 2rem;
+}
+
+.year input {
+  width: 25%;
+}
+
+.summary label {
+  vertical-align: 0%;
+}
+
+.add-show {
+  background: rgba(70, 189, 223, 0.9);
+  border-radius: 5px;
+  border: none;
+  color: #282828;
+  float: right;
+  min-height: 2rem;
+  min-width: 9rem;
+}
+
+.add-show i {
+  margin-right: 1rem;
 }
 
 .choices-form-wrapper {
@@ -681,15 +768,46 @@ h3 {
 
 .actor-card {
   background: #4A4A4A;
+  margin-bottom: 3rem;
 }
 
 .actor-card img {
   height: 15rem;
   width: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 5px;
 }
 
+.actor-card .actors-list {
+  margin-right: 3rem;
+}
+
+.actor-card .actors-list a {
+  text-decoration: none;
+}
+
+.actor-card .actors-list h3 {
+  margin: 3rem 0 .5rem 0;
+}
+
+.actor-card .actors-list button {
+  background: #4A4A4A;
+  border: none;
+  color: #9FA3A4;
+  float: right;
+}
+
+.actor-card .actors-list button:hover {
+  color: #E95065;
+  border: 1px solid #E95065;
+  border-radius: 5px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 .actors-shows-title {
-  margin: 2rem 0 3rem 2rem;
+  padding: 2rem 0 0rem 2rem;
+  margin-bottom: 0;
 }
 

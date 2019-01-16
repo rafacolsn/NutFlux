@@ -28,6 +28,19 @@
         opacity: 1;
     }
 }
+.edit-icon {
+    color: $font-color;
+    float: right;
+    margin-right: 2rem;
+    transition: all .3s ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+        color: $second-color;
+    }
+    a:hover {
+        color: $second-color;
+    }
+}
 .poster {
     position: relative;
     transition: border 0.5s ease-in-out;
@@ -77,6 +90,7 @@
         p {
             overflow-y: auto;
             min-height: 13rem;
+            text-align: justify;
         }
     }
     .row1, {
@@ -135,4 +149,62 @@
 }
 .search-title {
     margin: 2rem 0 1rem;
+}
+
+.media-edit {
+    background: $second-bg;
+    border-radius: 8px;
+    padding: 0 0 0 2rem;
+    input, textarea {
+        margin: 1rem 0 2rem 2rem;
+        color: $second-bg;
+    }
+    textarea {
+        min-height: 8rem;
+        min-width: 20rem;
+    }
+    button {
+        background: $second-bg;
+        font-family: Nunito;
+        color: $font-color; 
+        font-size: x-large;
+        border: 1px solid $font-color;
+        border-radius: 3px;
+        height: 100%;
+        margin: 1rem 0 0 20rem;
+        transition: all .3s ease-in-out;
+        &:hover {
+            color: $third-color;
+            border-color: $third-color;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    }
+    .show-poster input {
+        width: 56rem;
+    }
+    
+}
+.edit {
+    margin-right: 2rem;
+}
+.year input {
+    width: 25%;
+}
+.summary {
+    label {
+        vertical-align: 0%;
+    }
+}
+.add-show {
+    background: $second-color;
+    border-radius: 5px;
+    border: none;
+    color: $second-bg;
+    float: right;
+    min-height: 2rem;
+    min-width: 9rem;
+    i {
+        margin-right: 1rem;
+    }
 }
