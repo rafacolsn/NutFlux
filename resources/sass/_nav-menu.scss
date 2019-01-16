@@ -58,7 +58,19 @@
   .dropdown-child {
     display: none;
     background-color: $second-bg;
-    box-shadow: 10px 5px 8px $background;
+    font-size: 1rem;
+    border-radius: 5px;
+    
+    .shadow {
+      box-shadow: 9px 16px 13px -12px black;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: -2px;
+      border-radius: 5px;
+      z-index: -1;
+    }
+
     min-width: 13rem;
     padding-top: 1.7rem;
     z-index: 100;
@@ -73,6 +85,9 @@
     background: $nutflux-color;
     color: $second-bg;
   }
+  .dropdown-child li:last-child a:hover {
+    border-radius: 0 0 5px 5px;
+}
   .dropdown:hover .dropdown-child {
     display: block;
   }

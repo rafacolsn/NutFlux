@@ -283,12 +283,23 @@ h3 {
 .dropdown-child {
   display: none;
   background-color: #282828;
-  -webkit-box-shadow: 10px 5px 8px #4A4A4A;
-          box-shadow: 10px 5px 8px #4A4A4A;
+  font-size: 1rem;
+  border-radius: 5px;
   min-width: 13rem;
   padding-top: 1.7rem;
   z-index: 100;
   position: relative;
+}
+
+.dropdown-child .shadow {
+  -webkit-box-shadow: 9px 16px 13px -12px black;
+          box-shadow: 9px 16px 13px -12px black;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -2px;
+  border-radius: 5px;
+  z-index: -1;
 }
 
 .dropdown-child a {
@@ -300,6 +311,10 @@ h3 {
 .dropdown-child li a:hover {
   background: #E57255;
   color: #282828;
+}
+
+.dropdown-child li:last-child a:hover {
+  border-radius: 0 0 5px 5px;
 }
 
 .dropdown:hover .dropdown-child {
@@ -354,11 +369,14 @@ h3 {
   position: relative;
   -webkit-transition: border 0.5s ease-in-out;
   transition: border 0.5s ease-in-out;
+  border: 2px solid #282828;
+  border-radius: 5px;
 }
 
 .poster:hover {
   border: 2px solid rgba(70, 189, 223, 0.9);
-  border-radius: 5px;
+  -webkit-transition: border 0.5s ease-in-out;
+  transition: border 0.5s ease-in-out;
 }
 
 .media-list a p {

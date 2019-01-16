@@ -53088,6 +53088,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["user", "csrf"],
@@ -53186,6 +53191,8 @@ var staticRenderFns = [
           _vm._v("Favourites")
         ])
       ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "shadow" }),
       _vm._v(" "),
       _c("li", [
         _c("a", { attrs: { href: "/choices/#later" } }, [
