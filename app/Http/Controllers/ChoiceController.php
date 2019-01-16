@@ -28,6 +28,11 @@ class ChoiceController extends Controller
                             ->select('choices.id as id_choice', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as id_media', 'medias.year')
                             ->where('choices.user_id', '=', $user->id)
                             ->get();
+
+            if ( count( $choices ) <= 0 ) {
+                return redirect('/medias');
+            }
+
             return view( 'choices.index', compact( 'choices', 'user' ) );
         }
         return redirect('/users')->with('error', 'You have to choose your profile to see your choices');

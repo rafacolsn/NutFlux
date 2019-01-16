@@ -53,7 +53,7 @@ class ActorController extends Controller
 
         // Actor::create($request->all());
 
-    
+
     }
 
     /**
@@ -64,7 +64,8 @@ class ActorController extends Controller
      */
     public function show($id)
     {
-        $actorsObj = Actor::find($id);
+        $actorsObj = Actor::find( $id );
+        $actorsObj -> medias = $actorsObj -> medias() -> get();
         return view('actors.show', compact('actorsObj'));
     }
 
@@ -94,13 +95,13 @@ class ActorController extends Controller
             'actorLastname' => 'required',
             'actorPicture' => 'required',
         ]);
-        
+
         $actor = Actor::find($id);
         $actor->firstname = $request->get('actorFirstname');
         $actor->lastname = $request->get('actorLastname');
         $actor->picture = $request->get('actorPicture');
         $actor->save();
-  
+
         return redirect()->route('actors.index')->with('success','Actor updated successfully');
     }
 
