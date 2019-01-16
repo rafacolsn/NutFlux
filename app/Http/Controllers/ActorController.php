@@ -67,6 +67,7 @@ class ActorController extends Controller
     {
         $actorsObj = Actor::find( $id );
         $actorsObj -> medias = $actorsObj -> medias() -> get();
+        $user =  $request->session()->get('user');
         $choices = DB::table('choices')
                         ->join('medias', 'medias.id', '=', 'choices.media_id')
                         ->select('choices.id as id', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as media_id')
