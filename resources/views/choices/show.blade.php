@@ -13,5 +13,5 @@
 @stop
 
 @section( 'content' )
-    <choices-show :choice="{{ json_encode( $choicesObj ) }}" :type="{{ json_encode( $type ) }}"></choices-show>
+    <choices-show :choices="{{ json_encode( $choices ) }}" :type="{{ json_encode( $type ) }}"></choices-show>
 @stop

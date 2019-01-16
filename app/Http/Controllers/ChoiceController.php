@@ -25,10 +25,10 @@ class ChoiceController extends Controller
 
             $choices = DB::table('choices')
                             ->join('medias', 'medias.id', '=', 'choices.media_id')
-                            ->select('choices.id as id_choice', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as id_media')
+                            ->select('choices.id as id_choice', 'medias.title', 'medias.poster', 'choices.type', 'medias.id as id_media', 'medias.year')
                             ->where('choices.user_id', '=', $user->id)
                             ->get();
-            return view( 'choices.index', compact( 'choices' ) );
+            return view( 'choices.index', compact( 'choices', 'user' ) );
         }
         return redirect('/users')->with('error', 'You have to choose your profile to see your choices');
     }
@@ -82,13 +82,12 @@ class ChoiceController extends Controller
     public function show(Request $request, $type)
     {
         $user =  $request->session()->get('user');
-        $choicesObj = DB::table('choices')
+        $choices = DB::table('choices')
                         ->join('medias', 'medias.id', '=', 'choices.media_id')
-                        ->select('medias.title', 'medias.id', 'medias.poster')
-                        ->where('choices.type', '=', $type)
+                        ->select('choices.id as id', 'medias.title', 'medias.poster', 'choices.type', 'medias.year', 'medias.id as media_id')
                         ->where('choices.user_id', '=', $user->id)
                         ->get();
-        return view('choices.show', compact('choicesObj', 'type'));
+        return view('choices.show', compact('choices', 'type'));
 
     }
 

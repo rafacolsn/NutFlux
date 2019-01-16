@@ -9,6 +9,6 @@
 @stop
 
 @section( 'content' )
-    <choices-index :choiceslist="{{ json_encode($choices) }}" csrf="{{ csrf_token() }}"></choices-index>
- 
+    <choices-index :choiceslist="{{ json_encode( $choices ) }}" :user="{{ json_encode( $user ) }}" csrf="{{ csrf_token() }}"></choices-index>
+
 @stop

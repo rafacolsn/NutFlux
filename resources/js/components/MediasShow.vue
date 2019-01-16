@@ -112,10 +112,10 @@
             // Return id of user choice matching criterias or false
             let choiceId = false;
             this.choices.forEach( function ( choice ) {
-                console.log( choice );
+                //console.log( choice );
                 if ( choice.media_id == mediaId && choice.type == type ) {
                     choiceId = choice.id;
-                    console.log( 'match !' );
+                    //console.log( 'match !' );
                 }
             } );
             return choiceId;
