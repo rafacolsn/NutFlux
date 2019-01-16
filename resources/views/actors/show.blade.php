@@ -5,6 +5,6 @@
 @stop
 
 @section( 'content' )
-    <actors-show :actor="{{ json_encode($actorsObj) }}"></actors-show>
-    
+    <actors-show :actor="{{ json_encode($actorsObj) }}" :choices="{{ json_encode( $choices ) }}"></actors-show>
+
 @stop
