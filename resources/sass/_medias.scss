@@ -198,13 +198,19 @@
 }
 .add-show {
     background: $second-color;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    text-align: center;
     border-radius: 5px;
     border: none;
     color: $second-bg;
     float: right;
-    min-height: 2rem;
-    min-width: 9rem;
+    transition: all .3s ease-in-out;
     i {
         margin-right: 1rem;
+    }
+    &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
     }
 }

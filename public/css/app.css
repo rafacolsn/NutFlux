@@ -587,16 +587,25 @@ h3 {
 
 .add-show {
   background: rgba(70, 189, 223, 0.9);
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  text-align: center;
   border-radius: 5px;
   border: none;
   color: #282828;
   float: right;
-  min-height: 2rem;
-  min-width: 9rem;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .add-show i {
   margin-right: 1rem;
+}
+
+.add-show:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
 }
 
 .choices-form-wrapper {
