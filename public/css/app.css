@@ -357,8 +357,8 @@ h3 {
 
 .media-list-item {
   padding: 2rem;
-  -webkit-transition-duration: .3;
-          transition-duration: .3;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
 }
 
 .media-list-item:hover .choices-form-wrapper {
@@ -390,7 +390,13 @@ h3 {
 .media-card {
   padding: 2rem 1rem 2rem 2rem;
   background: #282828;
-  border-radius: 3%;
+  border-radius: 8px;
+}
+
+.media-card .search-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .media-card img {
@@ -450,7 +456,7 @@ h3 {
 .media-card .row2 p {
   padding: 0 2rem 1rem 0;
   text-align: left;
-  max-width: 5rem;
+  max-width: 6rem;
   min-height: 2rem;
 }
 
@@ -482,6 +488,17 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+}
+
+.text-left {
+  text-align: justify !important;
+  padding-top: 0 !important;
+  width: 100%;
+  max-width: 50% !important;
+}
+
+.search-title {
+  margin: 2rem 0 1rem;
 }
 
 .choices-form-wrapper {

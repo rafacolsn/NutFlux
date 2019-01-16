@@ -6,15 +6,20 @@
                 <li v-for="result in results">
                     <div class="media-list" v-if="result.title">
                         <a :href="'/medias/' + result.id">
-                            <h2>{{ result.title }} ({{ result.year }})</h2>
-                            <img class="left" :src="result.poster" :alt="result.title" />
+                            <h2 class="search-title">{{ result.title }} ({{ result.year }})</h2>
+                            <div class="search-wrapper">
+                                <img class="left" :src="result.poster" :alt="result.title" />
+                                <p class="summary text-left">{{ result.summary }}</p>
+                            </div>
                         </a>
-                            <p class="summary">{{ result.summary }}</p>
+                            
                     </div>
 
                     <div class="actors-list" v-if="result.lastname">
-                        <img :src="result.picture" :alt="result.firstname + ' ' + result.lastname" />
-                        <h2><a :href="'/actors/' + result.id">{{ result.firstname }} {{ result.lastname }}</a></h2>
+                        <a :href="'/actors/' + result.id">
+                            <h2 class="search-title">{{ result.firstname }} {{ result.lastname }}</h2>
+                            <img :src="result.picture" :alt="result.firstname + ' ' + result.lastname" />
+                        </a>
                     </div>
                 </li>
             </ul>

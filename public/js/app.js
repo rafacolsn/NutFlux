@@ -50188,10 +50188,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ["medias", "csrf", "user", "choices"],
@@ -50421,10 +50417,8 @@ var render = function() {
                         )
                       : _vm._e()
                   ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("a", { attrs: { href: "/medias/" + media.id } }, [
+                ]),
+                _vm._v(" "),
                 _c("p", [
                   _vm._v(_vm._s(media.title) + " (" + _vm._s(media.year) + ")")
                 ])
@@ -52907,6 +52901,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['keyword', 'results']
@@ -52932,7 +52931,7 @@ var render = function() {
                 result.title
                   ? _c("div", { staticClass: "media-list" }, [
                       _c("a", { attrs: { href: "/medias/" + result.id } }, [
-                        _c("h2", [
+                        _c("h2", { staticClass: "search-title" }, [
                           _vm._v(
                             _vm._s(result.title) +
                               " (" +
@@ -52941,35 +52940,37 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _c("img", {
-                          staticClass: "left",
-                          attrs: { src: result.poster, alt: result.title }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "summary" }, [
-                        _vm._v(_vm._s(result.summary))
+                        _c("div", { staticClass: "search-wrapper" }, [
+                          _c("img", {
+                            staticClass: "left",
+                            attrs: { src: result.poster, alt: result.title }
+                          }),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "summary text-left" }, [
+                            _vm._v(_vm._s(result.summary))
+                          ])
+                        ])
                       ])
                     ])
                   : _vm._e(),
                 _vm._v(" "),
                 result.lastname
                   ? _c("div", { staticClass: "actors-list" }, [
-                      _c("img", {
-                        attrs: {
-                          src: result.picture,
-                          alt: result.firstname + " " + result.lastname
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("h2", [
-                        _c("a", { attrs: { href: "/actors/" + result.id } }, [
+                      _c("a", { attrs: { href: "/actors/" + result.id } }, [
+                        _c("h2", { staticClass: "search-title" }, [
                           _vm._v(
                             _vm._s(result.firstname) +
                               " " +
                               _vm._s(result.lastname)
                           )
-                        ])
+                        ]),
+                        _vm._v(" "),
+                        _c("img", {
+                          attrs: {
+                            src: result.picture,
+                            alt: result.firstname + " " + result.lastname
+                          }
+                        })
                       ])
                     ])
                   : _vm._e()
