@@ -76,6 +76,10 @@ h3 {
     color: $second-color;
   }
 }
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 // import nav-menu sass
 @import 'nav-menu';

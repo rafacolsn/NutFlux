@@ -4,15 +4,15 @@
             
             <h1 class="breadcrump">
                 <a href="/choices"> Home</a> >
-                <span>Actors</span>
-                > {{ media.title }}
+                <a href="/actors"> Actors</a> >
+                    {{ actor.firstname }} {{ actor.lastname }}
             </h1>
-            <h1>{{ actor.firstname }} {{ actor.lastname }}</h1>
             <img :src="actor.picture" :alt="actor.firstname + ' ' + actor.lastname" />  
         </div>
         
         <div class="media-list" v-if="actor.medias">
-            <ul>
+            <h2 class="actors-shows-title">Actor's Shows</h2>
+            <ul class="flex" >
                 <li v-for="media in actor.medias" class="media-list-item">
                     <a :href="'/medias/' + media.id" >
                 <div class="poster">

@@ -15,7 +15,7 @@
                             
                     </div>
 
-                    <div class="actors-list" v-if="result.lastname">
+                    <div class="actors-list flex" v-if="result.lastname">
                         <a :href="'/actors/' + result.id">
                             <h2 class="search-title">{{ result.firstname }} {{ result.lastname }}</h2>
                             <img :src="result.picture" :alt="result.firstname + ' ' + result.lastname" />

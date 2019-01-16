@@ -49056,12 +49056,14 @@ var render = function() {
       _c("h1", { staticClass: "breadcrump" }, [
         _c("a", { attrs: { href: "/choices" } }, [_vm._v(" Home")]),
         _vm._v(" >\n            "),
-        _c("span", [_vm._v("Actors")]),
-        _vm._v("\n            > " + _vm._s(_vm.media.title) + "\n        ")
-      ]),
-      _vm._v(" "),
-      _c("h1", [
-        _vm._v(_vm._s(_vm.actor.firstname) + " " + _vm._s(_vm.actor.lastname))
+        _c("a", { attrs: { href: "/actors" } }, [_vm._v(" Actors")]),
+        _vm._v(
+          " >\n                " +
+            _vm._s(_vm.actor.firstname) +
+            " " +
+            _vm._s(_vm.actor.lastname) +
+            "\n        "
+        )
       ]),
       _vm._v(" "),
       _c("img", {
@@ -49074,8 +49076,13 @@ var render = function() {
     _vm._v(" "),
     _vm.actor.medias
       ? _c("div", { staticClass: "media-list" }, [
+          _c("h2", { staticClass: "actors-shows-title" }, [
+            _vm._v("Actor's Shows")
+          ]),
+          _vm._v(" "),
           _c(
             "ul",
+            { staticClass: "flex" },
             _vm._l(_vm.actor.medias, function(media) {
               return _c("li", { staticClass: "media-list-item" }, [
                 _c("a", { attrs: { href: "/medias/" + media.id } }, [
@@ -50633,7 +50640,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "ul",
-            { staticClass: "media-list", attrs: { if: type.medias } },
+            { staticClass: "media-list flex", attrs: { if: type.medias } },
             _vm._l(type.medias, function(media) {
               return _c("li", { staticClass: "media-list-item" }, [
                 _c("a", { attrs: { href: "/medias/" + media.id } }, [
@@ -52811,7 +52818,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "ul",
-          { staticClass: "media-list" },
+          { staticClass: "media-list flex" },
           _vm._l(_vm.choiceslist, function(item) {
             return item.type === list.slug
               ? _c("li", { staticClass: "media-list-item" }, [
@@ -53963,7 +53970,7 @@ var render = function() {
                   : _vm._e(),
                 _vm._v(" "),
                 result.lastname
-                  ? _c("div", { staticClass: "actors-list" }, [
+                  ? _c("div", { staticClass: "actors-list flex" }, [
                       _c("a", { attrs: { href: "/actors/" + result.id } }, [
                         _c("h2", { staticClass: "search-title" }, [
                           _vm._v(

@@ -219,6 +219,14 @@ h3 {
   color: rgba(70, 189, 223, 0.9);
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .nav-menu {
   background-color: #282828;
   display: -webkit-box;
@@ -332,11 +340,6 @@ h3 {
 .media-list {
   background: #282828;
   border-radius: 8px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-margin-after: 3rem;
           margin-block-end: 3rem;
 }
@@ -684,5 +687,9 @@ h3 {
   height: 15rem;
   width: 10rem;
   border-radius: 5px;
+}
+
+.actors-shows-title {
+  margin: 2rem 0 3rem 2rem;
 }
 

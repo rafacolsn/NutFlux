@@ -2,7 +2,7 @@
   <div class="content">
     <div v-for="list in lists" >
         <h2 :id="list.slug" class="list-title"><span :class="list.icon"></span> {{ list.title }}</h2>
-        <ul class="media-list">
+        <ul class="media-list flex">
           <li class="media-list-item" v-for="item in choiceslist" v-if="item.type === list.slug">
 
             <a :href="'/medias/' + item.id_media">

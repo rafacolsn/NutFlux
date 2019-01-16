@@ -3,7 +3,7 @@
     <h1>All Shows</h1>
     <div v-for="type in types">
         <h2 :id="type.id">{{ type.title }}</h2>
-        <ul :if="type.medias" class="media-list">
+        <ul :if="type.medias" class="media-list flex">
             <li v-for="media in type.medias" class="media-list-item">
                 <a :href="'/medias/' + media.id" >
                     <div class="poster">
