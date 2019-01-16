@@ -1,17 +1,19 @@
 <template>
-    <div class="container">
+    <div class="content">
         <h1>Actors index</h1>
         <ol v-if="actors">
             <li v-for="actor in actors">
-                <p>{{ actor.firstname }} {{ actor.lastname }}</p>
-                <img :src="actor.picture" :alt="actor.firstname + ' ' +  actor.lastname" />
-                <form method="post" :action="'/actors/' + actor.id">
-                    <input type="hidden" name="id" :value="actor.id" />
-                    <input type="hidden" name="_method" value="DELETE">
-                    <input type="hidden" name="_token" :value="csrf">
+                <a :href="'/actors/' + actor.id">
+                    <p>{{ actor.firstname }} {{ actor.lastname }}</p>
+                    <img :src="actor.picture" :alt="actor.firstname + ' ' +  actor.lastname" />
+                    <form method="post" :action="'/actors/' + actor.id">
+                        <input type="hidden" name="id" :value="actor.id" />
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" :value="csrf">
 
-                    <button v-on:click="destroy">Delete</button>
-                </form>
+                        <button v-on:click="destroy">Delete</button>
+                    </form>
+                </a>
             </li>
         </ol>
     </div>

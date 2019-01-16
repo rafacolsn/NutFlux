@@ -211,6 +211,14 @@ h3 {
   margin: 3rem auto;
 }
 
+.breadcrump {
+  color: rgba(70, 189, 223, 0.9);
+}
+
+.breadcrump a {
+  color: rgba(70, 189, 223, 0.9);
+}
+
 .nav-menu {
   background-color: #282828;
   display: -webkit-box;
@@ -666,5 +674,15 @@ h3 {
 
 .register-link {
   margin: 0;
+}
+
+.actor-card {
+  background: #4A4A4A;
+}
+
+.actor-card img {
+  height: 15rem;
+  width: 10rem;
+  border-radius: 5px;
 }
 

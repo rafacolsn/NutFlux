@@ -1,10 +1,15 @@
 <template>
     <div class="content">
-        <h1>Home >
-                <span v-if="media.is_serie">TV Show</span>
-                <span v-if="media.is_serie == 0">Movie</span>
+        <h1 class="breadcrump">
+            <a href="/choices"> Home</a> > 
+                <span v-if="media.is_serie">
+                    <a href="/medias#tv-shows"> TV Show</a>
+                </span>
+                <span v-if="media.is_serie == 0">
+                    <a href="/medias#movies"> Movie</a>
+                </span>
                 > {{ media.title }}
-            </h1>
+        </h1>
         <div class="media-card">
 
 

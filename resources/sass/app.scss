@@ -70,6 +70,13 @@ h3 {
   margin: 3rem auto;
 }
 
+.breadcrump {
+  color: $second-color;
+  a {
+    color: $second-color;
+  }
+}
+
 // import nav-menu sass
 @import 'nav-menu';
 
@@ -79,3 +86,5 @@ h3 {
 @import 'choices-buttons';
 
 @import 'guest-forms';
+
+@import 'actors';
