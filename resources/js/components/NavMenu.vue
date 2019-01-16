@@ -21,16 +21,16 @@
 
       <ul class="dropdown-child">
         <li>
-          <a href="/medias">All</a>
+          <a href="/medias">All Shows</a>
         </li>
         <li>
-          <a href="/choices/favourites">Favourites</a>
+          <a href="/choices/#favourites">Favourites</a>
         </li>
         <li>
-          <a href="/choices/later">To Watch Later</a>
+          <a href="/choices/#later">To Watch Later</a>
         </li>
         <li>
-          <a href="/choices/watched">Seen</a>
+          <a href="/choices/#seen">Watched</a>
         </li>
       </ul>
     </div>

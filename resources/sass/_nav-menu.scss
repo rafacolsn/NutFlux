@@ -58,6 +58,7 @@
   .dropdown-child {
     display: none;
     background-color: $second-bg;
+    box-shadow: 10px 5px 8px $background;
     min-width: 13rem;
     padding-top: 1.7rem;
     z-index: 100;

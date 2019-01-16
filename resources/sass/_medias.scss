@@ -3,6 +3,7 @@
     border-radius: 8px;
     display: flex;
     flex-wrap: wrap;
+    margin-block-end: 3rem;
     img {
         height: 15rem;
         width: 10rem;
@@ -67,19 +68,19 @@
             }
         }
     }
+    .summary {
+        padding-right: 2rem;
+        p {
+            overflow-y: auto;
+            min-height: 13rem;
+        }
+    }
     .row1, {
         display: flex;
     }
     .row1-column1 {
         img {
             float: left;
-        }
-        .summary {
-            padding-right: 2rem;
-            p {
-                overflow-y: auto;
-                min-height: 13rem;
-            }
         }
     }
     .trailer {
@@ -95,6 +96,8 @@
         p {
             padding : 0 2rem 1rem 0;
             text-align: left;
+            max-width: 5rem;
+            min-height: 2rem;
         }
 
         .actors-list {
@@ -118,4 +121,5 @@
 }
 .actors-choices-wrapper {
     display: flex;
+    position: relative;
 }

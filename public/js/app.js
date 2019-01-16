@@ -179,7 +179,7 @@ module.exports = function normalizeComponent (
 "use strict";
 
 
-var bind = __webpack_require__(9);
+var bind = __webpack_require__(12);
 var isBuffer = __webpack_require__(25);
 
 /*global toString:true*/
@@ -533,10 +533,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(11);
+    adapter = __webpack_require__(14);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(11);
+    adapter = __webpack_require__(14);
   }
   return adapter;
 }
@@ -611,7 +611,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
 
 /***/ }),
 /* 4 */
@@ -925,6 +925,24 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 /* 6 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/dog.jpg?86bb9176d97f09764dd6db191c32d440";
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/cat.jpg?0bf1d1bbdae1712b9b1a75aa534dd071";
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/duck.jpg?e5d1cfb4db70734f976173c0bbc63512";
+
+/***/ }),
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3505,7 +3523,7 @@ Popper.Defaults = Defaults;
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
-/* 7 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -13876,13 +13894,13 @@ return jQuery;
 
 
 /***/ }),
-/* 8 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(24);
 
 /***/ }),
-/* 9 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13900,7 +13918,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 10 */
+/* 13 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -14090,7 +14108,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 11 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14101,7 +14119,7 @@ var settle = __webpack_require__(28);
 var buildURL = __webpack_require__(30);
 var parseHeaders = __webpack_require__(31);
 var isURLSameOrigin = __webpack_require__(32);
-var createError = __webpack_require__(12);
+var createError = __webpack_require__(15);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(33);
 
 module.exports = function xhrAdapter(config) {
@@ -14277,7 +14295,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14302,7 +14320,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14314,7 +14332,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14340,24 +14358,6 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/dog.jpg?86bb9176d97f09764dd6db191c32d440";
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/cat.jpg?0bf1d1bbdae1712b9b1a75aa534dd071";
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/duck.jpg?e5d1cfb4db70734f976173c0bbc63512";
-
-/***/ }),
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14377,7 +14377,7 @@ module.exports = __webpack_require__(118);
  */
 
 __webpack_require__(20);
-var axios = __webpack_require__(8);
+var axios = __webpack_require__(11);
 
 window.Vue = __webpack_require__(42);
 
@@ -14460,8 +14460,8 @@ window._ = __webpack_require__(21);
  */
 
 try {
-  window.Popper = __webpack_require__(6).default;
-  window.$ = window.jQuery = __webpack_require__(7);
+  window.Popper = __webpack_require__(9).default;
+  window.$ = window.jQuery = __webpack_require__(10);
 
   __webpack_require__(23);
 } catch (e) {}
@@ -14472,7 +14472,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(8);
+window.axios = __webpack_require__(11);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -31660,7 +31660,7 @@ module.exports = function(module) {
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(7), __webpack_require__(6)) :
+   true ? factory(exports, __webpack_require__(10), __webpack_require__(9)) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -35608,7 +35608,7 @@ module.exports = function(module) {
 
 
 var utils = __webpack_require__(1);
-var bind = __webpack_require__(9);
+var bind = __webpack_require__(12);
 var Axios = __webpack_require__(26);
 var defaults = __webpack_require__(3);
 
@@ -35643,9 +35643,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(14);
+axios.Cancel = __webpack_require__(17);
 axios.CancelToken = __webpack_require__(40);
-axios.isCancel = __webpack_require__(13);
+axios.isCancel = __webpack_require__(16);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -35798,7 +35798,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(12);
+var createError = __webpack_require__(15);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -36231,7 +36231,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(1);
 var transformData = __webpack_require__(37);
-var isCancel = __webpack_require__(13);
+var isCancel = __webpack_require__(16);
 var defaults = __webpack_require__(3);
 var isAbsoluteURL = __webpack_require__(38);
 var combineURLs = __webpack_require__(39);
@@ -36391,7 +36391,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(14);
+var Cancel = __webpack_require__(17);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -47840,7 +47840,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(13)))
 
 /***/ }),
 /* 45 */
@@ -48515,7 +48515,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("img", {
-        attrs: { src: __webpack_require__(15), alt: "dog" }
+        attrs: { src: __webpack_require__(6), alt: "dog" }
       }),
       _vm._v(" "),
       _c("input", {
@@ -48534,7 +48534,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("img", {
-        attrs: { src: __webpack_require__(16), alt: "cat" }
+        attrs: { src: __webpack_require__(7), alt: "cat" }
       }),
       _vm._v(" "),
       _c("input", {
@@ -48553,7 +48553,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("img", {
-        attrs: { src: __webpack_require__(17), alt: "duck" }
+        attrs: { src: __webpack_require__(8), alt: "duck" }
       }),
       _vm._v(" "),
       _c("input", {
@@ -48827,7 +48827,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("img", {
-        attrs: { src: __webpack_require__(15), alt: "dog" }
+        attrs: { src: __webpack_require__(6), alt: "dog" }
       }),
       _vm._v(" "),
       _c("input", {
@@ -48847,7 +48847,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("img", {
-        attrs: { src: __webpack_require__(16), alt: "cat" }
+        attrs: { src: __webpack_require__(7), alt: "cat" }
       }),
       _vm._v(" "),
       _c("input", {
@@ -48866,7 +48866,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("img", {
-        attrs: { src: __webpack_require__(17), alt: "duck" }
+        attrs: { src: __webpack_require__(8), alt: "duck" }
       }),
       _vm._v(" "),
       _c("input", {
@@ -51678,7 +51678,7 @@ var render = function() {
                         : ""
                     ],
                     attrs: {
-                      src: __webpack_require__(15),
+                      src: __webpack_require__(6),
                       alt: "dog"
                     }
                   })
@@ -51721,7 +51721,7 @@ var render = function() {
                         : ""
                     ],
                     attrs: {
-                      src: __webpack_require__(16),
+                      src: __webpack_require__(7),
                       alt: "cat"
                     }
                   })
@@ -51763,7 +51763,7 @@ var render = function() {
                         : ""
                     ],
                     attrs: {
-                      src: __webpack_require__(17),
+                      src: __webpack_require__(8),
                       alt: "duck"
                     }
                   })
@@ -52334,14 +52334,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content" }, [
-    _c("h2", { staticClass: "list-title" }, [_vm._v("Favourites")]),
+    _c("h2", { staticClass: "list-title", attrs: { id: "favourites" } }, [
+      _vm._v("Favourites")
+    ]),
     _vm._v(" "),
     _c(
       "ul",
       { staticClass: "media-list" },
       _vm._l(_vm.choiceslist, function(item) {
         return item.type === "favourites"
-          ? _c("li", [
+          ? _c("li", { staticClass: "media-list-item" }, [
               _c("a", { attrs: { href: "/medias/" + item.id_media } }, [
                 _c("img", { attrs: { src: item.poster, alt: item.title } }),
                 _vm._v(" "),
@@ -52353,14 +52355,16 @@ var render = function() {
       0
     ),
     _vm._v(" "),
-    _c("h2", { staticClass: "list-title" }, [_vm._v("Watched")]),
+    _c("h2", { staticClass: "list-title", attrs: { id: "seen" } }, [
+      _vm._v("Watched")
+    ]),
     _vm._v(" "),
     _c(
       "ul",
       { staticClass: "media-list" },
       _vm._l(_vm.choiceslist, function(item) {
         return item.type === "watched"
-          ? _c("li", [
+          ? _c("li", { staticClass: "media-list-item" }, [
               _c("a", { attrs: { href: "/medias/" + item.id_media } }, [
                 _c("img", { attrs: { src: item.poster, alt: item.title } }),
                 _vm._v(" "),
@@ -52372,14 +52376,16 @@ var render = function() {
       0
     ),
     _vm._v(" "),
-    _c("h2", { staticClass: "list-title" }, [_vm._v("To Watch Later")]),
+    _c("h2", { staticClass: "list-title", attrs: { id: "later" } }, [
+      _vm._v("To Watch Later")
+    ]),
     _vm._v(" "),
     _c(
       "ul",
       { staticClass: "media-list" },
       _vm._l(_vm.choiceslist, function(item) {
         return item.type === "later"
-          ? _c("li", [
+          ? _c("li", { staticClass: "media-list-item" }, [
               _c("a", { attrs: { href: "/medias/" + item.id_media } }, [
                 _c("img", { attrs: { src: item.poster, alt: item.title } }),
                 _vm._v(" "),
@@ -52936,11 +52942,14 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("img", {
+                          staticClass: "left",
                           attrs: { src: result.poster, alt: result.title }
                         })
                       ]),
                       _vm._v(" "),
-                      _c("p", [_vm._v(_vm._s(result.summary))])
+                      _c("p", { staticClass: "summary" }, [
+                        _vm._v(_vm._s(result.summary))
+                      ])
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -53168,22 +53177,24 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("ul", { staticClass: "dropdown-child" }, [
-      _c("li", [_c("a", { attrs: { href: "/medias" } }, [_vm._v("All")])]),
+      _c("li", [
+        _c("a", { attrs: { href: "/medias" } }, [_vm._v("All Shows")])
+      ]),
       _vm._v(" "),
       _c("li", [
-        _c("a", { attrs: { href: "/choices/favourites" } }, [
+        _c("a", { attrs: { href: "/choices/#favourites" } }, [
           _vm._v("Favourites")
         ])
       ]),
       _vm._v(" "),
       _c("li", [
-        _c("a", { attrs: { href: "/choices/later" } }, [
+        _c("a", { attrs: { href: "/choices/#later" } }, [
           _vm._v("To Watch Later")
         ])
       ]),
       _vm._v(" "),
       _c("li", [
-        _c("a", { attrs: { href: "/choices/watched" } }, [_vm._v("Seen")])
+        _c("a", { attrs: { href: "/choices/#seen" } }, [_vm._v("Watched")])
       ])
     ])
   }

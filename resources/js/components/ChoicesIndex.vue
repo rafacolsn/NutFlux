@@ -1,8 +1,8 @@
 <template>
   <div class="content">
-    <h2 class="list-title">Favourites</h2>
+    <h2 id="favourites" class="list-title">Favourites</h2>
     <ul class="media-list">
-      <li v-for="item in choiceslist" v-if="item.type === 'favourites' ">
+      <li class="media-list-item" v-for="item in choiceslist" v-if="item.type === 'favourites' ">
         
         <a :href="'/medias/' + item.id_media">
             <img :src="item.poster" :alt="item.title" />
@@ -11,9 +11,9 @@
         
       </li>
     </ul>
-    <h2 class="list-title">Watched</h2>
+    <h2 id="seen" class="list-title">Watched</h2>
     <ul class="media-list" >
-      <li v-for="item in choiceslist" v-if="item.type === 'watched' ">
+      <li class="media-list-item" v-for="item in choiceslist" v-if="item.type === 'watched' ">
         
         <a :href="'/medias/' + item.id_media">
             <img :src="item.poster" :alt="item.title" />
@@ -22,9 +22,9 @@
         
       </li>
     </ul>
-    <h2 class="list-title">To Watch Later</h2>
+    <h2 id="later" class="list-title">To Watch Later</h2>
     <ul class="media-list">
-      <li v-for="item in choiceslist" v-if="item.type === 'later' ">
+      <li class="media-list-item" v-for="item in choiceslist" v-if="item.type === 'later' ">
         
         <a :href="'/medias/' + item.id_media">
             <img :src="item.poster" :alt="item.title"/>

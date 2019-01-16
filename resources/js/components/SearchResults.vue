@@ -7,9 +7,9 @@
                     <div class="media-list" v-if="result.title">
                         <a :href="'/medias/' + result.id">
                             <h2>{{ result.title }} ({{ result.year }})</h2>
-                            <img :src="result.poster" :alt="result.title" />
+                            <img class="left" :src="result.poster" :alt="result.title" />
                         </a>
-                            <p>{{ result.summary }}</p>
+                            <p class="summary">{{ result.summary }}</p>
                     </div>
 
                     <div class="actors-list" v-if="result.lastname">
