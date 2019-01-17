@@ -5,10 +5,15 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
 const axios = require('axios');
 
 window.Vue = require('vue');
+
+import VueRouter from 'vue-router';
+import OurRoutes from './routes';
+Vue.use(VueRouter);
+const router = new VueRouter ({ mode: 'history', routes: OurRoutes });
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -67,10 +72,7 @@ Vue.component('nav-menu', require('./components/NavMenu.vue'));
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue( {
-    el: '#app'
-} );
+const app = new Vue({ 
+    router 
+}).$mount("#app");
 
-const menu = new Vue( {
-    el: '#nav'
-} );

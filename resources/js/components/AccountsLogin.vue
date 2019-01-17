@@ -15,7 +15,8 @@
                         <input class="input-field" type="password" v-model="password" name="password" placeholder="Type your password">
                     </p>
 
-                    <input type="hidden" name="_token" :value="csrf">
+                    <!-- <input type="hidden" name="_token" :value="csrf"> -->
+                       {{ crsf_token() }}
 
                     <div class="container-button">
                         <button class="btn" @click="login">Login</button>

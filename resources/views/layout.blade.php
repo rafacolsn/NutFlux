@@ -11,20 +11,13 @@
 
         <link rel="shortcut icon" type="image/png" href="{{ URL::asset('img/favicon.ico') }}" />
 
-        <title>@yield( 'title' ) - NutFlux</title>
+        <title>NutFlux</title>
     </head>
     <body>
 
-        <div id="nav">
-            <!-- include vue component -->           
-        </nav>
-        <nav-menu :user="{{ json_encode(session("user")) }}" csrf="{{ csrf_token() }}"></nav-menu>
-            
-        </div>
-
         <main id="app">
-            @yield( 'content' )
-
+           
+        <router-view></router-view>
 
         </main> <!-- .content -->
 

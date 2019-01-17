@@ -11,18 +11,22 @@
 |
 */
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get( '/', 'Auth\LoginController@showLoginForm' );
-Auth::routes();
-Route::get( '/home', 'HomeController@index' ) ->name ( 'home' );
-Route::resource('actors', 'ActorController');
-Route::resource('medias', 'MediaController');
-Route::resource('accounts', 'AccountController');
-Route::resource('users', 'UserController');
-Route::resource( 'choices', 'ChoiceController' );
-Route::get('/register', 'AccountController@create')->name('register');
-Route::post('/register', 'AccountController@store');
-Route::get('/login/{id}', 'UserController@login')->name('userlogin');
-Route::get( '/search', 'SearchController@search' ) -> name( 'search' );
-// Route::get( '/home', 'HomeController@index' ) -> name( 'home' );
-Route::post('/logout', 'AccountController@logout') -> name('logout');
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get( '/', 'Auth\LoginController@showLoginForm' );
+// Auth::routes();
+// Route::get( '/home', 'HomeController@index' ) ->name ( 'home' );
+// Route::resource('actors', 'ActorController');
+// Route::resource('medias', 'MediaController');
+// Route::resource('accounts', 'AccountController');
+// Route::resource('users', 'UserController');
+// Route::resource( 'choices', 'ChoiceController' );
+// Route::get('/register', 'AccountController@create')->name('register');
+// Route::post('/register', 'AccountController@store');
+// Route::get('/login/{id}', 'UserController@login')->name('userlogin');
+// Route::get( '/search', 'SearchController@search' ) -> name( 'search' );
+// // Route::get( '/home', 'HomeController@index' ) -> name( 'home' );
+// Route::post('/logout', 'AccountController@logout') -> name('logout');
+
+Route::any('/{any}', function () {
+    return view('layout');
+})->where('any', '.*');
