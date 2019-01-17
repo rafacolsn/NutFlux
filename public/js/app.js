@@ -51984,7 +51984,7 @@ var render = function() {
           "form",
           {
             staticClass: "guest-form",
-            attrs: { method: "post", action: "/register/" }
+            attrs: { method: "post", action: "/register" }
           },
           [
             _c("p", { staticClass: "input-wrapper" }, [
@@ -52579,7 +52579,7 @@ var render = function() {
           "form",
           {
             staticClass: "guest-form",
-            attrs: { method: "post", action: "/login/" }
+            attrs: { method: "post", action: "/login" }
           },
           [
             _c("p", { staticClass: "input-wrapper" }, [
