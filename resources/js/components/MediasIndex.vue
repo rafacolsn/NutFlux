@@ -1,5 +1,6 @@
 <template>
   <div class="content">
+    <a href="/medias/create" class="add-show"><i class="fas fa-plus"></i>Add a show</a>
     <h1>All Shows</h1>
     <div v-for="type in types">
         <h2 :id="type.id">{{ type.title }}</h2>

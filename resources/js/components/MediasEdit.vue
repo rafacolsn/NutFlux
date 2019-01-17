@@ -1,7 +1,7 @@
 <template>
-    <div class="content">
+    <div class="content medias-edit">
         <h1>Edit this media</h1>
-        <form :action="'/medias/' + media.id" method="post" class="media-edit flex">
+        <form :action="'/medias/' + media.id" method="post">
             <div class="edit">
                 <label for="mediaTitle">Title</label>
                 <input type="text" name="mediaTitle" :value="media.title" />

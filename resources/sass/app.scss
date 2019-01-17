@@ -29,6 +29,7 @@
     scrollbar-face-color: $foreground-color;
     scrollbar-track-color: $background-color;
   }
+};
 
 body, html {
   @include scrollbars(0.3rem, $second-color, #282828);
@@ -59,7 +60,6 @@ h1, .list-title {
 h2 {
   font-family: Nunito;
   color: $third-color;
-  // padding: 2rem; Emilie
 }
 h3 {
   font-weight: bold;
@@ -80,6 +80,10 @@ h3 {
   display: flex;
   flex-wrap: wrap;
 }
+.space {
+  margin-bottom: 2rem;
+  justify-content: space-evenly;
+}
 
 // import nav-menu sass
 @import 'nav-menu';
@@ -94,5 +98,4 @@ h3 {
 @import 'actors';
 
 // import users sass
-@import 'users-create';
-@import 'users-edit';
+@import 'users';

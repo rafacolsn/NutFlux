@@ -1,13 +1,8 @@
 <template>
   <div class="container users-edit">
-    <div class="float">
-      <h2>Edit user</h2>
-    </div>
-
-    <div class="float">
-      <img id="avatar-user" :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
-    </div>
-
+    <img id="avatar-user" :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
+    <h2>Edit user</h2>
+    
     <form class="clear" method="post" :action="'/users/' + user.id">
       <p>
         <input type="text" name="userFirstname" :value="user.firstname">
@@ -33,12 +28,12 @@
 
       <input type="hidden" name="_method" value="PATCH">
       <input type="hidden" name="_token" :value="csrf">
-      
+
       <div class="container-button">
         <button class="btn" v-on:click="send">Edit</button>
         <button class="btn" v-on:click="destroy">Delete user</button>
         <button class="btn">
-            <a href="/users">Cancel</a>
+          <a href="/users">Cancel</a>
         </button>
       </div>
     </form>

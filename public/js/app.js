@@ -48024,7 +48024,7 @@ exports = module.exports = __webpack_require__(16)(false);
 
 
 // module
-exports.push([module.i, "\n.container {\n  color: #fff;\n}\na {\n  color: #fff;\n}\nli {\n  list-style-type: none;\n}\nimg {\n  max-width: 10%;\n}\n\n", ""]);
+exports.push([module.i, "\n.container {\n  color: #fff;\n}\na {\n  color: #fff;\n}\nli {\n  list-style-type: none;\n}\nimg {\n  max-width: 10%;\n}\n", ""]);
 
 // exports
 
@@ -48103,6 +48103,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["users", "csrf"],
@@ -48126,7 +48127,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     }
   }
-
 });
 
 /***/ }),
@@ -48137,77 +48137,93 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("Users index")]),
+  return _c("div", { staticClass: "content users-index" }, [
+    _c("h1", [_vm._v("Your profiles")]),
     _vm._v(" "),
     _vm.users
       ? _c(
           "ol",
+          { staticClass: "flex space" },
           [
             _vm._l(_vm.users, function(user) {
               return _c("li", [
-                _c(
-                  "form",
-                  { attrs: { method: "GET", action: "/login/" + user.id } },
-                  [
-                    _c("button", { on: { click: _vm.login } }, [
-                      _c("p", [
-                        _vm._v(
-                          _vm._s(user.firstname) + " " + _vm._s(user.lastname)
-                        )
-                      ]),
-                      _vm._v(" "),
+                _c("div", { staticClass: "user-wrapper" }, [
+                  _c(
+                    "form",
+                    { attrs: { method: "GET", action: "/login/" + user.id } },
+                    [
+                      _c(
+                        "button",
+                        { staticClass: "user-btn", on: { click: _vm.login } },
+                        [
+                          _c("p", [
+                            _vm._v(
+                              _vm._s(user.firstname) +
+                                " " +
+                                _vm._s(user.lastname)
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: { type: "hidden", name: "id" },
+                            domProps: { value: user.id }
+                          }),
+                          _vm._v(" "),
+                          _c("img", {
+                            attrs: {
+                              src: user.avatar,
+                              alt: user.firstname + " " + user.lastname
+                            }
+                          })
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "edit-btn",
+                      attrs: { href: "/users/" + user.id + "/edit" }
+                    },
+                    [_vm._v("Edit user information")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "form",
+                    { attrs: { method: "post", action: "/users/" + user.id } },
+                    [
                       _c("input", {
                         attrs: { type: "hidden", name: "id" },
                         domProps: { value: user.id }
                       }),
                       _vm._v(" "),
-                      _c("img", {
+                      _c("input", {
                         attrs: {
-                          src: user.avatar,
-                          alt: user.firstname + " " + user.lastname
+                          type: "hidden",
+                          name: "_method",
+                          value: "DELETE"
                         }
-                      })
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "form",
-                  { attrs: { method: "post", action: "/users/" + user.id } },
-                  [
-                    _c("input", {
-                      attrs: { type: "hidden", name: "id" },
-                      domProps: { value: user.id }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        type: "hidden",
-                        name: "_method",
-                        value: "DELETE"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: { type: "hidden", name: "_token" },
-                      domProps: { value: _vm.csrf }
-                    }),
-                    _vm._v(" "),
-                    _c("button", { on: { click: _vm.destroy } }, [
-                      _vm._v("Delete")
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "/users/" + user.id + "/edit" } }, [
-                  _vm._v("Edit user information")
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: { type: "hidden", name: "_token" },
+                        domProps: { value: _vm.csrf }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "delete-btn",
+                          on: { click: _vm.destroy }
+                        },
+                        [_vm._v("Delete this user")]
+                      )
+                    ]
+                  )
                 ])
               ])
             }),
-            _vm._v(" "),
-            _c("br"),
-            _c("br"),
             _vm._v(" "),
             _vm.users.length == 0
               ? _c("li", [
@@ -48215,18 +48231,18 @@ var render = function() {
                     _vm._v("You haven't created any user yet. That's a shame.")
                   ])
                 ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.users.length < 3
-              ? _c("li", [
-                  _c("a", { attrs: { href: "/users/create" } }, [
-                    _vm._v("Add a new user to your account. ")
-                  ])
-                ])
               : _vm._e()
           ],
           2
         )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.users.length < 3
+      ? _c("div", [
+          _c("a", { attrs: { href: "/users/create" } }, [
+            _vm._v("Add a new user to your account.")
+          ])
+        ])
       : _vm._e()
   ])
 }
@@ -48381,11 +48397,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["user", "csrf", "users"],
@@ -48432,17 +48443,15 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container users-edit" }, [
-    _vm._m(0),
+    _c("img", {
+      attrs: {
+        id: "avatar-user",
+        src: _vm.user.avatar,
+        alt: _vm.user.firstname + " " + _vm.user.lastname
+      }
+    }),
     _vm._v(" "),
-    _c("div", { staticClass: "float" }, [
-      _c("img", {
-        attrs: {
-          id: "avatar-user",
-          src: _vm.user.avatar,
-          alt: _vm.user.firstname + " " + _vm.user.lastname
-        }
-      })
-    ]),
+    _c("h2", [_vm._v("Edit user")]),
     _vm._v(" "),
     _c(
       "form",
@@ -48465,11 +48474,11 @@ var render = function() {
           })
         ]),
         _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
         _vm._m(1),
         _vm._v(" "),
         _vm._m(2),
-        _vm._v(" "),
-        _vm._m(3),
         _vm._v(" "),
         _c("input", {
           attrs: { type: "hidden", name: "_method", value: "PATCH" }
@@ -48489,21 +48498,13 @@ var render = function() {
             _vm._v("Delete user")
           ]),
           _vm._v(" "),
-          _vm._m(4)
+          _vm._m(3)
         ])
       ]
     )
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "float" }, [
-      _c("h2", [_vm._v("Edit user")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -50596,6 +50597,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ["medias", "csrf", "user", "choices", "movies", "tv_shows"],
@@ -50635,6 +50637,8 @@ var render = function() {
     "div",
     { staticClass: "content" },
     [
+      _vm._m(0),
+      _vm._v(" "),
       _c("h1", [_vm._v("All Shows")]),
       _vm._v(" "),
       _vm._l(_vm.types, function(type) {
@@ -50679,7 +50683,7 @@ var render = function() {
                                 domProps: { value: _vm.csrf }
                               }),
                               _vm._v(" "),
-                              _vm._m(0, true)
+                              _vm._m(1, true)
                             ]
                           )
                         : _vm._e(),
@@ -50710,7 +50714,7 @@ var render = function() {
                                 domProps: { value: _vm.csrf }
                               }),
                               _vm._v(" "),
-                              _vm._m(1, true)
+                              _vm._m(2, true)
                             ]
                           )
                         : _vm._e(),
@@ -50741,7 +50745,7 @@ var render = function() {
                                 domProps: { value: _vm.csrf }
                               }),
                               _vm._v(" "),
-                              _vm._m(2, true)
+                              _vm._m(3, true)
                             ]
                           )
                         : _vm._e(),
@@ -50772,7 +50776,7 @@ var render = function() {
                                 domProps: { value: _vm.csrf }
                               }),
                               _vm._v(" "),
-                              _vm._m(3, true)
+                              _vm._m(4, true)
                             ]
                           )
                         : _vm._e(),
@@ -50803,7 +50807,7 @@ var render = function() {
                                 domProps: { value: _vm.csrf }
                               }),
                               _vm._v(" "),
-                              _vm._m(4, true)
+                              _vm._m(5, true)
                             ]
                           )
                         : _vm._e(),
@@ -50834,7 +50838,7 @@ var render = function() {
                                 domProps: { value: _vm.csrf }
                               }),
                               _vm._v(" "),
-                              _vm._m(5, true)
+                              _vm._m(6, true)
                             ]
                           )
                         : _vm._e()
@@ -50858,6 +50862,16 @@ var render = function() {
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "add-show", attrs: { href: "/medias/create" } },
+      [_c("i", { staticClass: "fas fa-plus" }), _vm._v("Add a show")]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -51073,15 +51087,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "content" }, [
+  return _c("div", { staticClass: "content medias-edit" }, [
     _c("h1", [_vm._v("Edit this media")]),
     _vm._v(" "),
     _c(
       "form",
-      {
-        staticClass: "media-edit flex",
-        attrs: { action: "/medias/" + _vm.media.id, method: "post" }
-      },
+      { attrs: { action: "/medias/" + _vm.media.id, method: "post" } },
       [
         _c("div", { staticClass: "edit" }, [
           _c("label", { attrs: { for: "mediaTitle" } }, [_vm._v("Title")]),
@@ -51330,11 +51341,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "content medias-edit" }, [
     _c("h1", [_vm._v("Create a media")]),
     _vm._v(" "),
     _c("form", { attrs: { method: "post", action: "/medias" } }, [
-      _c("p", [
+      _c("div", { staticClass: "edit" }, [
         _c("label", { attrs: { for: "mediaTitle" } }, [_vm._v("Title")]),
         _vm._v(" "),
         _c("input", {
@@ -51359,7 +51370,7 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("p", [
+      _c("div", { staticClass: "edit" }, [
         _c("label", { attrs: { for: "mediaSummary" } }, [_vm._v("Summary")]),
         _vm._v(" "),
         _c("textarea", {
@@ -51384,7 +51395,7 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("p", [
+      _c("div", { staticClass: "edit" }, [
         _c("label", { attrs: { for: "mediaYear" } }, [_vm._v("Year")]),
         _vm._v(" "),
         _c("input", {
@@ -51409,7 +51420,7 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("p", [
+      _c("div", { staticClass: "edit" }, [
         _c("label", { attrs: { for: "mediaTrailer" } }, [_vm._v("Trailer")]),
         _vm._v(" "),
         _c("input", {
@@ -51434,7 +51445,7 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("p", [
+      _c("div", { staticClass: "edit" }, [
         _c("label", { attrs: { for: "mediaIsSerie" } }, [
           _vm._v("Is it part of a TV Show ?")
         ]),
@@ -51478,7 +51489,7 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("p", [
+      _c("div", { staticClass: "edit show-poster" }, [
         _c("label", { attrs: { for: "mediaPoster" } }, [_vm._v("Poster")]),
         _vm._v(" "),
         _c("input", {
@@ -51503,7 +51514,7 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("p", [
+      _c("div", { staticClass: "edit" }, [
         _c("label", { attrs: { for: "mediaDirector" } }, [_vm._v("Director")]),
         _vm._v(" "),
         _c("input", {
@@ -51528,7 +51539,7 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("p", [
+      _c("div", { staticClass: "edit" }, [
         _c("label", { attrs: { for: "mediaProducer" } }, [_vm._v("Producer")]),
         _vm._v(" "),
         _c("input", {
@@ -54125,6 +54136,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["user", "csrf"],
@@ -54152,9 +54166,16 @@ var render = function() {
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("div", [
+      _c("div", { staticClass: "nav-user" }, [
         _c("a", { attrs: { href: "/users" } }, [
-          _vm._v(_vm._s(_vm.user.firstname))
+          _c("img", {
+            attrs: {
+              id: "nav-avatar-user",
+              src: _vm.user.avatar,
+              alt: _vm.user.firstname + " " + _vm.user.lastname
+            }
+          }),
+          _vm._v("\n      " + _vm._s(_vm.user.firstname) + "\n    ")
         ])
       ]),
       _vm._v(" "),
@@ -54251,7 +54272,7 @@ if (false) {
 /* 116 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \n@import 'nav-menu';\n^\n      Import directives may not be used within control directives or mixins.\n      in /home/raph/home/raph/becode/NutFlux/resources/sass/app.scss (line 85, column 1)\n    at runLoaders (/home/raph/home/raph/becode/NutFlux/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /home/raph/home/raph/becode/NutFlux/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /home/raph/home/raph/becode/NutFlux/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/home/raph/home/raph/becode/NutFlux/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/home/raph/home/raph/becode/NutFlux/node_modules/sass-loader/lib/loader.js:55:13)\n    at Object.done [as callback] (/home/raph/home/raph/becode/NutFlux/node_modules/neo-async/async.js:8077:18)\n    at options.error (/home/raph/home/raph/becode/NutFlux/node_modules/node-sass/lib/index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

@@ -1,35 +1,36 @@
 <template>
-  <div class="container">
-    <h1>Users index</h1>
-    <ol v-if="users">
+  <div class="content users-index">
+    <h1>Your profiles</h1>
+    <ol class="flex space" v-if="users">
       <li v-for="user in users">
-        <form method="GET" :action="'/login/' + user.id">
-          <button v-on:click="login">
-            <p>{{ user.firstname }} {{ user.lastname }}</p>
-            <input type="hidden" name="id" :value="user.id">
-            <img :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
-          </button>
-        </form>
-
-        <form method="post" :action="'/users/' + user.id">
-          <input type="hidden" name="id" :value="user.id">
-          <input type="hidden" name="_method" value="DELETE">
-          <input type="hidden" name="_token" :value="csrf">
+        <div class="user-wrapper">
+          <form method="GET" :action="'/login/' + user.id">
+            <button class="user-btn" v-on:click="login">
+              <p>{{ user.firstname }} {{ user.lastname }}</p>
+              <input type="hidden" name="id" :value="user.id">
+              <img :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
+            </button>
+          </form>
           
-          <button v-on:click="destroy">Delete</button>
-        </form>
+          <a class="edit-btn" :href="'/users/' + user.id + '/edit'">Edit user information</a>
 
-        <a :href="'/users/' + user.id + '/edit'">Edit user information</a>
+          <form method="post" :action="'/users/' + user.id">
+            <input type="hidden" name="id" :value="user.id">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" :value="csrf">
+            
+            <button class="delete-btn" v-on:click="destroy">Delete this user</button>
+          </form>
+
+        </div>
       </li>
-        <br><br>
-              <li v-if="users.length == 0">
+      <li v-if="users.length == 0">
         <p>You haven't created any user yet. That's a shame.</p>
       </li>
-      <li v-if="users.length < 3">
-        <a href="/users/create">Add a new user to your account. </a>
-      </li>
-
     </ol>
+    <div v-if="users.length < 3">
+      <a href="/users/create">Add a new user to your account.</a>
+    </div>
   </div>
 </template>
 
@@ -60,9 +61,8 @@ export default {
           // handle error
           console.log(error);
         });
-    },
-  },
-
+    }
+  }
 };
 </script>
 
@@ -83,5 +83,4 @@ li {
 img {
   max-width: 10%;
 }
-
 </style>
