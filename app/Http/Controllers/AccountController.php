@@ -43,6 +43,7 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
+        dd( 'this is register controller. You made it this far. Yay.' );
         $this -> validate( $request, [
             'email' => 'required',
             'password' => 'required',
