@@ -4,7 +4,7 @@
         <p class="site-title">Nutflux</p>
         <div class="wrapper">
             <h1>Sign Up</h1>
-            <form class="guest-form" method="post" action="/register/">
+            <form class="guest-form" method="post" action="/register">
                 <p class="input-wrapper">
                     <label class="input-label" for="email">Email:</label>
                     <input class="input-field" type="email" v-model="email" name="email" placeholder="Your email address">
