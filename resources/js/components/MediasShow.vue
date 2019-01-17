@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <button class="add-show"><i class="fas fa-plus"></i>Add a show</button>
+        <a href="/medias/create" class="add-show"><i class="fas fa-plus"></i>Add a show</a>
         <h1 class="breadcrump">
             <a href="/choices"> Home</a> > 
                 <span v-if="media.is_serie">

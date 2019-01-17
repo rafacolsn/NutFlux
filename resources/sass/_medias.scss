@@ -163,30 +163,12 @@
         min-height: 8rem;
         min-width: 20rem;
     }
-    button {
-        background: $second-bg;
-        font-family: Nunito;
-        color: $font-color; 
-        font-size: x-large;
-        border: 1px solid $font-color;
-        border-radius: 3px;
-        height: 100%;
-        margin: 1rem 0 0 20rem;
-        transition: all .3s ease-in-out;
-        &:hover {
-            color: $third-color;
-            border-color: $third-color;
-            transform: scale(1.1);
-            cursor: pointer;
-        }
-    }
-    .show-poster input {
-        width: 56rem;
-    }
+    
     
 }
 .edit {
-    margin-right: 2rem;
+    margin-top: 1rem;
+    float: left;
 }
 .year input {
     width: 25%;
@@ -198,13 +180,215 @@
 }
 .add-show {
     background: $second-color;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    text-align: center;
     border-radius: 5px;
     border: none;
     color: $second-bg;
     float: right;
-    min-height: 2rem;
-    min-width: 9rem;
+    transition: all .3s ease-in-out;
     i {
         margin-right: 1rem;
+    }
+    &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+        color: aliceblue;
+    }
+}
+.medias-create {
+    background-color: $second-bg;
+    margin: 4rem auto;
+    max-width: 60%;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    min-height: 20rem;
+
+    p{
+        margin: 0 1em;;
+    }
+    h2 {
+        padding: 3rem 0 0 5rem;
+    }
+    .img-avatar{
+        float: left;
+        padding: 0.5rem;
+        margin-left: 1em;
+        margin-top: 0.5em;
+
+
+    }
+
+    img{
+        max-width: 4rem;
+        border-radius: 10px;
+        border: 2px solid $second-bg;
+
+        }
+
+    img:hover{
+        border: 2px solid $third-color;
+    }
+
+    form{
+        max-width: 90%;
+        margin: 0 auto;
+        
+        input {
+        border-radius: 10px;
+        background-color: $back-form;
+        margin: 0.5rem;
+        height: 25px;   
+        color: $color-form;
+        padding: 0.2rem 0.4rem;
+        border: none;
+        }
+    }
+
+    .container-button{
+        clear: both;
+        padding: 1rem;
+    }
+
+    .btn{
+        border-radius: 28px;
+        background-color: $third-color;
+        width: 10em;
+        height: 3em;
+        text-align: center;
+        color: $back-form;
+        border: none;
+        font-size: 0.8em;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background: $second-color;
+        color: $back-form;
+        font-style: bold;
+    }
+    
+}
+.medias-edit{
+    background-color: $second-bg;
+    width: 75%;
+    min-height: 32rem;
+    height: 100%;
+    padding: 2rem;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    h1 {
+        padding: 1rem 0 0 3rem;
+    }
+    p{
+        margin: 0 1em;
+    }
+    
+    .img-avatar{
+        float: left;
+        padding: 0.5rem;
+        margin-left: 1em;
+        margin-top: 0.5em;
+    }
+
+    img{
+        max-width: 4rem;
+        border-radius: 10px;
+        border: 2px solid $second-bg;
+
+        }
+
+    img:hover{
+        border: 2px solid $third-color;
+    }
+
+    #avatar-user {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        &:hover{
+            border: 2px solid $second-bg;
+            }
+    }
+    form{
+        max-width: 90%;
+        margin: 0 auto;
+        
+        input, textarea {
+        border-radius: 10px;
+        background-color: $back-form;
+        margin: 0.5rem;
+        color: $color-form;
+        padding: 0.2rem 0.4rem;
+        border: none;
+        }
+
+        input {
+            height: 1.5rem;;   
+        }
+        textarea {
+            height: 12rem;
+            width: 30rem;
+        }
+    }
+
+    .container-button{
+        clear: both;
+        padding: 2rem;
+    }
+
+    .btn{
+        border-radius: 28px;
+        background-color: $third-color;
+        width: 10em;
+        height: 3em;
+        text-align: center;
+        color: $back-form;
+        border: none;
+        font-size: 0.8em;
+        text-decoration: none;
+        margin: 0 1em;
+    }
+
+    .btn:hover {
+        background: $second-color;
+        color: $back-form;
+        font-style: bold;
+    }
+    .clear{
+        clear: both;
+    }
+
+    a{
+        text-decoration: none;
+        color: $back-form;
+    }
+
+    a:hover{
+    background: $second-color;
+    color: $back-form;
+    font-style: bold;
+    }
+    button {
+        margin-top: 2rem;
+        background: $second-bg;
+        font-family: Nunito;
+        color: $font-color; 
+        font-size: x-large;
+        border: 1px solid $font-color;
+        border-radius: 3px;
+        height: 100%;
+        float: right;        
+        transition: all .3s ease-in-out;
+        &:hover {
+            color: $third-color;
+            border-color: $third-color;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    }
+    .show-poster input {
+        width: 56rem;
     }
 }

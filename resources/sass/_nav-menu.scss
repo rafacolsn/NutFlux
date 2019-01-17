@@ -1,10 +1,11 @@
 .nav-menu {
+    position: relative;
     background-color: $second-bg;
     display: flex;
     justify-content: space-between;
     padding: 2rem 5rem 1rem;
     font-size: 1.3rem;
-    font-family: Nunito;
+    font-family: 'Nunito';
     text-transform: uppercase;
     max-height: 2rem;
     .nutflux a {
@@ -90,4 +91,18 @@
 }
   .dropdown:hover .dropdown-child {
     display: block;
+  }
+  #nav-avatar-user {
+    border-radius: 50%;
+    position: absolute;
+    bottom: 25%;
+    left: 20%;
+    height: 50%;
+    border: 2px solid $second-bg;
+    &:hover {
+      border: 2px solid $second-color;
+    }
+  }
+  .nav-user {
+    text-align: center;
   }

@@ -5,8 +5,11 @@
     <div class="nutflux">
       <a href="/choices">NutFlux</a>
     </div>
-    <div>
-      <a href="/users">{{user.firstname}}</a>
+    <div class="nav-user">
+      <a href="/users">
+        <img id="nav-avatar-user" :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
+        {{user.firstname}}
+      </a>
     </div>
     <div class="dropdown" @mouseover="hover = true" @mouseleave="hover = false">
       <a href="#">Shows</a>
