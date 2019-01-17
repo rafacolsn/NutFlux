@@ -29,7 +29,6 @@
     scrollbar-face-color: $foreground-color;
     scrollbar-track-color: $background-color;
   }
-}
 
 body, html {
   @include scrollbars(0.3rem, $second-color, #282828);
@@ -60,6 +59,7 @@ h1, .list-title {
 h2 {
   font-family: Nunito;
   color: $third-color;
+  // padding: 2rem; Emilie
 }
 h3 {
   font-weight: bold;
@@ -92,3 +92,7 @@ h3 {
 @import 'guest-forms';
 
 @import 'actors';
+
+// import users sass
+@import 'users-create';
+@import 'users-edit';

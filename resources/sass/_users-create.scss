@@ -1,0 +1,72 @@
+.users-create{
+    background-color: $second-bg;
+    margin: 4rem auto;
+    max-width: 60%;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    min-height: 20rem;
+
+    p{
+        margin: 0 1em;;
+    }
+    
+    .img-avatar{
+        float: left;
+        padding: 0.5rem;
+        margin-left: 1em;
+        margin-top: 0.5em;
+
+
+    }
+
+    img{
+        max-width: 4rem;
+        border-radius: 10px;
+        border: 2px solid $second-bg;
+
+        }
+
+    img:hover{
+        border: 2px solid $third-color;
+    }
+
+    form{
+        max-width: 90%;
+        margin: 0 auto;
+        
+        input {
+        border-radius: 10px;
+        background-color: $back-form;
+        margin: 0.5rem;
+        height: 25px;   
+        color: $color-form;
+        padding: 0.2rem 0.4rem;
+        border: none;
+        }
+    }
+
+    .container-button{
+        clear: both;
+        padding: 1rem;
+    }
+
+    .btn{
+        border-radius: 28px;
+        background-color: $third-color;
+        width: 10em;
+        height: 3em;
+        text-align: center;
+        color: $back-form;
+        border: none;
+        font-size: 0.8em;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background: $second-color;
+        color: $back-form;
+        font-style: bold;
+    }
+    
+}
+

@@ -1,49 +1,46 @@
 <template>
-  <div class="container">
-    <img :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
+  <div class="container users-edit">
+    <div class="float">
+      <h2>Edit user</h2>
+    </div>
 
-    <h1>Edit user</h1>
-    <br>
+    <div class="float">
+      <img id="avatar-user" :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
+    </div>
 
-    <form method="post" :action="'/users/' + user.id">
+    <form class="clear" method="post" :action="'/users/' + user.id">
       <p>
-        <label for="userFirstname">Firstname</label>
         <input type="text" name="userFirstname" :value="user.firstname">
       </p>
-      <br>
       <p>
-        <label for="userLastname">Lastname</label>
         <input type="text" name="userLastname" :value="user.lastname">
       </p>
-      <br>
-      <div>
+
+      <div class="img-avatar">
         <img src="../../../images/dog.jpg" alt="dog">
         <input type="radio" id="dog" name="userAvatar" value="../../../images/dog.jpg">
       </div>
-      <br>
-      <div>
+
+      <div class="img-avatar">
         <img src="../../../images/cat.jpg" alt="cat">
         <input type="radio" id="cat" name="userAvatar" value="../../../images/cat.jpg">
       </div>
-      <br>
-      <div>
+
+      <div class="img-avatar">
         <img src="../../../images/duck.jpg" alt="duck">
         <input type="radio" id="duck" name="userAvatar" value="../../../images/duck.jpg">
       </div>
-      <br>
+
       <input type="hidden" name="_method" value="PATCH">
       <input type="hidden" name="_token" :value="csrf">
       
-      <button v-on:click="send">Edit</button>
-      <br>
-      <br>
-      <br>
-      <button v-on:click="destroy">Delete user</button>
-      <br>
-      <br>
-      <button>
-        <a href="/users">Cancel</a>
-      </button>
+      <div class="container-button">
+        <button class="btn" v-on:click="send">Edit</button>
+        <button class="btn" v-on:click="destroy">Delete user</button>
+        <button class="btn">
+            <a href="/users">Cancel</a>
+        </button>
+      </div>
     </form>
   </div>
 </template>
@@ -86,9 +83,9 @@ export default {
           console.log(error);
         });
     },
-  mounted: function() {
-    this.id = this.$el.getAttribute('data-id');
-  }
+    mounted: function() {
+      this.id = this.$el.getAttribute("data-id");
+    }
   }
 };
 </script>

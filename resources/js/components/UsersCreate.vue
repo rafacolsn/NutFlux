@@ -1,37 +1,41 @@
 <template>
-  <div class="container">
-    <h1>Create a user</h1>
+  <div class="container users-create">
+    <h1></h1>
+
+    <h2>Create a user</h2>
 
     <form method="post" action="/users">
       <p>
-        <label for="firstname">Firstname :</label>
-        <input type="text" name="firstname" v-model="firstname">
+        <input type="text" name="firstname" v-model="firstname" placeholder="Firstname" required>
       </p>
       <p>
-        <label for="lastname">Lastname :</label>
-        <input type="text" name="lastname" v-model="lastname">
+        <input type="text" name="lastname" v-model="lastname" placeholder="Lastname" required>
       </p>
 
-      <div>
-        <img src="../../../images/dog.jpg" alt="dog">
+      <div class="img-avatar">
+        <label for="dog">
+        <img src="../../../images/dog.jpg" alt="dog"></label>
         <input type="radio" id="dog" name="avatar" checked value="../../../images/dog.jpg">
       </div>
 
-      <div>
-        <img src="../../../images/cat.jpg" alt="cat">
+      <div class="img-avatar">
+        <label for="cat"><img src="../../../images/cat.jpg" alt="cat"></label>
         <input type="radio" id="cat" name="avatar" value="../../../images/cat.jpg">
       </div>
 
-      <div>
-        <img src="../../../images/duck.jpg" alt="duck">
+      <div class="img-avatar">
+        <label for="duck"><img src="../../../images/duck.jpg" alt="duck"></label>
         <input type="radio" id="duck" name="avatar" value="../../../images/duck.jpg">
       </div>
 
 
 
       <input type="hidden" name="_token" :value="csrf">
-      
-      <button v-on:click="create">Create</button>
+    <div class="container-button">  
+      <button class="btn" v-on:click="create"><span>Add user</span></button>
+    </div>
+
+    
     </form>
   </div>
 </template>
@@ -62,9 +66,3 @@ export default {
   }
 };
 </script>
-
-<style>
-img {
-  max-width: 10%;
-}
-</style>
