@@ -29,15 +29,15 @@
           </li>
         
           <li>
-            <a href="/choices/#favourites">Favourites</a>
+            <a href="/choices#favourites">Favourites</a>
           </li>
         <div class="shadow"> </div> 
           <li>
-            <a href="/choices/#later">To Watch Later</a>
+            <a href="/choices#later">To Watch Later</a>
           </li>
         
           <li>
-            <a href="/choices/#seen">Watched</a>
+            <a href="/choices#watched">Watched</a>
           </li>
         
       </ul>

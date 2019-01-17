@@ -54240,7 +54240,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("li", [
-        _c("a", { attrs: { href: "/choices/#favourites" } }, [
+        _c("a", { attrs: { href: "/choices#favourites" } }, [
           _vm._v("Favourites")
         ])
       ]),
@@ -54248,13 +54248,13 @@ var staticRenderFns = [
       _c("div", { staticClass: "shadow" }),
       _vm._v(" "),
       _c("li", [
-        _c("a", { attrs: { href: "/choices/#later" } }, [
+        _c("a", { attrs: { href: "/choices#later" } }, [
           _vm._v("To Watch Later")
         ])
       ]),
       _vm._v(" "),
       _c("li", [
-        _c("a", { attrs: { href: "/choices/#seen" } }, [_vm._v("Watched")])
+        _c("a", { attrs: { href: "/choices#watched" } }, [_vm._v("Watched")])
       ])
     ])
   }
