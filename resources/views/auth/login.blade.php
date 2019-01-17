@@ -5,7 +5,7 @@
 @stop
 
 @section( 'content' )
-    <form action="/login/" method="post">
+    <form action="/login" method="post">
         @csrf
         <p class="input-wrapper">
             <label class="input-label" for="email">Email:</label>
