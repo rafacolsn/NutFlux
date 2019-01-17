@@ -26,7 +26,3 @@ Route::get('/login/{id}', 'UserController@login')->name('userlogin');
 Route::get( '/search', 'SearchController@search' ) -> name( 'search' );
 // Route::get( '/home', 'HomeController@index' ) -> name( 'home' );
 Route::post('/logout', 'AccountController@logout') -> name('logout');
-
-Route::post( '/register', function ( $request ) {
-    dd( 'this is /register route in post method. Not all those who wander are lost...' );
-} );
