@@ -17,14 +17,13 @@
 
         <div id="nav">
             <!-- include vue component -->           
-        </nav>
         <nav-menu :user="{{ json_encode(session("user")) }}" csrf="{{ csrf_token() }}"></nav-menu>
             
         </div>
 
         <main id="app">
             @yield( 'content' )
-
+            
 
         </main> <!-- .content -->
 

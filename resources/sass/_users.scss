@@ -52,23 +52,7 @@
         padding: 1rem;
     }
 
-    .btn{
-        border-radius: 28px;
-        background-color: $third-color;
-        width: 10em;
-        height: 3em;
-        text-align: center;
-        color: $back-form;
-        border: none;
-        font-size: 0.8em;
-        text-decoration: none;
-    }
-
-    .btn:hover {
-        background: $second-color;
-        color: $back-form;
-        font-style: bold;
-    }
+    
     
 }
 .users-edit {
@@ -154,15 +138,19 @@
     .container-button{
         clear: both;
         padding: 2rem;
+        a {
+            padding: 0.6rem 2rem 0.8rem 2rem;
+        }
     }
+    
 
     .btn{
         border-radius: 28px;
         background-color: $third-color;
-        width: 10em;
-        height: 3em;
+        width: 10rem;
+        height: 3rem;
         text-align: center;
-        color: $back-form;
+        color: aliceblue;
         border: none;
         font-size: 0.8em;
         text-decoration: none;
@@ -205,3 +193,30 @@
     display: flex;
     flex-direction: column;
 }
+.new-user{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+.add-user {
+    max-width: 5rem;
+    margin: 1rem auto 2rem;
+    background: $back-form;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+    color: $second-bg;
+    transition: all .3s ease-in-out;
+    i {
+        margin-right: 1rem;
+    }
+    &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+        color: aliceblue;
+    }
+}
+

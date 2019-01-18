@@ -28,8 +28,10 @@
         <p>You haven't created any user yet. That's a shame.</p>
       </li>
     </ol>
-    <div v-if="users.length < 3">
-      <a href="/users/create">Add a new user to your account.</a>
+    <div class="new-user" v-if="users.length < 3">
+      <p>Make you happy ! Add a new user to your account.</p>
+      <a class="add-user" href="/users/create">Yeah !</a>
+      
     </div>
   </div>
 </template>

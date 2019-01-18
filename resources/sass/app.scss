@@ -84,6 +84,22 @@ h3 {
   margin-bottom: 2rem;
   justify-content: space-evenly;
 }
+.btn {
+  border-radius: 28px;
+  background-color: $third-color;
+  width: 10rem;
+  height: 3rem;
+  text-align: center;
+  color: aliceblue;
+  border: none;
+  font-size: 0.8em;
+  text-decoration: none;
+  &:hover {
+      background: $second-color;
+      color: $back-form;
+      font-style: bold;
+  }
+};
 
 // import nav-menu sass
 @import 'nav-menu';

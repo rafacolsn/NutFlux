@@ -38,6 +38,7 @@
             <input type="hidden" name="_token" :value="csrf">
 
             <button v-on:click="send">Create</button>
+            
         </form>
     </div>
 </template>

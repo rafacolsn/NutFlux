@@ -13,19 +13,23 @@
       </p>
 
       <div class="img-avatar">
-        <label for="dog">
-        <img src="../../../images/dog.jpg" alt="dog"></label>
-        <input type="radio" id="dog" name="avatar" checked value="../../../images/dog.jpg">
+        <label for="first">
+        <img :src="'https://api.adorable.io/avatars/' + firstname +'.png'" alt="adorable"></label>
+        <input type="radio" id="first" name="avatar" :value="'https://api.adorable.io/avatars/' + firstname +'.png'" v-model="avatar">
       </div>
 
       <div class="img-avatar">
-        <label for="cat"><img src="../../../images/cat.jpg" alt="cat"></label>
-        <input type="radio" id="cat" name="avatar" value="../../../images/cat.jpg">
+        <label for="last">
+        <img :src="'https://api.adorable.io/avatars/' + lastname +'.png'" alt="adorable">
+        </label>
+        <input type="radio" id="last" name="avatar" v-model="avatar" :value="'https://api.adorable.io/avatars/' + lastname +'.png'">
       </div>
 
       <div class="img-avatar">
-        <label for="duck"><img src="../../../images/duck.jpg" alt="duck"></label>
-        <input type="radio" id="duck" name="avatar" value="../../../images/duck.jpg">
+        <label for="firstlast">
+        <img :src="'https://api.adorable.io/avatars/' + firstname + lastname +'.png'" alt="adorable">
+        </label>
+        <input type="radio" id="firstlast" name="avatar" :value="'https://api.adorable.io/avatars/' + firstname + lastname +'.png'" v-model="avatar">
       </div>
 
 
