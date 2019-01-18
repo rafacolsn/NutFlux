@@ -19,7 +19,13 @@ class UserController extends Controller
     {
         $id = Auth::id();
         $usersAll = User::where('account_id', $id)->get();
-        return view('users.index', compact('usersAll'));
+        // return view('users.index', compact('usersAll'));
+        return response()->json(
+            [
+            'status'=>'success',
+            'usersAll'=>$usersAll
+            ],
+            200);
     }
 
 

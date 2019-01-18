@@ -4,7 +4,7 @@
             <p class="site-title">Nutflux</p>
             <div class="wrapper">
                 <h1>Login</h1>
-                <form class="guest-form" method="post" action="/login/">
+                <form class="guest-form" method="post" action="" @submit.prevent="login">
                     <p class="input-wrapper">
                         <label class="input-label" for="email">Email:</label>
                         <input class="input-field" type="email" v-model="email" name="email" placeholder="Your email address">
@@ -16,14 +16,13 @@
                     </p>
 
                     <!-- <input type="hidden" name="_token" :value="csrf"> -->
-                       {{ crsf_token() }}
 
                     <div class="container-button">
-                        <button class="btn" @click="login">Login</button>
+                        <button class="btn" @click.prevent="login">Login</button>
                     </div>
 
                     <p class="register-link">
-                        <a href="/accounts/create">Don't have an account yet ? Click here to register</a>
+                        <router-link to="/accounts/create">Don't have an account yet ? Click here to register</router-link>
                     </p>
                 </form>
             </div>
@@ -33,8 +32,8 @@
 
 
 <script>
+const axios = require('axios');
 export default {
-  props: ["csrf"],
   data() {
     return {
       email: "",
@@ -43,11 +42,20 @@ export default {
   },
   methods: {
     login: function(event) {
+        console.log(this.$router)
       axios
-        .post("/login/")
+        .post("/login", {
+            email: this.email,
+            password: this.password
+        })
 
         .then(function(response) {
-          console.log(response);
+            console.log(response);
+          this.$router.push(
+              {
+                  name: 'users',
+              }
+          )
         })
         .catch(function(error) {
           console.log(error);

@@ -11,9 +11,10 @@ window.Vue = require('vue');
 
 import VueRouter from 'vue-router';
 import OurRoutes from './routes';
+
 Vue.use(VueRouter);
 const router = new VueRouter ({ mode: 'history', routes: OurRoutes });
-
+import Login from './components/AccountsLogin.vue';
 
 /**
  * The following block of code may be used to automatically register your
@@ -71,8 +72,8 @@ Vue.component('nav-menu', require('./components/NavMenu.vue'));
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-const app = new Vue({ 
-    router 
-}).$mount("#app");
-
+const app = new Vue({
+    el: '#app',
+    router,
+    render: h => h(Login)
+  })

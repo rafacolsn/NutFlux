@@ -17,6 +17,18 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::post('/login', '/Auth/LoginController@login');
+// Route::post('/login', '/Auth/LoginController@login');
 
-Route::get('/users', 'UserController@index')->name('users.index');
+
+Route::group(
+    [
+        'middleware'=>'api',
+        'prefix'=>'auth'
+    ],
+    function ($router) {
+        Route::post('login', 'AuthController@login');
+        Route::post('logout', 'AuthController@logout');
+        Route::post('refresh', 'AuthController@refresh');
+        Route::get('users', 'UserController@index');
+    }
+);
