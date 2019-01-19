@@ -252,6 +252,26 @@ h3 {
   font-style: bold;
 }
 
+#login {
+  background: rgba(70, 189, 223, 0.9);
+  color: #353535;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+#login:hover {
+  font-style: bold;
+  color: aliceblue;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#signup {
+  color: #E95065;
+}
+
 .nav-menu {
   position: relative;
   background-color: #282828;

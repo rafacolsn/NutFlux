@@ -100,6 +100,19 @@ h3 {
       font-style: bold;
   }
 };
+#login {
+  background: $second-color;
+  color: $back-form;
+  transition: transform .3s ease-in-out;
+  &:hover {
+    font-style: bold;
+    color: aliceblue;
+    transform: scale(1.1);
+  }
+}
+#signup {
+  color:$third-color;
+}
 
 // import nav-menu sass
 @import 'nav-menu';

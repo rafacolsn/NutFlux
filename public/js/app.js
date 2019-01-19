@@ -52522,6 +52522,70 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["csrf"],
@@ -52559,7 +52623,7 @@ var render = function() {
       _c("p", { staticClass: "site-title" }, [_vm._v("Nutflux")]),
       _vm._v(" "),
       _c("div", { staticClass: "wrapper" }, [
-        _c("h1", [_vm._v("Sign Up")]),
+        _c("h1", { attrs: { id: "signup" } }, [_vm._v("Sign Up")]),
         _vm._v(" "),
         _c(
           "form",
@@ -52710,17 +52774,15 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "image-picker" }, [
-                _c("label", { attrs: { for: "dog" } }, [
+                _c("label", { attrs: { for: "first" } }, [
                   _c("img", {
                     staticClass: "image-picker-content",
-                    class: [
-                      _vm.avatar == "../../../images/dog.jpg"
-                        ? "selected-image"
-                        : ""
-                    ],
                     attrs: {
-                      src: __webpack_require__(89),
-                      alt: "dog"
+                      src:
+                        "https://api.adorable.io/avatars/" +
+                        _vm.firstname +
+                        ".png",
+                      alt: "adorable"
                     }
                   })
                 ]),
@@ -52734,36 +52796,40 @@ var render = function() {
                       expression: "avatar"
                     }
                   ],
-                  attrs: {
-                    type: "radio",
-                    id: "dog",
-                    name: "avatar",
-                    checked: "",
-                    value: "../../../images/dog.jpg"
-                  },
+                  attrs: { type: "radio", id: "first", name: "avatar" },
                   domProps: {
-                    checked: _vm._q(_vm.avatar, "../../../images/dog.jpg")
+                    value:
+                      "https://api.adorable.io/avatars/" +
+                      _vm.firstname +
+                      ".png",
+                    checked: _vm._q(
+                      _vm.avatar,
+                      "https://api.adorable.io/avatars/" +
+                        _vm.firstname +
+                        ".png"
+                    )
                   },
                   on: {
                     change: function($event) {
-                      _vm.avatar = "../../../images/dog.jpg"
+                      _vm.avatar =
+                        "https://api.adorable.io/avatars/" +
+                        _vm.firstname +
+                        ".png"
                     }
                   }
                 })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "image-picker" }, [
-                _c("label", { attrs: { for: "cat" } }, [
+                _c("label", { attrs: { for: "last" } }, [
                   _c("img", {
                     staticClass: "image-picker-content",
-                    class: [
-                      _vm.avatar == "../../../images/cat.jpg"
-                        ? "selected-image"
-                        : ""
-                    ],
                     attrs: {
-                      src: __webpack_require__(90),
-                      alt: "cat"
+                      src:
+                        "https://api.adorable.io/avatars/" +
+                        _vm.lastname +
+                        ".png",
+                      alt: "adorable"
                     }
                   })
                 ]),
@@ -52777,35 +52843,39 @@ var render = function() {
                       expression: "avatar"
                     }
                   ],
-                  attrs: {
-                    type: "radio",
-                    id: "cat",
-                    name: "avatar",
-                    value: "../../../images/cat.jpg"
-                  },
+                  attrs: { type: "radio", id: "last", name: "avatar" },
                   domProps: {
-                    checked: _vm._q(_vm.avatar, "../../../images/cat.jpg")
+                    value:
+                      "https://api.adorable.io/avatars/" +
+                      _vm.lastname +
+                      ".png",
+                    checked: _vm._q(
+                      _vm.avatar,
+                      "https://api.adorable.io/avatars/" + _vm.lastname + ".png"
+                    )
                   },
                   on: {
                     change: function($event) {
-                      _vm.avatar = "../../../images/cat.jpg"
+                      _vm.avatar =
+                        "https://api.adorable.io/avatars/" +
+                        _vm.lastname +
+                        ".png"
                     }
                   }
                 })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "image-picker" }, [
-                _c("label", { attrs: { for: "duck" } }, [
+                _c("label", { attrs: { for: "firstlast" } }, [
                   _c("img", {
                     staticClass: "image-picker-content",
-                    class: [
-                      _vm.avatar == "../../../images/duck.jpg"
-                        ? "selected-image"
-                        : ""
-                    ],
                     attrs: {
-                      src: __webpack_require__(91),
-                      alt: "duck"
+                      src:
+                        "https://api.adorable.io/avatars/" +
+                        _vm.firstname +
+                        _vm.lastname +
+                        ".png",
+                      alt: "adorable"
                     }
                   })
                 ]),
@@ -52819,18 +52889,28 @@ var render = function() {
                       expression: "avatar"
                     }
                   ],
-                  attrs: {
-                    type: "radio",
-                    id: "duck",
-                    name: "avatar",
-                    value: "../../../images/duck.jpg"
-                  },
+                  attrs: { type: "radio", id: "firstlast", name: "avatar" },
                   domProps: {
-                    checked: _vm._q(_vm.avatar, "../../../images/duck.jpg")
+                    value:
+                      "https://api.adorable.io/avatars/" +
+                      _vm.firstname +
+                      _vm.lastname +
+                      ".png",
+                    checked: _vm._q(
+                      _vm.avatar,
+                      "https://api.adorable.io/avatars/" +
+                        _vm.firstname +
+                        _vm.lastname +
+                        ".png"
+                    )
                   },
                   on: {
                     change: function($event) {
-                      _vm.avatar = "../../../images/duck.jpg"
+                      _vm.avatar =
+                        "https://api.adorable.io/avatars/" +
+                        _vm.firstname +
+                        _vm.lastname +
+                        ".png"
                     }
                   }
                 })
@@ -52862,7 +52942,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "register-link" }, [
       _c("a", { attrs: { href: "/login" } }, [
-        _vm._v("Already have an account ? Log in !")
+        _vm._v(
+          "Already have an account ? What the f*@% are you doing here ? Log you in !"
+        )
       ])
     ])
   }
@@ -52877,24 +52959,9 @@ if (false) {
 }
 
 /***/ }),
-/* 89 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/dog.jpg?86bb9176d97f09764dd6db191c32d440";
-
-/***/ }),
-/* 90 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/cat.jpg?0bf1d1bbdae1712b9b1a75aa534dd071";
-
-/***/ }),
-/* 91 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/duck.jpg?e5d1cfb4db70734f976173c0bbc63512";
-
-/***/ }),
+/* 89 */,
+/* 90 */,
+/* 91 */,
 /* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -53255,9 +53322,15 @@ var render = function() {
             }),
             _vm._v(" "),
             _c("div", { staticClass: "container-button" }, [
-              _c("button", { staticClass: "btn", on: { click: _vm.login } }, [
-                _vm._v("Login")
-              ])
+              _c(
+                "button",
+                {
+                  staticClass: "btn",
+                  attrs: { id: "login" },
+                  on: { click: _vm.login }
+                },
+                [_vm._v("Login")]
+              )
             ]),
             _vm._v(" "),
             _vm._m(0)
@@ -53274,7 +53347,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "register-link" }, [
       _c("a", { attrs: { href: "/accounts/create" } }, [
-        _vm._v("Don't have an account yet ? Click here to register")
+        _vm._v(
+          "Whaaat ??? Don't have an account yet ? Click here to register !"
+        )
       ])
     ])
   }
