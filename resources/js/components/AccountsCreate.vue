@@ -1,16 +1,6 @@
 <template>
   <div class="container">
     <div class="content-wrapper">
-<<<<<<< HEAD
-        <p class="site-title">Nutflux</p>
-        <div class="wrapper">
-            <h1>Sign Up</h1>
-            <form class="guest-form" method="post" action="/register">
-                <p class="input-wrapper">
-                    <label class="input-label" for="email">Email:</label>
-                    <input class="input-field" type="email" v-model="email" name="email" placeholder="Your email address">
-                </p>
-=======
       <p class="site-title">Nutflux</p>
       <div class="wrapper">
         <h1 id="signup">Sign Up</h1>
@@ -25,7 +15,6 @@
               placeholder="Your email address"
             >
           </p>
->>>>>>> dev
 
           <p class="input-wrapper">
             <label class="input-label" for="password">Password:</label>
