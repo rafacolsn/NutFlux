@@ -20,7 +20,7 @@
             </div>
             <div class="edit">
                 <label for="mediaIsSerie">Is it part of a TV Show ?</label>
-                <input type="checkbox" name="mediaIsSerie" v-model="mediaIsSerie" />
+                <input type="checkbox" name="mediaIsSerie" v-model="mediaIsSerie"/>
             </div>
             <div class="edit show-poster">
                 <label for="mediaPoster">Poster</label>
