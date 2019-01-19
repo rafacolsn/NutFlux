@@ -146,16 +146,11 @@ class MediaController extends Controller
 
         $media = Media::find($id);
 
-        $mediaIsSerie = 0;
-        if ( $request -> get( 'mediaIsSerie' ) == true || $request -> get( 'mediaIsSerie' ) == 1 ) {
-            $mediaIsSerie = 1;
-        }
-
         $media->title = $request->get('mediaTitle');
         $media->summary = $request->get('mediaSummary');
         $media->year = $request->get('mediaYear');
         $media->trailer = $request->get('mediaTrailer');
-        $media->is_serie = $mediaIsSerie;
+        $media->is_serie = $request->get('mediaIsSerie');
         $media->poster = $request->get('mediaPoster');
         $media->director = $request->get('mediaDirector');
         $media->producer = $request->get('mediaProducer');

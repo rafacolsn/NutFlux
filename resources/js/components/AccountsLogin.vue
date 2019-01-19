@@ -18,11 +18,11 @@
                     <input type="hidden" name="_token" :value="csrf">
 
                     <div class="container-button">
-                        <button class="btn" @click="login">Login</button>
+                        <button id="login" class="btn" @click="login">Login</button>
                     </div>
 
                     <p class="register-link">
-                        <a href="/accounts/create">Don't have an account yet ? Click here to register</a>
+                        <a href="/accounts/create">Whaaat ??? Don't have an account yet ? Click here to register !</a>
                     </p>
                 </form>
             </div>

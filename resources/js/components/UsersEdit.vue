@@ -2,39 +2,45 @@
   <div class="container users-edit">
     <img id="avatar-user" :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
     <h2>Edit user</h2>
-    
+
     <form class="clear" method="post" :action="'/users/' + user.id">
       <p>
-        <input type="text" name="userFirstname" :value="user.firstname">
+        <input type="text" name="userFirstname" v-model="userFirstname">
       </p>
       <p>
-        <input type="text" name="userLastname" :value="user.lastname">
+        <input type="text" name="userLastname" v-model="userLastname">
       </p>
 
       <div class="img-avatar">
-        <img src="../../../images/dog.jpg" alt="dog">
-        <input type="radio" id="dog" name="userAvatar" value="../../../images/dog.jpg">
+        <label for="first">
+        <img :src="'https://api.adorable.io/avatars/' + userFirstname +'.png'" alt="adorable">
+        </label>
+        <input type="radio" id="first" name="userAvatar" v-model="userAvatar" :value="'https://api.adorable.io/avatars/' + userFirstname +'.png'">
       </div>
 
       <div class="img-avatar">
-        <img src="../../../images/cat.jpg" alt="cat">
-        <input type="radio" id="cat" name="userAvatar" value="../../../images/cat.jpg">
+        <label for="last">
+        <img :src="'https://api.adorable.io/avatars/' + userLastname +'.png'" alt="adorable">
+        </label>
+        <input type="radio" id="last" name="userAvatar" v-model="userAvatar" :value="'https://api.adorable.io/avatars/' + userLastname +'.png'">
       </div>
 
       <div class="img-avatar">
-        <img src="../../../images/duck.jpg" alt="duck">
-        <input type="radio" id="duck" name="userAvatar" value="../../../images/duck.jpg">
+        <label for="firstlast">
+        <img :src="'https://api.adorable.io/avatars/' + userFirstname + userLastname + '.png'" alt="adorable">
+        </label>
+        <input type="radio" id="firstlast" name="userAvatar" v-model="userAvatar" :value="'https://api.adorable.io/avatars/' + userFirstname + userLastname +'.png'">
       </div>
 
       <input type="hidden" name="_method" value="PATCH">
       <input type="hidden" name="_token" :value="csrf">
 
       <div class="container-button">
-        <button class="btn" v-on:click="send">Edit</button>
-        <button class="btn" v-on:click="destroy">Delete user</button>
-        <button class="btn">
-          <a href="/users">Cancel</a>
-        </button>
+        <button class="btn" v-on:click="send">Save</button>
+        
+        <a class="btn" href="/users">Cancel</a>
+        
+        <button class="delete-btn" v-on:click="destroy">Delete this user</button>
       </div>
     </form>
   </div>
@@ -47,10 +53,10 @@ export default {
   props: ["user", "csrf", "users"],
   data() {
     return {
-      userId: user.id,
-      userFirstname: user.firstname,
-      userLastname: user.lastname,
-      userAvatar: user.avatar
+      userId: this.user.id,
+      userFirstname: this.user.firstname,
+      userLastname: this.user.lastname,
+      userAvatar: this.user.avatar
     };
   },
   methods: {

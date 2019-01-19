@@ -234,6 +234,44 @@ h3 {
           justify-content: space-evenly;
 }
 
+.btn {
+  border-radius: 28px;
+  background-color: #E95065;
+  width: 10rem;
+  height: 3rem;
+  text-align: center;
+  color: aliceblue;
+  border: none;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: rgba(70, 189, 223, 0.9);
+  color: #353535;
+  font-style: bold;
+}
+
+#login {
+  background: rgba(70, 189, 223, 0.9);
+  color: #353535;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+#login:hover {
+  font-style: bold;
+  color: aliceblue;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#signup {
+  color: #E95065;
+}
+
 .nav-menu {
   position: relative;
   background-color: #282828;
@@ -1082,24 +1120,6 @@ h3 {
   padding: 1rem;
 }
 
-.users-create .btn {
-  border-radius: 28px;
-  background-color: #E95065;
-  width: 10em;
-  height: 3em;
-  text-align: center;
-  color: #353535;
-  border: none;
-  font-size: 0.8em;
-  text-decoration: none;
-}
-
-.users-create .btn:hover {
-  background: rgba(70, 189, 223, 0.9);
-  color: #353535;
-  font-style: bold;
-}
-
 .users-edit img {
   max-width: 4rem;
 }
@@ -1201,14 +1221,19 @@ h3 {
   padding: 2rem;
 }
 
+.users-edit .container-button a,
+.users-index .container-button a {
+  padding: 0.6rem 2rem 0.8rem 2rem;
+}
+
 .users-edit .btn,
 .users-index .btn {
   border-radius: 28px;
   background-color: #E95065;
-  width: 10em;
-  height: 3em;
+  width: 10rem;
+  height: 3rem;
   text-align: center;
-  color: #353535;
+  color: aliceblue;
   border: none;
   font-size: 0.8em;
   text-decoration: none;
@@ -1257,5 +1282,41 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.new-user {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.add-user {
+  max-width: 5rem;
+  margin: 1rem auto 2rem;
+  background: #353535;
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  border-radius: 8px;
+  border: none;
+  color: #282828;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.add-user i {
+  margin-right: 1rem;
+}
+
+.add-user:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
+  color: aliceblue;
 }
 

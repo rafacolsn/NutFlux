@@ -84,6 +84,35 @@ h3 {
   margin-bottom: 2rem;
   justify-content: space-evenly;
 }
+.btn {
+  border-radius: 28px;
+  background-color: $third-color;
+  width: 10rem;
+  height: 3rem;
+  text-align: center;
+  color: aliceblue;
+  border: none;
+  font-size: 0.8em;
+  text-decoration: none;
+  &:hover {
+      background: $second-color;
+      color: $back-form;
+      font-style: bold;
+  }
+};
+#login {
+  background: $second-color;
+  color: $back-form;
+  transition: transform .3s ease-in-out;
+  &:hover {
+    font-style: bold;
+    color: aliceblue;
+    transform: scale(1.1);
+  }
+}
+#signup {
+  color:$third-color;
+}
 
 // import nav-menu sass
 @import 'nav-menu';
