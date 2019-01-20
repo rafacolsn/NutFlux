@@ -43,8 +43,6 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        var_dump('store function entered');
-        var_dump('<br />');
         $this -> validate( $request, [
             'email' => 'required',
             'password' => 'required',
@@ -53,19 +51,11 @@ class AccountController extends Controller
             'avatar' => 'required'
         ] );
 
-        var_dump('validation suceeded');
-        var_dump('<br />');
-
         $account = new Account( [
             'email' => $request -> get( 'email' ),
             'password' => Hash::make( $request -> get( 'password' ) ),
         ] );
-
-        var_dump($account);
-        var_dump('<br />');
         $account -> save();
-        var_dump('account saved');
-        var_dump('<br />');
 
         $user = new User( [
             'firstname' => $request -> get( 'firstname' ),
@@ -73,10 +63,8 @@ class AccountController extends Controller
             'avatar' => $request -> get( 'avatar' ),
             'account_id' => $account -> id
         ] );
-        var_dump($user);
-        var_dump('<br />');
         $user -> save();
-        var_dump('user saved');
+
         return redirect( '/accounts' ) -> with( 'success', 'Account has been added' );
     }
 
